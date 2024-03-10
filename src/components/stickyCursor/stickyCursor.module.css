@@ -1,0 +1,13 @@
+/* .cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: var(--cursor-color);
+    border-radius: 50%;
+    pointer-events: none;
+}
+@media (max-width: 900px) {
+    .cursor {
+        display: none;
+    }
+} */

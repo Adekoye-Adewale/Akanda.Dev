@@ -1,0 +1,25 @@
+.wrapper {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    transform: translateY(-19px);
+}
+.menu{
+    width: 480px;
+    height: 650px;
+    background-color:#c9fd74;
+    border-radius: 25px;
+    position: relative;
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .wrapper {
+        right: 7px;
+        transform: translateY(-20px);
+    }
+    .menu{
+        max-width: calc( 90vw - 80px) !important;
+        /* top: -10px !important;
+        right: -10px !important; */
+    }
+}

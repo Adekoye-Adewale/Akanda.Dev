@@ -1,0 +1,48 @@
+.header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    /* mix-blend-mode: difference; */
+    z-index: 1;
+}
+.burger {
+    display: none;
+    position: relative;
+    /* display: flex; */
+    gap: 8px;
+    flex-direction: column;
+    padding: 30px;
+    pointer-events: none;
+}
+/* .burger::before, 
+.burger::after {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 2px;
+    mix-blend-mode: difference;
+    background-color: var(--cursor-color);
+} */
+.menu__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: default;
+}
+/* Mobile */
+@media (max-width: 768px) {
+ .logo {
+    max-width: 50px;
+    max-height: 50px;
+    aspect-ratio: 1;
+ }
+}
+/* Tablet and Smaller Desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
