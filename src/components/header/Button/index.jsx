@@ -13,7 +13,9 @@ export default function Button({isActive, toggleMenu}) {
                     className={styles.el}
                     onClick={() => {toggleMenu()}}
                 >
-                    <PerspectiveText label="Menu"/>
+                    <PerspectiveText 
+                        label="Menu"
+                    />
                 </div>
                 <div 
                     className={styles.el}

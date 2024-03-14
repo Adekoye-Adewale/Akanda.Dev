@@ -20,8 +20,13 @@ export default function Nav() {
                                     animate="enter"
                                     exit="exit"
                                 >
-                                    <Link href={href}>
-                                        {title}
+                                    <Link 
+                                        href={href} 
+                                        title={title}
+                                        className={`perspective__text`}
+                                    >
+                                        <span>{title}</span>
+                                        <span>{title}</span>
                                     </Link>
                                 </motion.div>
                             </div>
@@ -40,13 +45,15 @@ export default function Nav() {
                                 initial="initial"
                                 animate="enter"
                                 exit="exit"
+                                className={`perspective__text`}
                                 key={`f_${i}`}
                                 href={href}
+                                title={title}
                                 target='_blank'
                                 rel="nofollow noreferrer"
-                                title={title}
                             >
-                                {title}
+                                <span>{title}</span>
+                                <span>{title}</span>
                             </motion.a>
                         )
                     })

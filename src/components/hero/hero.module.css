@@ -1,0 +1,19 @@
+.wrapper{
+    height: 90svh;
+    padding-inline: 10px;
+}
+.wrapper h1{
+    display: grid;
+    max-width: 730px;
+}
+.wrapper span:nth-child(2){
+    opacity: 0.1;
+    transition: opacity 500ms ease-in-out;
+}
+.wrapper:hover span:nth-child(2){
+    opacity: 1;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  
+}

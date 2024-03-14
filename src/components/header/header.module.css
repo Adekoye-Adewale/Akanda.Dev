@@ -5,15 +5,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    box-sizing: border-box;
     cursor: pointer;
-    /* mix-blend-mode: difference; */
     z-index: 1;
+    mix-blend-mode: difference;
 }
 .burger {
     display: none;
     position: relative;
-    /* display: flex; */
     gap: 8px;
     flex-direction: column;
     padding: 30px;
@@ -34,6 +32,11 @@
     align-items: center;
     cursor: default;
 }
+@media (prefers-color-scheme: light){
+    .header{
+        mix-blend-mode: normal;
+    }
+}
 /* Mobile */
 @media (max-width: 768px) {
  .logo {
@@ -41,6 +44,11 @@
     max-height: 50px;
     aspect-ratio: 1;
  }
+ @media (prefers-color-scheme: dark){
+    .header{
+        mix-blend-mode: normal;
+    }
+}
 }
 /* Tablet and Smaller Desktop */
 @media (min-width: 769px) and (max-width: 1024px) {
