@@ -24,6 +24,7 @@ export default function Nav() {
                                         href={href} 
                                         title={title}
                                         className={`perspective__text`}
+                                        onClick={() => handleSeeMoreClick(facts, setFacts)}
                                     >
                                         <span>{title}</span>
                                         <span>{title}</span>
