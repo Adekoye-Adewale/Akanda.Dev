@@ -17,15 +17,19 @@ export const links = [
     },
     {
         title: "Projects",
-        href: "/projects"
+        href: "/website-development-projects"
     },
-    {
-        title: "Expertise",
-        href: "/skills"
-    },
+    // {
+    //     title: "Expertise",
+    //     href: "/skills"
+    // },
     {
         title: "Contact",
-        href: "/contact"
+        href: "/contact-website-developer-in-lagos"
+    },
+    {
+        title: "Blog",
+        href: "/blog"
     }
 ]
 
