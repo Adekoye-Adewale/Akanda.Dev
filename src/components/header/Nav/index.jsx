@@ -4,7 +4,7 @@ import { links, menuFooterLinks } from '@/webContents/header';
 import { perspective, slideIn } from "./anim";
 import Link from 'next/link';
 
-export default function Nav() {
+export default function Nav({ navClose }) {
     return (
         <div className={styles.nav}>
             <div className={styles.body}>
@@ -24,7 +24,7 @@ export default function Nav() {
                                         href={href} 
                                         title={title}
                                         className={`perspective__text`}
-                                        onClick={() => handleSeeMoreClick(facts, setFacts)}
+                                        onClick={navClose}
                                     >
                                         <span>{title}</span>
                                         <span>{title}</span>

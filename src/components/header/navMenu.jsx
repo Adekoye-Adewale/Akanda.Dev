@@ -65,7 +65,7 @@ export default function NavMenu() {
                 initial="closed"
             >
                 <AnimatePresence>
-                    {isActive && <Nav />}
+                    {isActive && <Nav navClose={() => {setIsActive(!isActive)}} />}
                 </AnimatePresence>
             </motion.div>
             <Button 
