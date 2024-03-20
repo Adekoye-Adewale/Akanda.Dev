@@ -1,7 +1,7 @@
 import React from "react"
 import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
-import { loadingContents, loadingEntrance } from "./anim"
+import { loadingContents, loadingEntrance, loadingProgress } from "./anim"
 import { entranceFacts as EntranceFacts } from "./copyContent"
 import { handleSeeMoreClick, setRandomOpacity } from "./library"
 
@@ -65,6 +65,15 @@ export default function Loading() {
                         See More
                     </div>
                 </div>
+                <motion.div 
+                    className="loading__progress"
+                    variants={loadingProgress}
+                    initial="initial"
+                    animate={animationComplete ? "exit" : "enter"}
+                    exit="exit"
+                >
+
+                </motion.div>
             </motion.div>
         </div>
     )

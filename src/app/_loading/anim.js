@@ -63,3 +63,27 @@ export const loadingContents = {
         }
     }
 }
+
+export const loadingProgress = {
+    initial: {
+        width: '10%',
+        height: 10,
+    },
+    enter: {
+        width: '100%',
+        height: 30,
+        transition: { 
+            duration: 6,
+            delay: 0.55, 
+            ease: [.215,.01,.355,1],
+        }
+    },
+    exit: {
+        opacity: 0,
+        transition: { 
+            duration: 0.5, 
+            type: "tween", 
+            ease: [.215,.01,.003,1]
+        }
+    }
+}
