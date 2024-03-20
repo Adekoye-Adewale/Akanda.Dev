@@ -1,9 +1,9 @@
-export default function ProjectPage() {
+export default function ContactPage() {
     
     return (
         <div className='grid__center full__size'>
             <h1>
-                Projects
+                Contacts
             </h1>
         </div>
     )
