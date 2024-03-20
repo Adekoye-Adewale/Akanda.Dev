@@ -90,6 +90,7 @@
     --light: hsl(247°, 0%, 9%);
     --dark: hsl(0, 0%, 98%);
     --black: #000;
+    --preloader-bg: #E5E5E5;
   }
   html {
     color-scheme: dark;
@@ -102,6 +103,7 @@
     --light: hsl(0, 0%, 98%);
     --dark: hsl(247°, 0%, 9%);
     --black: #fff;
+    --preloader-bg: #191919;
   }
   html {
     color-scheme: light;
@@ -206,7 +208,7 @@ body:has(h1:hover) .cursor {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--color-200);
+  background-color: var(--preloader-bg);
   height: 200px;
   width: 200px;
   border-radius: 200px;
