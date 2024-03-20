@@ -68,6 +68,8 @@ export const loadingProgress = {
     initial: {
         width: '10%',
         height: 10,
+        // left: 0,
+        // top: 0,
     },
     enter: {
         width: '100%',
