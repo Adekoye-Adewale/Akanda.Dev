@@ -68,14 +68,12 @@ export const loadingProgress = {
     initial: {
         width: '10%',
         height: 10,
-        // left: 0,
-        // top: 0,
     },
     enter: {
         width: '100%',
-        height: 30,
+        height: 40,
         transition: { 
-            duration: 6,
+            duration: 5.5,
             delay: 0.55, 
             ease: [.215,.01,.355,1],
         }
@@ -85,7 +83,7 @@ export const loadingProgress = {
         transition: { 
             duration: 0.5, 
             type: "tween", 
-            ease: [.215,.01,.003,1]
+            ease: [.215,.01,.003,1],
         }
     }
 }

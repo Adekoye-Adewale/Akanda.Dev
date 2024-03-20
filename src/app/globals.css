@@ -150,12 +150,6 @@ p{
 section {
   height: 70vh;
 }
-/* section:nth-child(2n+1) {
-  background-color: gray;
-}
-section:nth-child(3n+1) {
-  background-color: red;
-} */
 .img__wrap {
   line-height: 0px;
 }
@@ -189,7 +183,10 @@ body:has(a:hover) .cursor {
   transform: scale(2);
 }
 body:has(h1:hover) .cursor {
-  transform: scale(4);
+  transform: scale(8);
+}
+.cursor__pointer{
+  cursor: pointer;
 }
 .grid__center{
   display: grid;
@@ -261,7 +258,7 @@ body:has(h1:hover) .cursor {
   top: -20px;
   left: 0;
   width: 10px;
-  height: 30px;
+  height: 40px;
   border-radius: 0px 10px 10px 0px;
 }
 .italic{

@@ -1,8 +1,8 @@
 import { forwardRef } from 'react';
-import styles from './header.module.css';
 import Magnetic from '../magnetic';
 import NavMenu from './navMenu';
 import Logo from './logo';
+import styles from './header.module.css';
 
 const HeaderComp = forwardRef(function index(props, ref) {
   return (

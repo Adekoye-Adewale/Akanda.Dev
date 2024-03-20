@@ -2,8 +2,8 @@ import React from "react"
 import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 import { loadingContents, loadingEntrance, loadingProgress } from "./anim"
-import { entranceFacts as EntranceFacts } from "./copyContent"
 import { handleSeeMoreClick, setRandomOpacity } from "./library"
+import { entranceFacts as EntranceFacts } from "./copyContent"
 
 export default function Loading() {
 
