@@ -6,7 +6,7 @@ export const ProjectFile = [
         status:`Completed`,
         year:`2022`,
         img: {
-            src: ``,
+            src: `/images/`,
             alt: ``,
             title: ``,
             width: ``,
@@ -30,7 +30,7 @@ export const ProjectFile = [
         status:`Completed`,
         year:`2022`,
         img: {
-            src: ``,
+            src: `/images/`,
             alt: ``,
             title: ``,
             width: ``,
@@ -50,11 +50,11 @@ export const ProjectFile = [
     {
         client:`POF Luxury`,
         industry:`Fashion Brand`,
-        summary:``,
+        summary:`Fashion retail store in the United Kingdom`,
         status:`Completed`,
         year:`2023`,
         img: {
-            src: ``,
+            src: `/images/`,
             alt: ``,
             title: ``,
             width: ``,
@@ -68,6 +68,30 @@ export const ProjectFile = [
         technologies: ['WordPress', `WooCommerces`, `Elementor`, `Google Tag Manager`],
         agency: {
             name: `Techduce Africa`,
+            url: `http://techduce.africa/`,
+        }
+    },
+    {
+        client:`Design Glaze`,
+        industry:`Construction`,
+        summary:`uPVC Windows and Doors installer in United Kingdom`,
+        status:`Completed`,
+        year:`2024`,
+        img: {
+            src: `/images/design-glaze.webp`,
+            alt: `Design Glaze | uPVC Windows and Doors installer in United Kingdom`,
+            title: `Design Glaze | uPVC Windows and Doors installer in United Kingdom`,
+            width: ``,
+            height: ``,
+        },
+        url: {
+            href: `https://designglaze.com/windows-and-doors-installation-in-wolverhampton-uk/`,
+            title: `Click to visit Design Glaze website`,
+        },
+        category: `SEO` `Landing Pages`,
+        technologies: ['WordPress', `SEO`, `Elementor`, `Google Tag Manager`, `Google Ads`],
+        agency: {
+            name: `Freelence`,
             url: `/`,
         }
     },
