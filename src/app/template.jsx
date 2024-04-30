@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
-import Loading from './_loading/loading';
-import Home from './page';
+import Loading from './_loading/loading'
 
 export default function Template({ children }) {
 
