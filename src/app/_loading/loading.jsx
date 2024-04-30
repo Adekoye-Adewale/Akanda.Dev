@@ -19,7 +19,7 @@ export default function Loading() {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setAnimationComplete(true);
-        }, 6000); // Set a timeout of 6000ms before exiting animation
+        }, 6000);
 
         return () => clearTimeout(timeout);
     }, []);
