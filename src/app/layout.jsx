@@ -7,7 +7,7 @@ export const metadata = {
   author: `Adekoye Adewale`,
   openGraph: {
     title: 'Akanda dev',
-    description: 'A Creative software engineer with experience in designing and implementing user-friendly interfaces and functional software solutions for complex business problems...',
+    description: 'Meet Adekoye Adewale, a Frontend Software Engineer, Website Developer and SEO Expert in Lagos, Nigeria...',
     type: `website`,
     url: `https://www.akanda.dev/`,
     img: `/images/metaPreviewImage.png`,
