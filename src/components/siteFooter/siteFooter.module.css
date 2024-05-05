@@ -1,3 +1,7 @@
+.foot__cards_wrap{
+    padding: 60px;
+    background-color: red;
+}
 .foot__cards_wrap ul{
     display: flex;
     justify-content: space-between;
