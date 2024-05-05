@@ -1,3 +1,4 @@
+import SiteFooter from "@/components/siteFooter";
 import MainLayout from "../components/mainLayoutHeader";
 import "./globals.css";
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
       <body>
         <MainLayout/>
         {children}
+        <SiteFooter/>
       </body>
     </html>
   );
