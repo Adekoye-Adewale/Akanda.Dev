@@ -16,15 +16,16 @@ export function Cards() {
     return (
         <ul>
             {FootCard.map(( card, index ) => (
-                <Link 
-                    key={index}
-                    href={card.link}
-                >
-                    <Card 
-                        pri={card.pri} 
-                        sec={card.sec} 
-                    />
-                </Link>
+                <li key={index}>
+                    <Link
+                        href={card.link}
+                    >
+                        <Card 
+                            pri={card.pri} 
+                            sec={card.sec} 
+                        />
+                    </Link>
+                </li>
             ))}
         </ul>
     )
@@ -32,7 +33,7 @@ export function Cards() {
 
 export function Card({ pri, sec }) {
     return (
-        <li>
+        <>
             <div className={style.left}>
                 <span className={style.link__pri__text}>
                     {pri}
@@ -47,6 +48,6 @@ export function Card({ pri, sec }) {
                     <path d="M31.25 13L25 6.75L18.75 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             </div>
-        </li>
+        </>
     )
 }
