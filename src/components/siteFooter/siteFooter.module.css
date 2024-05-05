@@ -1,0 +1,29 @@
+.foot__cards_wrap ul{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1800px;
+    margin-inline: auto;
+}
+.foot__cards_wrap li{
+    display: flex;
+    justify-content: space-between;
+    max-width: 350px;
+}
+.left{
+    display: grid;
+}
+.link__pri__text{
+    font-family: 'Suisse Intl Light';
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 28.53px;
+    text-align: left;
+
+}.link__sec__text{
+    font-family: Suisse Neue Light;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 48px;
+    text-align: left;
+
+}
