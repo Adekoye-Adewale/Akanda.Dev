@@ -1,5 +1,3 @@
-
-
 export function Heading({ head }) {
     return (
         <h1 className="cursor__pointer"
