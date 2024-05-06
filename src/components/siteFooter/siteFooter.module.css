@@ -29,6 +29,7 @@
     z-index: -1;
 }
 .foot__cards_wrap ul{
+    list-style-type: none;
     display: flex;
     justify-content: space-between;
     max-width: 1800px;
@@ -37,9 +38,11 @@
     padding: 0%;
 }
 .foot__cards_wrap li{
+    max-width: 350px;
+}
+.foot__cards_wrap a{
     display: flex;
     justify-content: space-between;
-    max-width: 350px;
 }
 .left{
     display: grid;
