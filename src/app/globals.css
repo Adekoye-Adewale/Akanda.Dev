@@ -93,6 +93,8 @@
     --preloader-bg: #E5E5E5;
     --bg-hexa: #171717;
     --bg-alt-hexa: #FAFAFA;
+    --btn-color: #000;
+    --btn-border: #fff;
   }
   html {
     color-scheme: dark;
@@ -111,6 +113,8 @@
     --preloader-bg: #191919;
     --bg-hexa: #FAFAFA;
     --bg-alt-hexa: #171717;
+    --btn-color: #fff;
+    --btn-border: #000;
   }
   html {
     color-scheme: light;
@@ -150,6 +154,9 @@ h4{
 }
 p{
   font-size: 1.2rem;
+  letter-spacing: 0.06rem;
+  line-height: 150%;
+  margin: 0;
 }
 button{
   font-family: "Suisse Intl Light";
@@ -157,9 +164,14 @@ button{
   line-height: 150%;
   text-transform: capitalize;
   cursor: pointer;
+  text-wrap: nowrap;
+}
+button:focus-visible{
+  border-color: red;
 }
 section {
   height: 70vh;
+  padding-inline: 3.125%;
 }
 footer{
   position: relative;
