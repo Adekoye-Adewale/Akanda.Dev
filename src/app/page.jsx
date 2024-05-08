@@ -1,6 +1,7 @@
 import HomeHero from "@/components/hero/HomeHero";
 import styles from "./page.module.css";
 import Tab from "@/components/tab";
+import HomePage from "@/components/HomePageComponents";
 
 export default function Home() {
 
@@ -8,9 +9,7 @@ export default function Home() {
     <main className={styles.main}>
       <HomeHero/>
       <section></section>
-      <section>
-        <Tab/>
-      </section>
+      <HomePage/>
       <section></section>
       <section></section>
     </main>
