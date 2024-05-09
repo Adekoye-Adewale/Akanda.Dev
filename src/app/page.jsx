@@ -10,8 +10,6 @@ export default function Home() {
       <HomeHero/>
       <section></section>
       <HomePage/>
-      <section></section>
-      <section></section>
     </main>
   );
 }
