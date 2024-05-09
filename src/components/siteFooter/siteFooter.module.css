@@ -17,6 +17,7 @@
     font-size: 2rem;
     line-height: 150%;
     letter-spacing: 5%;
+    margin-top: 40px;
 }
 .foot__cards_wrap{
     position: -webkit-sticky;
@@ -78,6 +79,7 @@
     }
     .cta__wrap p{
         font-size: 1rem;
+        margin-top: 20px;
     }
     .foot__cards_wrap{
         padding: 40px 10px;
