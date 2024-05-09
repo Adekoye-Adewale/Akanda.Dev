@@ -1,14 +1,28 @@
-.accordion__title{
+.wrap{
+    height: 100%;
+    max-height: 110px;
+    padding-bottom: 40px;
+    overflow: hidden;
     border-bottom: solid 2px var(--acd-border);
+    transition: all 800ms ease-in-out;
+}
+.wrap:first-child .accordion__title{
+    margin-top: 0px;
+}
+.this{
+    max-height: 500px;
+}
+.accordion__title{
     padding-bottom: 10px;
     margin-top: 40px;
 }
 .accordion__content{
     height: 0;
     overflow: hidden;
-    transition: height 0.3s ease-in-out;
 }
 .open.accordion__content{
     height: 100%;
-    transition: height 0.3s ease-in-out;
+}
+.accordion__content p{
+    padding-top: 10px;
 }
