@@ -95,6 +95,7 @@
     --bg-alt-hexa: #FAFAFA;
     --btn-color: #000;
     --btn-border: #fff;
+    --acd-border: #f7f7f7;
   }
   html {
     color-scheme: dark;
@@ -115,6 +116,7 @@
     --bg-alt-hexa: #171717;
     --btn-color: #fff;
     --btn-border: #000;
+    --acd-border: #222;
   }
   html {
     color-scheme: light;
@@ -142,15 +144,20 @@ a{
 :is(h1, h2, h3, h4) {
   font-family: var(--head-font), Times New Roman, Times, serif;
   font-weight: lighter;
+  margin: 0;
 }
 h1{
   font-size: clamp(1.65rem, 1.1834rem + 2.276vw, 4rem);
 }
+h2{
+  font-size: clamp(1.5rem, 1.2131rem + 0.6557vw, 2rem);
+}
 h3{
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 0.741rem + 1.0492vw, 2rem);
+  line-height: 160%;
 }
 h4{
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 0.7131rem + 0.6557vw, 1.5rem);
 }
 p{
   font-size: 1.2rem;
@@ -169,7 +176,7 @@ button{
 button:focus-visible{
   border-color: red;
 }
-section {
+section{
   height: 100vh;
   padding-inline: 3.125%;
 }
@@ -186,10 +193,10 @@ footer{
 .hidden{
   display: none;
 }
-.img__wrap {
+.img__wrap{
   line-height: 0px;
 }
-.ccursor {
+.ccursor{
   position: absolute;
   left: 0;
   top: 0;
@@ -197,7 +204,7 @@ footer{
   height: 100%;
   pointer-events: all;
 }
-.cursor {
+.cursor{
   position: fixed;
   width: 20px;
   height: 20px;
@@ -208,11 +215,11 @@ footer{
   mix-blend-mode: difference;
   z-index: 9999;
 }
-body:has(:active) .cursor {
+body:has(:active) .cursor{
   transform: scale(0.5);
 }
 body:has(img:hover) .cursor, 
-body:has(a:hover) .cursor {
+body:has(a:hover) .cursor{
   transform: scale(2);
 }
 body:has(h1:hover) .cursor {
@@ -330,7 +337,7 @@ body:has(h1:hover) .cursor {
   opacity: 1;
 }
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 768px){
   h2{
     font-size: 1.5rem;
   }
