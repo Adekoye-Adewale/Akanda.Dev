@@ -1,0 +1,15 @@
+.skill__sec{
+    display: grid;
+    row-gap: 100px;
+}
+.skill__sec__title{
+    max-width: 70%;
+}
+@media (max-width: 768px){
+    .skill__sec{
+        row-gap: 32px;
+    }
+    .skill__sec__title{
+        max-width: 100%;
+    }
+}
