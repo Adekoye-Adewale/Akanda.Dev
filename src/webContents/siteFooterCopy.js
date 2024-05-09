@@ -11,7 +11,7 @@ export const FootCard = [
     },
     {
         pri: `Learn more`,
-        sec: `About us`,
+        sec: `About me`,
         link: `/about-akanda`,
     },
 ]
