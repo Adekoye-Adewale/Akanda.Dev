@@ -40,6 +40,14 @@ export const HomeContent = {
             title: `No Bull-Sh*t`,
         },
     ],
+    faq: {
+        title: `Frequently Asked Questions`,
+        btn: {
+            href: `/`,
+            text: `Ask Akanda.Dev`,
+        },
+        desc: `Got Questions?`,
+    },
     cta: {
         title: `Connect With Akanda`,
         description: `Are you ready to elevate your business to new heights? Akanda.Dev specializes in crafting stunning websites that not only captivate your audience but also drive results. As a seasoned website developer with a keen eye for detail, I'm dedicated to delivering unparalleled quality on every project.`,
