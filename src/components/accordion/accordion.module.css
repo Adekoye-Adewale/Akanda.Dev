@@ -1,0 +1,14 @@
+.accordion__title{
+    border-bottom: solid 2px var(--acd-border);
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+.accordion__content{
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+.open.accordion__content{
+    height: 100%;
+    transition: height 0.3s ease-in-out;
+}
