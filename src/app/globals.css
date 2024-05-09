@@ -167,18 +167,20 @@ p{
 }
 button{
   font-family: "Suisse Intl Light";
-  font-size: 2rem;
+  font-size: 1.2rem;
   line-height: 150%;
   text-transform: capitalize;
   cursor: pointer;
   text-wrap: nowrap;
+  transition: all 500ms ease-in-out;
 }
 button:focus-visible{
   border-color: red;
 }
 section{
-  height: 100vh;
+  min-height: 100vh;
   padding-inline: 3.125%;
+  padding-block: 100px;
 }
 footer{
   position: relative;
@@ -352,6 +354,9 @@ body:has(h1:hover) .cursor {
 @media (max-width: 900px) {
   .cursor{
       display: none;
+  }
+  section{
+    padding-block: 50px;
   }
 }
 /* Tablet and Smaller Desktop */
