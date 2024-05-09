@@ -1,7 +1,7 @@
 import HomeHero from "@/components/hero/HomeHero";
 import styles from "./page.module.css";
 import Tab from "@/components/tab";
-import HomePage from "@/components/HomePageComponents";
+import HomePage from "@/components/pages/HomePageComponents";
 
 export default function Home() {
 
