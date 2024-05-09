@@ -7,12 +7,12 @@
     position: relative;
     transition: all 450ms ease-in-out;
 }
-.pri__btn button:hover{
+:is(.pri__btn, .sec__btn) :is( button:hover ){
     color: var(--preloader-bg);
     background-color: var(--black);
     border-radius: 5px;
 }
-.pri__btn button::after{
+:is(.pri__btn, .sec__btn) ::after{
     content: '';
     position: absolute;
     bottom: 0;
@@ -26,7 +26,14 @@
     transform-origin: bottom center;
     z-index: -1;
 }
-.pri__btn button:hover::after{
+:is(.pri__btn, .sec__btn) button:hover::after{
     transform: translate(5px, 5px);
     border-radius: 5px;
+}
+.sec__btn button{
+    position: relative;
+    padding: 16px 40px;
+    border-radius: 20px;
+    border: solid 1px var(--preloader-bg);
+    background-color: var(--bg-hexa);
 }
