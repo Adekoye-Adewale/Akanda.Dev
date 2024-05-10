@@ -5,8 +5,9 @@
 .wrap h2{
     font-size: 3rem;
     text-align: center;
-    max-width: 900px;
+    max-width: 700px;
     margin: auto;
+    justify-content: center;
 }
 .list__wrap{
     display: flex;
@@ -21,6 +22,8 @@
 .list p{
     font-size: 32px;
     letter-spacing: 0.1rem;
+    max-width: 600px;
+    margin: auto;
 }
 .list h3{
     font-size: 100px;
@@ -29,13 +32,15 @@
 .copy__wrap{
     position: -webkit-sticky;
     position: sticky;
-    top: 20%;
+    top: 30%;
     left: 0;
 }
 .img__wrap{
     position: relative;
-    width: 700px;
-    height: 409px;
+    max-width: 700px;
+    max-height: 409px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     margin: auto;
     z-index: 0;
@@ -46,4 +51,22 @@
     max-width: 700px;
     max-height: 409px;
     aspect-ratio: 700/409;
+}
+@media (max-width: 768px){
+    .list{
+        padding-block: 10px;
+    }
+    .wrap h2{
+        font-size: 1.5rem;
+        max-width: 300px;
+    }
+    .list p{
+        font-size: 1rem;
+        letter-spacing: 0.06rem;
+        text-wrap: balance;
+    }
+    .list h3{
+        font-size: 48px;
+        margin-block: 5px 20px;
+    }
 }
