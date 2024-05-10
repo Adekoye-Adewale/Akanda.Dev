@@ -1,0 +1,14 @@
+/* h2 - Title*/
+.title{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    line-height: 150%;
+}
+.title__word{
+    position: relative;
+}
+.title__shadow{
+    position: absolute;
+    opacity: .1;
+}
