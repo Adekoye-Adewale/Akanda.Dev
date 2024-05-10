@@ -1,10 +1,6 @@
 .wrap{
     max-width: 1800px;
     width: 100%;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    left: 0;
 }
 .wrap h2{
     font-size: 3rem;
@@ -30,15 +26,24 @@
     font-size: 100px;
     margin-block: 10px 120px;
 }
+.copy__wrap{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20%;
+    left: 0;
+}
 .img__wrap{
+    position: relative;
     width: 700px;
     height: 409px;
     object-fit: cover;
+    margin: auto;
+    z-index: 0;
 }
 .img__wrap img{
     width: 100%;
     height: 100%;
     max-width: 700px;
     max-height: 409px;
-    align-self: 700/409;
+    aspect-ratio: 700/409;
 }
