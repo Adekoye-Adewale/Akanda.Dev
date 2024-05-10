@@ -1,9 +1,9 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import { Body } from '../text';
-import style from './accordion.module.css'
-import AccordionTitle from './accordionTitle';
+import React from 'react'
 import { useAccordionState } from './Lib/useAccordionState';
+import { Body } from '../text';
+import AccordionTitle from './accordionTitle';
+import style from './accordion.module.css'
 
 export default function Accordion({ Content }) {
 
@@ -28,7 +28,7 @@ export default function Accordion({ Content }) {
                     </div>
 
                     <div
-                        key={activeTab.title || "empty"} 
+                        key={activeTab.title || ""} 
                         className={`${style.accordion__content} ${isSelected(tab) ? `${style.open}` : ``}`}
                     >
                         <Body text={tab.answer}/>
