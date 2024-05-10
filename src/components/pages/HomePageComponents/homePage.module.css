@@ -1,3 +1,7 @@
+.about__sec{
+    display: flex;
+    align-items: center;
+}
 .skill__sec{
     display: grid;
     row-gap: 60px;
