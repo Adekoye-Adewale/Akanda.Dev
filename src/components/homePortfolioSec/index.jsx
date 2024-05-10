@@ -10,7 +10,7 @@ export default function HomePortfolioSec() {
     return (
         <div className={style.wrap}>
             <Title title={HomeContent.portfolioTitle}/>
-            <PortfolioList Works={HomePortfolio}/>
+            <PortfolioList/>
         </div>
     )
 }
