@@ -1,0 +1,27 @@
+.wrap{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-flow: dense;
+    gap: 3.67%;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrap>div:first-child{
+    grid-column: span 3;
+}
+.wrap>div:last-child{
+    display: grid;
+    grid-column-end: span 2;
+    text-align: right;
+    justify-self: flex-end;
+}
+@media (max-width: 768px){
+    .wrap{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px 0px;
+    }
+    .wrap>div:last-child{
+        text-align: left;
+        justify-self: flex-start
+    }
+}
