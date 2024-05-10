@@ -7,13 +7,13 @@ import { FAQ } from '@/webContents/faq'
 import SecBtn from '@/components/btn/secBtn'
 import SectionFoot from '@/components/sectionFooter'
 import HomeAboutSec from '@/components/homeAboutSec'
-import style from './homePage.module.css'
 import HomePortfolioSec from '@/components/homePortfolioSec'
+import style from './homePage.module.css'
 
 export default function HomePage() {
     return (
         <>
-            <section>
+            <section className={style.about__sec}>
                 <HomeAboutSec/>
             </section>
             <section>
