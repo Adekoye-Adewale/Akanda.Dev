@@ -2,6 +2,7 @@ export const HomeContent = {
     intro: `In the business of putting everyone online.`,
     introAbout: `With a focus on the digital realm, Akanda specializes in website design and development, mobile app development, analytics, and SEO.`,
     about: `Akanda forte is taking industry leaders forward with digital products that focus on and meet their wants and needs.`,
+    portfolioTitle: `Akanda.Dev work across many industries`,
     skillTitle: `As an experienced front-end software engineer with a keen eye for detail, Akanda is committed to providing exceptional quality on every project.`,
     skill: [
         {
