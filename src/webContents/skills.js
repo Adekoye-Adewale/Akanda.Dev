@@ -11,7 +11,7 @@ export const Tabs = [
             width: `600`,
             height: `473`,
         },
-        text: `When it comes to web design, we're the expert. We've built website using major web technology & framework for backend systems and frontend applications.`,
+        text: `When it comes to web design, Akanda is the expert. I build websites using major web technologies & frameworks for content management systems (e.g. WordPress, Wix, Webflow, Shopify…) and custom coded web applications.`,
         link: {
             href: `/`,
             title: `Start your development now`,
