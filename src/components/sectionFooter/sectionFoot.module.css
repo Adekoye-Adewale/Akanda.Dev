@@ -1,0 +1,19 @@
+.wrap{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+.wrap :is(a, p){
+    font-size: 0.8rem;
+}
+.wrap>p:first-child{
+    text-align: center;
+}
+.wrap>a:last-child{
+    max-width: 230px;
+    text-align: right;
+    justify-self: flex-end;
+    text-wrap: balance;
+}
