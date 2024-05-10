@@ -17,7 +17,7 @@ export const FAQ = [
     {    
         title: 'q4',
         question: `How long will a web development project take?`,
-        answer: `Typically, my websites are completed within a timeframe of 2 to 10 weeks. However, I ensure that I have the capacity, for projects before accepting them to ensure your project will never be placed in a waiting queue.`,
+        answer: `Typically, my websites are completed within a timeframe of 2 to 10 weeks. However, I ensure that I have the capacity for projects before accepting them to ensure your project will never be placed in a waiting queue.`,
     },
     {    
         title: 'q5',
