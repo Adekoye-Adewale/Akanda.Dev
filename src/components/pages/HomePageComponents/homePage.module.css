@@ -1,6 +1,6 @@
 .skill__sec{
     display: grid;
-    row-gap: 100px;
+    row-gap: 60px;
 }
 .skill__sec__title{
     max-width: 70%;
@@ -30,6 +30,12 @@
 .faq__sec > div:last-child{
     grid-column: span 5;
 }
+.sec__foot{
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    padding: 20px 3.125%;
+}
 @media (max-width: 900px){
     .faq__sec{
         display: flex;
@@ -42,9 +48,6 @@
     }
     .faq__sec > div:nth-child(2){
         /* grid-column: span 7; */
-        /* display: flex;
-        flex-direction: column;
-        gap: 20px; */
     }
     .faq__sec > div:last-child{
         margin-top: 20px;
@@ -56,5 +59,8 @@
     }
     .skill__sec__title{
         max-width: 100%;
+    }
+    .sec__foot{
+        display: none;
     }
 }
