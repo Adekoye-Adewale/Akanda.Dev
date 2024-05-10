@@ -20,5 +20,8 @@
 }
 /* Mobile */
 @media (max-width: 768px) {
-  
+    .wrapper{
+        height: 60svh;
+        padding-inline: 20px;
+    }
 }
