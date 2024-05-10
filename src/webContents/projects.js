@@ -7,10 +7,10 @@ export const ProjectFile = [
         year:`2022`,
         img: {
             src: `/images/`,
-            alt: ``,
-            title: ``,
-            width: ``,
-            height: ``,
+            alt: `Mediatek NG-A media independent company`,
+            title: `Mediatek NG-A media independent company`,
+            width: `700`,
+            height: `409`,
         },
         url: {
             href: `https://www.mediatekng.com/`,
@@ -88,11 +88,44 @@ export const ProjectFile = [
             href: `https://designglaze.com/windows-and-doors-installation-in-wolverhampton-uk/`,
             title: `Click to visit Design Glaze website`,
         },
-        category: `SEO` `Landing Pages`,
+        // category: {`SEO` `Landing Pages`},
         technologies: ['WordPress', `SEO`, `Elementor`, `Google Tag Manager`, `Google Ads`],
         agency: {
             name: `Freelence`,
             url: `/`,
         }
+    },
+]
+
+export const HomePortfolio = [
+    {
+        client:`Mediatek NG`,
+        summary:`A media independent company`,
+        img: {
+            src: `/images/mediatelNG.webp`,
+            alt: `Mediatek NG-A media independent company`,
+            title: `Mediatek NG-A media independent company`,
+            width: `700`,
+            height: `409`,
+        },
+        url: {
+            href: `https://www.mediatekng.com/`,
+            title: `Click to visit Mediatek NG website`,
+        },
+    },
+    {
+        client:`Design Glaze`,
+        summary:`uPVC Windows and Doors Installer in United Kingdom`,
+        img: {
+            src: `/images/mediatelNG.webp`,
+            alt: `Design Glaze-uPVC Windows and Doors Installer in United Kingdom`,
+            title: `Design Glaze-uPVC Windows and Doors Installer in United Kingdom`,
+            width: `700`,
+            height: `409`,
+        },
+        url: {
+            href: `https://www.mediatekng.com/`,
+            title: `Click to visit Mediatek NG website`,
+        },
     },
 ]
