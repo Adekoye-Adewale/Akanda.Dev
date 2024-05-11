@@ -39,6 +39,7 @@
     bottom: 0;
     left: 0;
     padding: 20px 3.125%;
+    mix-blend-mode: difference;
 }
 @media (max-width: 900px){
     .faq__sec{
