@@ -67,11 +67,12 @@ const GrowImg = ({ img }) => {
     })
 
     const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.3, 0.5]);
+    const radius = useTransform(scrollYProgress, [0, 0.5, 1], [0, 30, 0])
 
     return (
         <motion.div 
             ref={el}
-            style={{scale}}
+            style={{scale, borderRadius: radius}}
             className={style.img__wrap}
         >
             <Image {...img}/>
