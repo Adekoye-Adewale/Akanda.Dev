@@ -44,6 +44,7 @@
     object-fit: cover;
     margin: auto;
     z-index: 0;
+    overflow: hidden;
 }
 .img__wrap img{
     width: 100%;
