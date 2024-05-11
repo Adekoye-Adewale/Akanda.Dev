@@ -27,9 +27,24 @@ export default function PortfolioList() {
         client:`Design Glaze`,
         summary:`uPVC Windows and Doors Installer in United Kingdom`,
         img: {
-            src: `/images/mediatelNG.webp`,
+            src: `/images/design-glaze-uk.webp`,
             alt: `Design Glaze-uPVC Windows and Doors Installer in United Kingdom`,
             title: `Design Glaze-uPVC Windows and Doors Installer in United Kingdom`,
+            width: `700`,
+            height: `409`,
+        },
+        url: {
+            href: `https://www.mediatekng.com/`,
+            title: `Click to visit Mediatek NG website`,
+        },
+    },
+    {
+        client:`BLBrand`,
+        summary:`A fashion brand that produces stylish adire infused with streetwear`,
+        img: {
+            src: `/images/blbrand.webp`,
+            alt: `BLBrand is a fashion brand that produces stylish adire infused with streetwear to give you a rebrand of Adire in fulfilment of fashion needs.`,
+            title: `BLBrand is a fashion brand that produces stylish adire infused with streetwear to give you a rebrand of Adire in fulfilment of fashion needs.`,
             width: `700`,
             height: `409`,
         },
