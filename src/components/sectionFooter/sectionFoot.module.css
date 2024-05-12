@@ -8,8 +8,9 @@
 .wrap :is(a, p){
     font-size: 0.8rem;
 }
-.wrap>p:first-child{
+.wrap>p{
     text-align: center;
+    text-wrap: balance;
 }
 .wrap>a:last-child{
     max-width: 230px;
