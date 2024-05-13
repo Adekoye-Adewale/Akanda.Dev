@@ -30,15 +30,39 @@ export const HomeContent = {
     whyAkandaList: [
         {
             title: `High Quality`,
+            img: {
+                src: `/images/ai-icon.png`,
+                alt: `ai-icon`,
+                height: `512`,
+                width: `512`,
+            }
         },
         {
             title: `Quality Assurance`,
+            img: {
+                src: `/images/ai-icon.png`,
+                alt: `ai-icon`,
+                height: `512`,
+                width: `512`,
+            }
         },
         {
-            title: `Swift Support`,
+            title: `Customer Centric Products`,
+            img: {
+                src: `/images/ai-icon.png`,
+                alt: `ai-icon`,
+                height: `512`,
+                width: `512`,
+            }
         },
         {
             title: `No Bull-Sh*t`,
+            img: {
+                src: `/images/ai-icon.png`,
+                alt: `ai-icon`,
+                height: `512`,
+                width: `512`,
+            }
         },
     ],
     faq: {
