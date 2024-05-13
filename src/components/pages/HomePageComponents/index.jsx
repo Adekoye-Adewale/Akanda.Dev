@@ -8,6 +8,7 @@ import SecBtn from '@/components/btn/secBtn'
 import SectionFoot from '@/components/sectionFooter'
 import HomeAboutSec from '@/components/homeAboutSec'
 import HomePortfolioSec from '@/components/homePortfolioSec'
+import WhyChoose from '@/components/whyChooseSec'
 import style from './homePage.module.css'
 
 export default function HomePage() {
@@ -27,6 +28,12 @@ export default function HomePage() {
                     <SubTitle subTitle={HomeContent.skillTitle}/>
                 </div>
                 <Tab/>
+            </section>
+            <section className={style.why__sec}>
+                <WhyChoose 
+                    desc={HomeContent.whyAkanda} 
+                    Why={HomeContent.whyAkandaList}
+                />
             </section>
             <section className={style.faq__sec}>
                 <div>
