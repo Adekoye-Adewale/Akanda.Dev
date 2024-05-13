@@ -150,7 +150,8 @@ h1{
   font-size: clamp(1.65rem, 1.1834rem + 2.276vw, 4rem);
 }
 h2{
-  font-size: clamp(1.5rem, 1.2131rem + 0.6557vw, 2rem);
+  font-size: clamp(1.5rem, 1.2131rem + 0.6557vw, 3rem);
+  line-height: 150%;
 }
 h3{
   font-size: clamp(1.2rem, 0.741rem + 1.0492vw, 2rem);
@@ -340,9 +341,9 @@ body:has(h1:hover) .cursor {
 }
 /* Mobile */
 @media (max-width: 768px){
-  h2{
+  /* h2{
     font-size: 1.5rem;
-  }
+  } */
   button, p{
     font-size: 1rem;
   }
