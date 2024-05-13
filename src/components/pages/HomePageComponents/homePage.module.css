@@ -9,6 +9,9 @@
 .skill__sec__title{
     max-width: 70%;
 }
+.why__sec h2{
+    margin-bottom: 20px;
+}
 .faq__sec{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
