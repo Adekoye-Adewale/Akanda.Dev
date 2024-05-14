@@ -40,6 +40,8 @@
 }
 .foot__cards_wrap li{
     max-width: 350px;
+    height: 120px;
+    overflow: hidden;
 }
 .foot__cards_wrap a{
     display: flex;
@@ -47,6 +49,7 @@
 }
 .left{
     display: grid;
+    row-gap: 20px;
 }
 .link__pri__text{
     font-family: 'Suisse Intl Light';
