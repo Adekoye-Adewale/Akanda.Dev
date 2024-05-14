@@ -24,7 +24,7 @@
     position: sticky;
     bottom: 0;
     left: 0;
-    padding: 60px 3.125%;
+    padding: 60px 3.125% 10px 3.125%;
     color: var(--black);
     background-color: var(--preloader-bg);
     z-index: -1;
@@ -43,29 +43,74 @@
     height: 120px;
     overflow: hidden;
 }
+.foot__cards_wrap li:nth-child(2){
+    border: solid 0px var(--color-500);
+    border-left: 1px;
+    border-right: 1px;
+}
+.foot__cards_wrap li:hover .left{
+    transform: translateY(-50px);
+}
 .foot__cards_wrap a{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    gap: 20px;
 }
 .left{
     display: grid;
     row-gap: 20px;
+    transition: all 500ms ease-in-out;
+    text-align: left;
 }
 .link__pri__text{
     font-family: 'Suisse Intl Light';
     font-size: 22px;
     font-weight: 300;
     line-height: 28.53px;
-    text-align: left;
-
+    
+    transition: opacity 350ms ease-in-out;
+}
+.foot__cards_wrap li:hover .link__pri__text:first-child, 
+.link__pri__text:last-child{
+    opacity: 0;
+}
+.foot__cards_wrap li:hover .link__pri__text:last-child{
+    opacity: 1;
 }
 .link__sec__text{
     font-family: Suisse Neue Light;
     font-size: 48px;
     font-weight: 500;
-    line-height: 48px;
-    text-align: left;
-
+    line-height: 100%;
+}
+.svg__wrap{
+    display: grid;
+    place-content: center;
+    border: solid 2px var(--black);
+    width: 50px;
+    height: 70px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+}
+.foot__cards_wrap li:hover .svg__wrap{
+    height: 120px;
+    border-radius: 50px;
+    background-color: var(--black);
+}
+.svg__wrap svg{
+    fill: var(--black);
+    opacity: 0.3;
+}
+.svg__wrap path{
+    stroke: var(--black);
+}
+.foot__cards_wrap li:hover .svg__wrap svg{
+    transform: rotate(1.125turn);
+    opacity: 1;
+}
+.foot__cards_wrap li:hover .svg__wrap path{
+    stroke: var(--preloader-bg);
 }
 @media (max-width: 1090px){
     .cta__wrap{
