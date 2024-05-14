@@ -1,22 +1,5 @@
 .hero__wrapper h1{
     display: grid;
     max-width: 1368px;
+    margin-bottom: 40px;
 }
-/* .hero__wrapper span:first::after{
-    content: '👋';
-    animation: iconSwitch 3s ease-in-out 0ms infinite;
-}
-@keyframes iconSwitch {
-    25%{
-        content: '👋';
-    }
-    50%{
-        content: '👋🏼';
-    }
-    75%{
-        content: '👋🏽';
-    }
-    100%{
-        content: '👋🏾';
-    }
-} */
