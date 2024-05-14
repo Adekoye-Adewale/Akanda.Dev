@@ -187,6 +187,10 @@ footer{
   position: relative;
   z-index: 0;
 }
+svg, path{
+  transition: all 350ms ease-in-out;
+}
+
 .section__container{
   position: relative;
   width: 100%;
@@ -338,6 +342,27 @@ body:has(h1:hover) .cursor {
 .perspective__text:hover span:nth-of-type(2){
   transform: rotateX(0deg) translateY(0px);
   opacity: 1;
+}
+/* CONTACT PAGE */
+.hello::after{
+  content: '👋🏾';
+  font-style: normal;
+  transition: all 300ms ease-in-out;
+  animation: iconSwitch 5s ease-in-out 0ms infinite;
+}
+@keyframes iconSwitch {
+  25%{
+      content: '👋';
+  }
+  50%{
+      content: '👋🏼';
+  }
+  75%{
+      content: '👋🏽';
+  }
+  100%{
+      content: '👋🏾';
+  }
 }
 /* Mobile */
 @media (max-width: 768px){
