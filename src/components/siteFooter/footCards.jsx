@@ -23,6 +23,7 @@ export function Cards() {
                         <Card 
                             pri={card.pri} 
                             sec={card.sec} 
+                            desc={card.desc}
                         />
                     </Link>
                 </li>
@@ -31,7 +32,7 @@ export function Cards() {
     )
 }
 
-export function Card({ pri, sec }) {
+export function Card({ pri, sec, desc }) {
     return (
         <>
             <div className={style.left}>
@@ -40,6 +41,9 @@ export function Card({ pri, sec }) {
                 </span>
                 <span className={style.link__sec__text}>
                     {sec}
+                </span>
+                <span className={style.link__pri__text}>
+                    {desc}
                 </span>
             </div>
             <div  className={style.right}>
