@@ -1,26 +1,32 @@
-import React from 'react'
+'use client'
+import { useRef } from 'react'
+import { useScroll } from "framer-motion";
 import { Body, SubTitle, Title } from '@/components/text'
-import Tab from '@/components/tab'
 import { HomeContent } from '@/webContents/homePage'
-import Accordion from '@/components/accordion'
 import { FAQ } from '@/webContents/faq'
+import Tab from '@/components/tab'
+import Accordion from '@/components/accordion'
 import SecBtn from '@/components/btn/secBtn'
 import SectionFoot from '@/components/sectionFooter'
 import HomeAboutSec from '@/components/homeAboutSec'
 import HomePortfolioSec from '@/components/homePortfolioSec'
 import WhyChoose from '@/components/whyChooseSec'
+import HomeHero from '@/components/hero/HomeHero';
+import SectionRotate from '@/components/util/sectionRotate';
 import style from './homePage.module.css'
 
 export default function HomePage() {
+    
     return (
-        <>
-            <section className={style.about__sec}>
+        <main>
+            <HeroSection/>
+            <SectionRotate className={`${style.about__sec}`}>
                 <HomeAboutSec/>
-            </section>
-            <section>
+            </SectionRotate>
+            <section className={`${style.portfolio__sec}`}>
                 <HomePortfolioSec/>
             </section>
-            <section className={style.skill__sec}>
+            <SectionRotate className={`${style.skill__sec}`}>
                 <div className='hidden'>
                     <Title title={"Akanda Skill"}/>
                 </div>
@@ -28,14 +34,14 @@ export default function HomePage() {
                     <SubTitle subTitle={HomeContent.skillTitle}/>
                 </div>
                 <Tab/>
-            </section>
-            <section className={style.why__sec}>
+            </SectionRotate>
+            <SectionRotate className={`${style.why__sec}`}>
                 <WhyChoose 
                     desc={HomeContent.whyAkanda} 
                     Why={HomeContent.whyAkandaList}
                 />
-            </section>
-            <section className={style.faq__sec}>
+            </SectionRotate>
+            <SectionRotate className={`${style.faq__sec}`}>
                 <div>
                     <Title title={HomeContent.faq.title}/>
                 </div>
@@ -44,10 +50,25 @@ export default function HomePage() {
                     <SecBtn {...HomeContent.faq.btn}/>
                 </div>
                 <Accordion Content={FAQ}/>
-            </section>
+            </SectionRotate>
             <div className={style.sec__foot}>
                 <SectionFoot/>
             </div>
-        </>
+        </main>
+    )
+}
+
+
+const HeroSection = () => {
+    const hero = useRef();
+    const { scrollYProgress } = useScroll({
+        target: hero,
+        offset: ["end start", "end end"]
+    }) 
+
+    return (
+        <section ref={hero}>
+            <HomeHero scrollYProgress={scrollYProgress}/>    
+        </section>
     )
 }
