@@ -2,7 +2,10 @@
     display: flex;
     align-items: center;
 }
-.skill__sec{
+.portfolio__sec{
+    padding: 100px 3.125%;
+}
+.skill__sec>div{
     display: grid;
     row-gap: 60px;
 }
@@ -12,26 +15,26 @@
 .why__sec h2{
     margin-bottom: 20px;
 }
-.faq__sec{
+.faq__sec>div{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-auto-flow: dense;
     gap: 40px 100px;
     align-items: flex-start;
 }
-.faq__sec > div:first-child{
+.faq__sec > div > div:first-child{
     grid-column: span 7;
 }
 :is(.why__sec, .faq__sec) h2{
     max-width: 420px;
 }
-.faq__sec > div:nth-child(2){
+.faq__sec > div > div:nth-child(2){
     grid-column: span 2;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.faq__sec > div:last-child{
+.faq__sec > div > div:last-child{
     grid-column: span 5;
 }
 .sec__foot{
@@ -42,7 +45,7 @@
     mix-blend-mode: difference;
 }
 @media (max-width: 900px){
-    .faq__sec{
+    .faq__sec>div{
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -50,10 +53,10 @@
     :is(.why__sec, .faq__sec) h2{
         max-width: 100%;
     }
-    .faq__sec > div:nth-child(2){
+    .faq__sec > div > div:nth-child(2){
         /* grid-column: span 7; */
     }
-    .faq__sec > div:last-child{
+    .faq__sec > div> div:last-child{
         margin-top: 20px;
     }
 }
