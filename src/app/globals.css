@@ -136,6 +136,8 @@ body{
   background: var(--bg-color);
   margin: 0;
   padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
 }
 a{
   color: inherit;
@@ -178,10 +180,20 @@ button{
 button:focus-visible{
   border-color: red;
 }
+main, section{
+  position: relative;
+  background-color: var(--black);
+}
 section{
-  min-height: 100vh;
+  /* min-height: 100vh;
   padding-inline: 3.125%;
   padding-block: 100px;
+  background-color: var(--preloader-bg); */
+  /* background: var(--bg-hexa); */
+}
+.stick{
+  position: sticky;
+  top: 0;
 }
 footer{
   position: relative;
@@ -242,7 +254,16 @@ body:has(h1:hover) .cursor {
 }
 .full__size{
   width: 100%;
-  height: 100svh;
+  min-height: 100svh;
+}
+.section__bg{
+  background-color: var(--bg-hexa);
+}
+.inline__pad{
+  padding-inline: 3.125%;
+}
+.container__pad{
+  padding: 100px 3.125%;
 }
 .loading__page{
   position: fixed;
@@ -343,6 +364,10 @@ body:has(h1:hover) .cursor {
   transform: rotateX(0deg) translateY(0px);
   opacity: 1;
 }
+.full__screen{
+  min-height: 100vh;
+  width: 100vw;
+}
 /* CONTACT PAGE */
 .hello::after{
   content: '👋🏾';
@@ -382,8 +407,8 @@ body:has(h1:hover) .cursor {
       display: none;
   }
   section{
-    padding-block: 50px;
-    min-height: 60svh;
+    /* padding-block: 50px;
+    min-height: 60svh; */
   }
 }
 /* Tablet and Smaller Desktop */
