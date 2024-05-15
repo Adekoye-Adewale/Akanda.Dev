@@ -65,7 +65,7 @@ export const Tabs = [
             width: `600`,
             height: `315`,
         },
-        text: `User tracking is an integral part of lead generation and targeted marketing while running Ads and campaigns. With the professional use of Google Tag Manager, Facebook Pexel, Snapchat Pexel, and Pinterest Pexel, Akanda ensures you no longer waste any extra penny to reach the right audience.`,
+        text: `User tracking is an integral part of lead generation and targeted marketing while running Ads and campaigns. With the professional use of Google Tag Manager, Facebook pixel, Snapchat pixel, and Pinterest pixel, Akanda ensures you no longer waste any extra penny to reach the right audience.`,
         link: {
             href: `/`,
             title: `Boost Ads and campaign results now`,
