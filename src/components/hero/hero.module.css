@@ -1,6 +1,12 @@
 .wrapper{
-    height: 100vh;
-    padding-inline: 10px;
+    /* padding-inline: 10px; */
+    display: grid;
+    place-content: center;
+    width: calc(100vw);
+    min-height: calc(100vh);
+    padding-inline: 3.125%;
+    padding-block: 100px;
+    background: var(--bg-hexa);
 }
 .wrapper h1{
     display: grid;
