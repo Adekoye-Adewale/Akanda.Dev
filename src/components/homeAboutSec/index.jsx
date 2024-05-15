@@ -6,7 +6,7 @@ import style from './HomeAboutSec.module.css'
 export default function HomeAboutSec() {
 
     return (
-        <div className={style.wrap}>
+        <div className={`${style.wrap}`}>
             <div>
                 <Title 
                     title={HomeContent.introAbout} 
