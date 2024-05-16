@@ -5,10 +5,30 @@ import style from './text.module.css'
 
 export function Heading({ head }) {
     return (
-        <h1 className="cursor__pointer"
-            dangerouslySetInnerHTML={{ __html: head }}
-        >
-        </h1>
+        <Reveal>
+            <h1 className="cursor__pointer"
+                dangerouslySetInnerHTML={{ __html: head }}
+            >
+            </h1>
+        </Reveal>
+    )
+}
+
+export function Reveal({ children }) {
+    return (
+        <>
+            <motion.div 
+                variants={{
+                    hidden: { opacity: 0, y: 75 },
+                    visible: { opacity: 1, y: 0},
+                }}
+                initial='hidden'
+                animate='visible'
+                transition={{ duration: 0.5, delay: 0.05 }}
+            >
+                {children}
+            </motion.div>
+        </>
     )
 }
 
