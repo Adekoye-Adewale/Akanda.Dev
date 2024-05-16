@@ -14,6 +14,7 @@ import WhyChoose from '@/components/whyChooseSec'
 import HomeHero from '@/components/hero/HomeHero';
 import SectionRotate from '@/components/util/sectionRotate';
 import style from './homePage.module.css'
+import CtaWrap from '@/components/siteFooter/ctaWrap';
 
 export default function HomePage() {
     
@@ -54,6 +55,7 @@ export default function HomePage() {
             <div className={style.sec__foot}>
                 <SectionFoot/>
             </div>
+            <CtaWrap/>
         </main>
     )
 }
