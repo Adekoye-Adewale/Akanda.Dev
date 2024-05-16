@@ -1,5 +1,34 @@
+.scroll__ani{
+    position: relative;
+    height: 200vh;
+}
+.scroll__sec{
+    background-color: var(--bg-hexa);    
+}
+.hero__wrapper{
+    min-height: 100vh;
+}
 .hero__wrapper h1{
     display: grid;
     max-width: 1368px;
     margin-bottom: 40px;
+}
+.cta__sec{
+    max-width: 1500px;
+    margin: auto;
+    text-align: center;
+}
+.cta__sec h2{
+    margin: auto;
+    justify-content: center;
+    max-width: 650px;
+}
+.cta__sec p{
+    margin-block: 20px 40px;
+    text-wrap: balance;
+}
+.cta__sec button{
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
 }
