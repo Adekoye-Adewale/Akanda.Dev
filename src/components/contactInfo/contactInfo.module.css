@@ -1,0 +1,28 @@
+.contact__info__sec{
+    display: grid;
+    align-content: space-around;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 10%;
+    min-height: 100vh;
+}
+.contact__details{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    grid-auto-flow: dense;
+}
+.social{
+    grid-column: span 2;
+}
+.contact__info__sec p{
+    font-size: clamp(1.2rem, 0.9183rem + 0.9014vw, 2rem);;
+}
+.contact__desc p{
+    text-align: right;
+}
+/* .contact__desc{
+    max-width: 47.5%;
+    margin-left: auto;
+} */
