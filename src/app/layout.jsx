@@ -1,5 +1,8 @@
-import SiteFooter from "@/components/siteFooter";
+import Head from "next/head";
+import Script from "next/script";
+import { Home } from "./_schema";
 import MainLayout from "../components/mainLayoutHeader";
+import SiteFooter from "@/components/siteFooter";
 import "./globals.css";
 
 export const metadata = {
@@ -8,7 +11,7 @@ export const metadata = {
   author: `Adekoye Adewale`,
   openGraph: {
     title: 'Akanda dev',
-    description: 'Meet Adekoye Adewale, a Frontend Software Engineer, Website Developer and SEO Expert in Lagos, Nigeria...',
+    description: 'With a focus on the digital realm, Akanda specializes in website design and development, mobile app development, analytics, and SEO...',
     type: `website`,
     url: `https://www.akanda.dev/`,
     img: `/images/metaPreviewImage.png`,
@@ -35,6 +38,15 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(Home),
+          }}
+        />
+      </Head>
       <body>
         <MainLayout/>
         {children}
