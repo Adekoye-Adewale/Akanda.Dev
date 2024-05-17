@@ -1,26 +1,27 @@
 .pri__btn button{
     padding: 16px 40px;
     border-radius: 20px;
-    border: solid 1px var(--preloader-bg);
+    border: solid 2px var(--preloader-bg);
     color: var(--black);
     background-color: var(--preloader-bg);
     position: relative;
     transition: all 450ms ease-in-out;
 }
-:is(.pri__btn, .sec__btn) :is( button:hover ){
-    color: var(--preloader-bg);
-    background-color: var(--black);
+.button:hover{
+    /* color: var(--preloader-bg);
+    background-color: var(--black); */
+    border: solid 2px var(--black);
     border-radius: 5px;
 }
-:is(.pri__btn, .sec__btn) ::after{
+/* :is(.pri__btn, .sec__btn) ::after{
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: var(--bg-alt-hexa);
-    border-radius: 20px;
+    height: 100%; */
+    /* background-color: var(--bg-alt-hexa); */
+    /* border-radius: 20px;
     transition: all .3s ease;
     transform: translate(0px, 0px);
     transform-origin: bottom center;
@@ -29,7 +30,8 @@
 :is(.pri__btn, .sec__btn) button:hover::after{
     transform: translate(5px, 5px);
     border-radius: 5px;
-}
+    background-color: var(--bg-alt-hexa);
+} */
 .sec__btn button{
     position: relative;
     padding: 16px 40px;
@@ -37,30 +39,36 @@
     border: solid 1px var(--preloader-bg);
     background-color: var(--bg-hexa);
 }
-
+.sec__btn span{
+    color: var(--color-200);
+}
+.sec__btn:hover button{
+    background-color: var(--black);
+}    
 .button{
     position: relative;
-    width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
     height: 100%;
     padding: 1rem 2rem;
     color: var(--color-800);
     background-color: var(--color-200);
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
     overflow: hidden;    
 }
-.button:nth-of-type(2){
+:is(.pri__btn, .button):nth-of-type(2){
     color: var(--color-200);
     background-color: var(--color-800);
 }
-.button:hover .perspectiveText{
+:is(.pri__btn:hover, .button:hover) .perspectiveText{
     transform: rotateX(90deg);
 }
-.button:hover .perspectiveText span:nth-of-type(1){
+:is(.pri__btn:hover, .button:hover) .perspectiveText span:nth-of-type(1){
     transform: translateY(-100%);
     opacity: 0;
 }
-.button:hover .perspectiveText span:nth-of-type(2){
+:is(.pri__btn:hover, .button:hover) .perspectiveText span:nth-of-type(2){
     opacity: 1;
 }
 .perspectiveText{
