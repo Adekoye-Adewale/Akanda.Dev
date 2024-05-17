@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Script from "next/script";
 import { Home } from "./_schema";
 import MainLayout from "../components/mainLayoutHeader";
@@ -38,15 +37,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <Script
-          id="faq-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(Home),
-          }}
-        />
-      </Head>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(Home),
+        }}
+      />
       <body>
         <MainLayout/>
         {children}
