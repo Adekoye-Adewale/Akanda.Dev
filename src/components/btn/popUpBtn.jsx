@@ -7,20 +7,9 @@ export default function PopUpBtn({ text, onClick }) {
             className={style.button}
             onClick={onClick}
         >
-            <div 
-                className={style.el}
-            >
-                <PerspectiveText
-                    label={text}
-                />
-            </div>
-            <div 
-                className={style.el}
-            >
-                <PerspectiveText
-                    label={text}
-                />
-            </div>
+            <PerspectiveText
+                label={text}
+            />
         </button>
     )
 }
@@ -28,8 +17,8 @@ export default function PopUpBtn({ text, onClick }) {
 function PerspectiveText({label}) {
     return (    
         <div className={style.perspectiveText}>
-            <p>{label}</p>
-            <p>{label}</p>
+            <span>{label}</span>
+            <span>{label}</span>
         </div>
     )
 }
