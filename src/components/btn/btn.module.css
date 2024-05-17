@@ -37,3 +37,16 @@
     border: solid 1px var(--preloader-bg);
     background-color: var(--bg-hexa);
 }
+
+.button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 40px;
+    height: fit-content;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;    
+}
