@@ -6,7 +6,7 @@
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
     mix-blend-mode: difference;
 }
 .burger {
@@ -17,15 +17,6 @@
     padding: 30px;
     pointer-events: none;
 }
-/* .burger::before, 
-.burger::after {
-    display: block;
-    content: "";
-    width: 30px;
-    height: 2px;
-    mix-blend-mode: difference;
-    background-color: var(--cursor-color);
-} */
 .menu__button {
     position: relative;
     display: flex;
