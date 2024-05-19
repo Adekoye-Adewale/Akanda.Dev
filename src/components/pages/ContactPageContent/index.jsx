@@ -36,6 +36,11 @@ const HeroSection = ({scrollYProgress}) => {
     return (
         <motion.section 
             style={{scale, rotate}} 
+            transition={{ 
+                duration: 0.5, 
+                type: "spring", 
+                ease: "easeInOut"
+            }}
             className={`${styles.scroll__sec} inline__pad stick`}
         >
             <Hero/>
