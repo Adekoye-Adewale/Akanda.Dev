@@ -183,6 +183,9 @@ button{
 button:focus-visible{
   border-color: red;
 }
+main{
+  z-index: 1;
+}
 main, section{
   position: relative;
   background-color: var(--black);
@@ -394,9 +397,6 @@ body:has(h1:hover) .cursor {
 }
 /* Mobile */
 @media (max-width: 768px){
-  /* h2{
-    font-size: 1.5rem;
-  } */
   button, p{
     font-size: 1rem;
   }
@@ -404,6 +404,9 @@ body:has(h1:hover) .cursor {
     height: 70vh;
     padding: 50px 20px;
   }
+  .full__screen {
+    width: 100%;
+}
 }
 @media (max-width: 900px) {
   .cursor{
