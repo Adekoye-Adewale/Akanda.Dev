@@ -11,13 +11,19 @@ export default function SectionRotate({ className, children }) {
     }) 
 
     const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
+    // const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
     const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
 
     return (
         <section ref={container} className={className}>
             <motion.div 
-                style={{scale, rotate, opacity}} 
+                style={{scale, opacity}} 
+                transition={{ 
+                    duration: 0.5, 
+                    type: "spring", 
+                    stiffness: 100, 
+                    ease: "easeInOut"
+                }}
                 className='full__screen grid__center section__bg container__pad'
             >
                 {children}
