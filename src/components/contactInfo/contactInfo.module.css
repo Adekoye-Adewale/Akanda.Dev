@@ -22,7 +22,9 @@
 .contact__desc p{
     text-align: right;
 }
-/* .contact__desc{
-    max-width: 47.5%;
-    margin-left: auto;
-} */
+@media (max-width: 768px){
+    .contact__info__sec{
+        align-content: center;
+        row-gap: 20px;
+    }
+}
