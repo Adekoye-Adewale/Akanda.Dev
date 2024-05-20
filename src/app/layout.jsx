@@ -5,7 +5,7 @@ import SiteFooter from "@/components/siteFooter";
 import "./globals.css";
 
 export const metadata = {
-  metadataBase: new URL('https://adekoye.com.ng'),
+  metadataBase: new URL('https://akanda.netlify.app'),
   title: "Akanda Dev",
   description: "A Creative software engineer with experience in designing and implementing user-friendly interfaces and functional software solutions for complex business problems.",
   author: `Adekoye Adewale`,
@@ -31,6 +31,18 @@ export const metadata = {
     site: `@__akanda__`,
     creator: `@__akanda__`,
   },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   other: { 
     pinterest: "nopin",
   },
@@ -55,7 +67,7 @@ export default function RootLayout({ children }) {
       />
       <body>
         <MainLayout/>
-        {children}
+          {children}
         <SiteFooter/>
       </body>
     </html>
