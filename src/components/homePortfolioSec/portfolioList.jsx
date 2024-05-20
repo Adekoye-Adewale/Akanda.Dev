@@ -40,11 +40,11 @@ export default function PortfolioList() {
     },
     {
         client:`BLBrand`,
-        summary:`A fashion brand that produces stylish adire infused with streetwear`,
+        summary:`A fashion brand that produces stylish Adire infused with streetwear`,
         img: {
             src: `/images/blbrand.webp`,
-            alt: `BLBrand is a fashion brand that produces stylish adire infused with streetwear to give you a rebrand of Adire in fulfilment of fashion needs.`,
-            title: `BLBrand is a fashion brand that produces stylish adire infused with streetwear to give you a rebrand of Adire in fulfilment of fashion needs.`,
+            alt: `BLBrand is a fashion brand that produces stylish Adire infused with streetwear to give you a rebrand of Adire in fulfilment of fashion needs.`,
+            title: `BLBrand is a fashion brand that produces stylish Adire infused with streetwear to give you a rebrand of Adire in fulfilment of fashion needs.`,
             width: `700`,
             height: `409`,
         },
