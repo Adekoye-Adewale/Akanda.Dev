@@ -32,7 +32,7 @@ export const metadata = {
     creator: `@__akanda__`,
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: {
