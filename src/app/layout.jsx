@@ -12,14 +12,14 @@ export const metadata = {
     title: 'Akanda Dev',
     description: 'With a focus on the digital realm, Akanda specializes in website design and development, mobile app development, analytics, and SEO...',
     siteName: 'Akanda.Dev',
-    images: [
-      {
-        url: `https://akanda.netlify.app/opengraph-image.png`,
-        width: 800,
-        height: 400,
-        alt: 'Akanda Dev Profile Card',
-      },
-    ],
+    // images: [
+    //   {
+    //     url: `https://images.ctfassets.net/ago9pp4p48sn/25qMJOooHhY6LAWH1r4npa/63f73c409dc32c12f63ad7c8321aeb30/opengraph-image.png.png`,
+    //     width: 800,
+    //     height: 400,
+    //     alt: 'Akanda Dev Profile Card',
+    //   },
+    // ],
     type: `website`,
     url: `https://www.akanda.dev/`,
     locale: "en_NG",
