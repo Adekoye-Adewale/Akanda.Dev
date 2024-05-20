@@ -40,7 +40,7 @@
     background-color: var(--bg-hexa);
 }
 .sec__btn span{
-    color: var(--color-200);
+    color: var(--preloader-bg);
 }
 .sec__btn:hover button{
     background-color: var(--black);
@@ -51,7 +51,7 @@
     width: fit-content;
     height: fit-content;
     padding: 1rem 2rem;
-    color: var(--color-800);
+    color: var(--acd-border);
     background-color: var(--color-200);
     cursor: pointer;
     border-radius: 20px;
