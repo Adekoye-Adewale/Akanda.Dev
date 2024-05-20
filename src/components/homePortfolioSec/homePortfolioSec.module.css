@@ -46,6 +46,7 @@
     z-index: 0;
     overflow: hidden;
     line-height: 0;
+    box-shadow: 0px 0px 25px -10px #0000007a;
 }
 .img__wrap img{
     width: 100%;
