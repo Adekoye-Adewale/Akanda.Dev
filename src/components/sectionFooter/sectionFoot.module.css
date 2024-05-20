@@ -18,3 +18,8 @@
     justify-self: flex-end;
     text-wrap: balance;
 }
+@media (prefers-color-scheme: light) {
+    .wrap :is(a, p){
+        color: var(--black);
+    }
+}
