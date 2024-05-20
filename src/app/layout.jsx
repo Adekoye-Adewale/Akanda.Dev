@@ -5,15 +5,23 @@ import SiteFooter from "@/components/siteFooter";
 import "./globals.css";
 
 export const metadata = {
-  title: "Akanda dev",
+  title: "Akanda Dev",
   description: "A Creative software engineer with experience in designing and implementing user-friendly interfaces and functional software solutions for complex business problems.",
   author: `Adekoye Adewale`,
   openGraph: {
-    title: 'Akanda dev',
+    title: 'Akanda Dev',
     description: 'With a focus on the digital realm, Akanda specializes in website design and development, mobile app development, analytics, and SEO...',
+    siteName: 'Akanda.Dev',
+    images: [
+      {
+        url: `https://akanda.netlify.app/opengraph-image.png`,
+        width: 800,
+        height: 400,
+        alt: 'Akanda Dev Profile Card',
+      },
+    ],
     type: `website`,
     url: `https://www.akanda.dev/`,
-    img: `/images/metaPreviewImage.png`,
     locale: "en_NG",
   },
   twitter: {
