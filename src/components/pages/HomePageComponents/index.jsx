@@ -2,7 +2,7 @@
 import { useRef } from 'react'
 import { useScroll } from "framer-motion";
 import { Body, SubTitle, Title } from '@/components/text'
-import { HomeContent } from '@/webContents/homePage'
+import { HomeContent, homeHero } from '@/webContents/homePage'
 import { FAQ } from '@/webContents/faq'
 import Tab from '@/components/tab'
 import Accordion from '@/components/accordion'
@@ -20,7 +20,7 @@ export default function HomePage() {
     
     return (
         <main>
-            <HeroSection/>
+            <HeroSection Hero={homeHero}/>
             <SectionRotate className={`${style.about__sec}`}>
                 <HomeAboutSec/>
             </SectionRotate>
@@ -52,7 +52,7 @@ export default function HomePage() {
                 </div>
                 <Accordion Content={FAQ}/>
             </SectionRotate>
-            <div className={style.sec__foot}>
+            <div className={`sec__foot`}>
                 <SectionFoot/>
             </div>
             <CtaWrap/>
@@ -61,7 +61,7 @@ export default function HomePage() {
 }
 
 
-const HeroSection = () => {
+export const HeroSection = ({ Hero, className }) => {
     const hero = useRef();
     const { scrollYProgress } = useScroll({
         target: hero,
@@ -69,8 +69,11 @@ const HeroSection = () => {
     }) 
 
     return (
-        <section ref={hero}>
-            <HomeHero scrollYProgress={scrollYProgress}/>    
+        <section ref={hero} className={className}>
+            <HomeHero 
+                Hero={Hero} 
+                scrollYProgress={scrollYProgress}
+            />    
         </section>
     )
 }
