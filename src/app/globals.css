@@ -191,11 +191,6 @@ main, section{
   background-color: var(--black);
 }
 section{
-  /* min-height: 100vh;
-  padding-inline: 3.125%;
-  padding-block: 100px;
-  background-color: var(--preloader-bg); */
-  /* background: var(--bg-hexa); */
 }
 .stick{
   position: sticky;
@@ -374,12 +369,23 @@ body:has(h1:hover) .cursor {
   min-height: 100vh;
   width: 100vw;
 }
+.sec__foot{
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  padding: 20px 3.125%;
+  mix-blend-mode: difference;
+}
 /* CONTACT PAGE */
 .hello::after{
   content: '👋🏾';
   font-style: normal;
   transition: all 300ms ease-in-out;
   animation: iconSwitch 5s ease-in-out 0ms infinite;
+}
+/* PORTFOLIO PAGE */
+.portfolio__hero h1 span:nth-child(2){
+  opacity: 1 !important;
 }
 @keyframes iconSwitch {
   25%{
@@ -409,12 +415,10 @@ body:has(h1:hover) .cursor {
 }
 }
 @media (max-width: 900px) {
-  .cursor{
+  .cursor, .sec__foot{
       display: none;
   }
   section{
-    /* padding-block: 50px;
-    min-height: 60svh; */
   }
 }
 /* Tablet and Smaller Desktop */
