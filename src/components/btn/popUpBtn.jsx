@@ -4,7 +4,7 @@ import style from './btn.module.css'
 export default function PopUpBtn({ text, onClick }) {
     return (
         <button 
-            className={style.button}
+            className={`${style.button} ${style.popup__button}`}
             onClick={onClick}
         >
             <PerspectiveText
