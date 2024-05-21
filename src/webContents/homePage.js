@@ -1,3 +1,5 @@
+export const homeHero = `<span class='italic'>In Business</span> <span>of making everyone </span> <div><span>visible</span> <span>on the internet</span></div>`
+
 export const HomeContent = {
     intro: `In the business of putting everyone online.`,
     introAbout: `With a focus on the digital realm, Akanda specializes in website design and development, mobile app development, analytics, and SEO.`,
