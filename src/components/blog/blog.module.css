@@ -1,0 +1,53 @@
+.blog__hero__wrap, .hero__wrap{
+    position: relative;
+    color: black;
+    display: grid;
+    row-gap: 20px;
+    padding: 100px 3.125%;
+    background-color: var(--purple-100);
+    max-width: 1920px;
+    width: 100%;
+}
+.hero__wrap h1{
+    max-width: 950px;
+}
+.hero__metadata__wrap,
+.hero__meta__blink{
+    display: flex;
+    align-content: center;
+}
+.hero__metadata__wrap{
+    gap: 20px;
+}
+.metadata{
+    border-left: solid 2px #D9D9D9;
+    padding-left: 10px;
+}
+.hero__meta__blink{
+    gap: 10px;
+}
+.hero__meta__blink span{
+    font-size: 2rem;
+    line-height: 150%;
+    letter-spacing: 0.1rem;
+}
+.hero__blinks{
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transition: all 400ms ease-in-out;
+    animation: blink 5000ms ease-in-out 0ms infinite;
+}
+
+@keyframes blink {
+    from, to{
+        background-color: #D9D9D9;
+    }
+    33.33%{
+        background-color: #fe0000;
+    }
+    66.67%{
+        background-color: #055205;
+    }
+}
