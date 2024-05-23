@@ -1,4 +1,3 @@
-
 # Akanda Portfolio
 ## Akanda a software engineer and web developer. Akanda is passionate about creating innovative solutions to real-world problems using programming language like JavaScript
 
