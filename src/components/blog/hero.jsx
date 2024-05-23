@@ -1,7 +1,6 @@
-import React from 'react'
-import style from './blog.module.css'
-import { Title } from '../text'
 import Image from 'next/image'
+import { Title } from '../text'
+import style from './blog.module.css'
 
 export default function ArchiveHero() {
     return (
