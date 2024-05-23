@@ -1,7 +1,7 @@
+import Link from "next/link";
 import Image from "next/image"
 import { articlePageCopy } from "@/webContents/blogCopy"
 import style from './blog.module.css'
-import Link from "next/link";
 
 export default function Cards() {
     const Content = articlePageCopy;
