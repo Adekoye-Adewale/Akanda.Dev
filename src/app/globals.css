@@ -160,7 +160,7 @@ h2{
 }
 h3{
   font-size: clamp(1.2rem, 0.741rem + 1.0492vw, 2rem);
-  line-height: 160%;
+  line-height: 150%;
 }
 h4{
   font-size: clamp(1rem, 0.7131rem + 0.6557vw, 1.5rem);
