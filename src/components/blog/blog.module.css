@@ -26,7 +26,7 @@
 .hero__meta__blink{
     gap: 10px;
 }
-.hero__meta__blink span{
+:is(.hero__meta__blink,.metadata) span{
     font-size: 2rem;
     line-height: 150%;
     letter-spacing: 0.1rem;
