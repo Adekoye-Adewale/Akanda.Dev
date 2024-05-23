@@ -1,15 +1,15 @@
 .blog__hero__wrap, .hero__wrap{
     position: relative;
-    color: black;
+    /* color: black; */
     display: grid;
     row-gap: 20px;
     padding: 100px 3.125%;
-    background-color: var(--purple-100);
+    background-color: var(--purple-800);
     max-width: 1920px;
     width: 100%;
 }
-.hero__wrap h1{
-    max-width: 950px;
+.hero__title__wrap{
+    max-width: 500px;
 }
 .hero__metadata__wrap,
 .hero__meta__blink{
@@ -50,4 +50,44 @@
     66.67%{
         background-color: #055205;
     }
+}
+
+.archive__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+    justify-content: center;
+    justify-items: center;
+    margin-inline: auto;
+    gap: 2rem;
+    max-width: 1800px;
+    width: 100%;
+}
+.archive__card{
+    display: grid;
+    gap: 20px;
+    max-width: 500px;
+    width: 100%;
+}
+.archive__card__img__wrap{
+    aspect-ratio: 500/350;
+    line-height: 0;
+    overflow: hidden;
+    border: solid 1px var(--bg-alt-hexa);
+    border-radius: 10px;
+}
+.archive__card__img__wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 500/350;
+}
+.archive__card__title{
+    font-family: var(--head-font);
+    font-size: clamp(1.2rem, 0.741rem + 1.0492vw, 2rem);
+    line-height: 150%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
