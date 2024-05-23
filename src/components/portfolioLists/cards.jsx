@@ -1,6 +1,6 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import style from './portfolioLists.module.css'
-import Link from 'next/link';
 
 export default function Cards({ CardList }) {
     return (
@@ -21,7 +21,6 @@ export default function Cards({ CardList }) {
         </div>
     )
 };
-
 
 export const Card = ({ img, title, type }) => {
     return (
