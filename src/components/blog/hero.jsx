@@ -9,7 +9,7 @@ export default function ArchiveHero() {
             className={style.hero__wrap}
         >
             <Blink type={'Blogs'}/>
-            <div>
+            <div className={style.hero__title__wrap}>
                 <Title 
                     title={`My Latest Articles`} 
                 />
