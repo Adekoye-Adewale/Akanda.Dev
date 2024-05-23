@@ -1,4 +1,3 @@
-import React from 'react'
 import Cards from './cards'
 import { portfolioList } from '@/webContents/portfolioPageCopy'
 
