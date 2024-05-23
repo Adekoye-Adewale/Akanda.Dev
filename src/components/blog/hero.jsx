@@ -21,16 +21,20 @@ export default function ArchiveHero() {
 export const BlogHero = ({ img, title, type, category, date }) => {
     return (
         <div className={style.blog__hero__wrap}>
-            <Image {...img}/>
-            <div>
-                <Title 
-                    title={title} 
-                />
+            <div className={style.blog__hero__img__wrap}>
+                <Image {...img}/>
             </div>
-            <div className={style.hero__metadata__wrap}>
-                <Blink type={type}/>
-                <MetaData title={category}/>
-                <MetaData title={date}/>
+            <div className={style.blog__hero__copy__wrap}>
+                <div>
+                    <Title 
+                        title={title} 
+                    />
+                </div>
+                <div className={style.hero__metadata__wrap}>
+                    <Blink type={type}/>
+                    <MetaData title={category}/>
+                    <MetaData title={date}/>
+                </div>
             </div>
         </div>
     )
