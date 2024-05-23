@@ -33,8 +33,9 @@
 }
 .hero__blinks{
     display: block;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
+    align-self: center;
     border-radius: 50px;
     transition: all 400ms ease-in-out;
     animation: blink 5000ms ease-in-out 0ms infinite;
