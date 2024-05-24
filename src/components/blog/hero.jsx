@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Title } from '../text'
+import { Heading } from '../text'
 import style from './blog.module.css'
 
 export default function ArchiveHero() {
@@ -9,8 +9,8 @@ export default function ArchiveHero() {
         >
             <Blink type={'Blogs'}/>
             <div className={style.hero__title__wrap}>
-                <Title 
-                    title={`My Latest Articles`} 
+                <Heading 
+                    head={`My Latest Articles`} 
                 />
             </div>
         </div>
@@ -26,8 +26,8 @@ export const BlogHero = ({ img, title, type, category, date }) => {
             </div>
             <div className={style.blog__hero__copy__wrap}>
                 <div>
-                    <Title 
-                        title={title} 
+                    <Heading 
+                        head={title}
                     />
                 </div>
                 <div className={style.hero__metadata__wrap}>
