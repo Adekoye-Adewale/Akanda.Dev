@@ -1,6 +1,6 @@
 .blog__hero__wrap, .hero__wrap{
     position: relative;
-    /* color: black; */
+    color: var(--gold-100);
     display: grid;
     row-gap: 20px;
     padding: 100px 3.125%;
@@ -119,4 +119,22 @@
     background-color: #0f0013f2;
     max-width: 1920px;
     width: 100%;
+}
+.blog__body{
+    background-color: var(--bg-color);
+    padding-inline: 3.125%;
+}
+.blog__content__wrap{
+    max-width: 1800px;
+    padding: 10px;
+    margin: 50px auto;
+}
+.blog__content__wrap a{
+    color: var(--gold-600);
+}
+.blog__content__wrap img{
+    width: 100%;
+}
+.blog__content__wrap p{
+    margin-block: 1rem;
 }
