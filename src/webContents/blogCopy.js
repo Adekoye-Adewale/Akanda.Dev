@@ -15,11 +15,26 @@ export const articlePageCopy = [
         date: `May, 2024`,
         source: `Medium`,
         sourceLink: `/`,
-        body: `Lorem ipsum dolor sit amet consectetur. Egestas placerat fermentum sem lorem diam. Diam aenean aenean integer tellus nunc blandit iaculis morbi. Egestas pharetra quis id ornare. At cum metus in id dolor.
-        Tellus sollicitudin scelerisque arcu ornare. Ante venenatis consequat phasellus eu amet enim eget purus ipsum. Ultrices adipiscing quisque est vitae. Enim praesent platea mattis phasellus gravida. Risus imperdiet volutpat laoreet faucibus ut amet. Lectus ut eu semper massa purus congue etiam tincidunt. Suscipit gravida velit euismod eget ut tortor. Blandit ornare facilisis sed tristique. Sem tellus enim condimentum urna volutpat laoreet nec risus malesuada. Non aliquam eget et nulla sed porttitor a. Ornare nec turpis rhoncus dictum velit velit. Arcu lectus eros donec nullam diam sed nunc egestas etiam. Id aliquet augue montes nulla.
-        Ac ut tristique tristique ac viverra arcu dignissim. Nunc sollicitudin vel egestas metus ultrices tellus commodo. Aliquam odio dignissim dui diam. Urna consequat nisl leo mus placerat sed donec vitae sit. Bibendum ultricies dictumst pellentesque pharetra massa. Est risus pharetra quisque non at commodo tellus tortor sit. Congue in donec sollicitudin imperdiet nulla enim etiam. Nunc imperdiet id amet pulvinar et eu placerat dolor nisi. Aliquet arcu leo eu vestibulum amet malesuada nec ipsum. Convallis volutpat vel mi vel. Nunc tortor adipiscing proin donec. Tincidunt laoreet mauris ut morbi faucibus faucibus mus.
-        Facilisi turpis fringilla in egestas venenatis ullamcorper. Risus luctus sed at ullamcorper suspendisse cursus mauris rutrum. At eget egestas nunc est tortor. Quis egestas dignissim justo proin nec amet. At mauris magna vulputate quis elementum est at.
-        Odio posuere lectus aliquam tellus quam non tristique sed. Faucibus volutpat nec mattis in et imperdiet faucibus. Ultricies vitae nisl pulvinar senectus eu. Cum lacus purus auctor semper diam facilisi facilisis diam.`,
+        body: `<h2>Google PageSpeed Insight: Why Is My Site (Still) Slow?</h2>
+        <img src='https://images.ctfassets.net/ago9pp4p48sn/25qMJOooHhY6LAWH1r4npa/63f73c409dc32c12f63ad7c8321aeb30/opengraph-image.png.png' alt='Google PageSpeed Insight: Why Is My Site (Still) Slow'>
+        <p>Lorem ipsum dolor sit amet consectetur. Egestas placerat fermentum sem lorem diam. Diam aenean aenean integer tellus nunc blandit iaculis morbi. Egestas pharetra quis id ornare. At cum metus in id dolor.</p>
+        <h3>Egestas pharetra quis id ornare</h3>
+        <ol>
+            <li>Urna consequat nisl leo mus placerat sed donec vitae sit.</li>
+            <li>Urna consequat nisl leo mus placerat sed donec vitae sit.</li>
+            <li>Urna consequat nisl leo mus placerat sed donec vitae sit.</li>
+            <li>Urna consequat nisl leo mus placerat sed donec vitae sit.</li>
+        </ol>
+        <p>Tellus sollicitudin scelerisque arcu ornare. Ante venenatis consequat phasellus eu amet enim eget purus ipsum. Ultrices adipiscing quisque est vitae. Enim praesent platea mattis phasellus gravida. Risus imperdiet volutpat laoreet faucibus ut amet. Lectus ut eu semper massa purus congue etiam tincidunt. Suscipit gravida velit euismod eget ut tortor. Blandit ornare facilisis sed tristique. Sem tellus enim condimentum urna volutpat laoreet nec risus malesuada. Non aliquam eget et nulla sed porttitor a. Ornare nec turpis rhoncus dictum velit velit. Arcu lectus eros donec nullam diam sed nunc egestas etiam. Id aliquet augue montes nulla.</p>
+        <p>Ac ut tristique tristique ac viverra arcu dignissim. Nunc sollicitudin vel egestas metus ultrices tellus commodo. Aliquam odio dignissim dui diam. Urna consequat nisl leo mus placerat sed donec vitae sit. Bibendum ultricies dictumst pellentesque pharetra massa. Est risus pharetra quisque non at commodo tellus tortor sit. Congue in donec sollicitudin imperdiet nulla enim etiam. Nunc imperdiet id amet pulvinar et eu placerat dolor nisi. Aliquet arcu leo eu vestibulum amet malesuada nec ipsum. Convallis volutpat vel mi vel. Nunc tortor adipiscing proin donec. Tincidunt laoreet mauris ut morbi faucibus faucibus mus.</p>
+        <ul>
+            <li>Urna consequat nisl leo mus placerat sed donec vitae sit.</li>
+            <li>Urna consequat nisl leo mus placerat sed donec vitae sit.</li>
+            <li>Urna consequat nisl leo mus placerat sed donec vitae sit.</li>
+            <li>Urna consequat nisl leo mus placerat sed donec vitae sit.</li>
+        </ul>
+        <p>Facilisi turpis fringilla in egestas venenatis ullamcorper. Risus luctus sed at ullamcorper suspendisse cursus mauris rutrum. At eget egestas nunc est tortor. Quis egestas dignissim justo proin nec amet. <a href='https://adekoye.com.ng'>At mauris magna</a> vulputate quis elementum est at.
+        <p>Odio posuere lectus aliquam tellus quam non tristique sed. Faucibus volutpat nec mattis in et imperdiet faucibus. Ultricies vitae nisl pulvinar senectus eu. Cum lacus purus auctor semper diam facilisi facilisis diam.</p>`,
     },
     {
         id: `0000002`,
