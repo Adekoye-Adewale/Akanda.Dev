@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { BlogHero } from '@/components/blog/hero'
 import CtaWrap from '@/components/siteFooter/ctaWrap'
 import { articlePageCopy } from '@/webContents/blogCopy';
+import BlogBody from "@/components/blog/body";
 
 export default function SingleBlogPage({ params }) {
 
@@ -13,7 +14,7 @@ export default function SingleBlogPage({ params }) {
         return redirect("/not-found");
     }
     
-    const { img, title, type, category, date } = blogContent
+    const { img, title, type, category, date, body } = blogContent
 
     return (
         <main>
@@ -24,6 +25,7 @@ export default function SingleBlogPage({ params }) {
                 category={category} 
                 date={date}
             />
+            <BlogBody blog={body}/>
             <CtaWrap/>
         </main>
     )
