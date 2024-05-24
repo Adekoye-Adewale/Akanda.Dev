@@ -138,3 +138,35 @@
 .blog__content__wrap p{
     margin-block: 1rem;
 }
+.related__section__wrap{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-flow: dense;
+}
+.related__title{
+    grid-column: span 2;
+}
+.related__cards__wrap{
+    grid-column: span 5;
+}
+.related__articles__wrap{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    max-width: 300px;
+}
+.related__articles__img__wrap{
+    width: 100%;
+}
+.related__articles__img__wrap img{
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.related__articles__title{
+    font-family: var(--head-font);
+    font-size: 24px;
+    line-height: 150%;
+}
