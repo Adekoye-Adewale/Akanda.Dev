@@ -17,7 +17,7 @@
 .hero__metadata__wrap,
 .hero__meta__blink{
     display: flex;
-    align-content: center;
+    align-items: center;
 }
 .hero__metadata__wrap{
     gap: 20px;
@@ -169,4 +169,14 @@
     font-family: var(--head-font);
     font-size: 24px;
     line-height: 150%;
+}
+@media (max-width: 768px){
+    .hero__metadata__wrap{
+        align-items: center;
+        gap: 10px;
+    }
+    :is(.hero__meta__blink,.metadata) span{
+        font-size: 0.8rem;
+        letter-spacing: 0.04rem;
+    }
 }
