@@ -35,7 +35,7 @@ export default function RelatedArticles() {
     };
     
     return (
-        <div className={style.related__section__wrap}>
+        <div className={`${style.related__section__wrap} blog__related__section`}>
             <div className={style.related__title}>
                 <SubTitle subTitle={'Related Articles'}/>
             </div>
