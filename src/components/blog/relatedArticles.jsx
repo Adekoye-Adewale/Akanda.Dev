@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { articlePageCopy } from '@/webContents/blogCopy';
 import '@splidejs/react-splide/css/core';
 import style from './blog.module.css';
+import Link from 'next/link';
 
 export default function RelatedArticles() {
     const Related = articlePageCopy;
@@ -42,11 +43,17 @@ export default function RelatedArticles() {
             <div className={style.related__cards__wrap}>
                 <Splide options={options} autoStart={{boolean: true}}>
                     {Related.slice(0, 3).map((card) => (
-                        <Card 
+                        <Link 
+                            href={card.slug} 
+                            title={card.title}
+                            target='__blank'
                             key={card.id}
-                            title={card.title} 
-                            img={card.img}
-                        />
+                        >
+                            <Card 
+                                title={card.title} 
+                                img={card.img}
+                            />
+                        </Link>
                     ))}
                 </Splide>
             </div>
@@ -54,11 +61,10 @@ export default function RelatedArticles() {
     )
 }
 
-const Card = ({ key, title, img }) => {
+const Card = ({ title, img }) => {
     return (
         <SplideSlide 
-            className={style.related__articles__wrap} 
-            key={key}
+            className={style.related__articles__wrap}
         >
             <div className={style.related__articles__img__wrap}>
                 <Image {...img}/>
