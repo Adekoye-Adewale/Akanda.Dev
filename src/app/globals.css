@@ -387,19 +387,24 @@ body:has(h1:hover) .cursor {
 .portfolio__hero h1 span:nth-child(2){
   opacity: 1 !important;
 }
-.splide__arrows.splide__arrows--ltr{
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-bottom: 20px;
-}
-.splide__arrow{
-  padding: 10px;
-  line-height: 0;
-  border-radius: 50px;
-  border: none;
-  & svg{
-    width: 60%;
+.blog__related__section{
+  & .splide__arrows.splide__arrows--ltr{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 20px;
+  }
+  & .splide__arrow{
+    padding: 10px;
+    line-height: 0;
+    border-radius: 50px;
+    border: none;
+    & svg{
+      width: 60%;
+    }
+  }
+  & .splide__pagination{
+    display: none;
   }
 }
 .splide__arrow.splide__arrow--prev{
