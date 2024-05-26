@@ -22,7 +22,7 @@ export const BlogHero = ({ img, title, type, category, date }) => {
     return (
         <div className={style.blog__hero__wrap}>
             <div className={style.blog__hero__img__wrap}>
-                <Image {...img}/>
+                <Image src={img.src} {...img}/>
             </div>
             <div className={style.blog__hero__copy__wrap}>
                 <div>
