@@ -41,7 +41,7 @@ export default function RelatedArticles() {
                 <SubTitle subTitle={'Related Articles'}/>
             </div>
             <div className={style.related__cards__wrap}>
-                <Splide options={options} autoStart={{boolean: true}}>
+                <Splide options={options}>
                     {Related.slice(0, 3).map((card) => (
                         <Link 
                             href={card.slug} 
