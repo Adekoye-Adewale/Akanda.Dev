@@ -3,18 +3,29 @@ import { BlogHero } from '@/components/blog/hero'
 import CtaWrap from '@/components/siteFooter/ctaWrap'
 import { articlePageCopy } from '@/webContents/blogCopy';
 import BlogBody from "@/components/blog/body";
+import { articleContents } from "@/app/api/contentful";
 
 export default function SingleBlogPage({ params }) {
 
-    const blogContent = articlePageCopy.find(
-        (content) => content.slug.replace('/blog/', '') === params.title
+    const blogContent = articleContents.items.find(
+        (content) => content.fields.slug === params.title
     );
 
     if (!blogContent) {
         return redirect("/not-found");
     }
+
+    console.log('bLoGFile::', blogContent.fields.content)
     
-    const { img, title, type, category, date, body } = blogContent
+    const { title, type, category, datePublished, content } = blogContent?.fields;
+
+    const img = {
+        src: blogContent?.fields.img.fields.file.url.replace('//', 'https://'),
+        alt: blogContent?.fields.img.fields.description,
+        title: blogContent?.fields.img.fields.title,
+        height: blogContent?.fields.img.fields.file.details.image.height,
+        width: blogContent?.fields.img.fields.file.details.image.width,
+    };
 
     return (
         <main>
@@ -23,10 +34,16 @@ export default function SingleBlogPage({ params }) {
                 title={title} 
                 type={type} 
                 category={category} 
-                date={date}
+                date={datePublished}
             />
-            <BlogBody blog={body}/>
+            <BlogBody blog={content}/>
             <CtaWrap/>
         </main>
     )
+}
+
+
+export async function getStaticProps() {
+    const response = await client.getEntry(process.env.ENTRY_ID);
+    console.log(response)
 }
