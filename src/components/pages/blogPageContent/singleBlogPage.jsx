@@ -4,6 +4,7 @@ import CtaWrap from '@/components/siteFooter/ctaWrap'
 import { articlePageCopy } from '@/webContents/blogCopy';
 import BlogBody from "@/components/blog/body";
 import { articleContents } from "@/app/api/contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export default function SingleBlogPage({ params }) {
 
@@ -15,10 +16,9 @@ export default function SingleBlogPage({ params }) {
         return redirect("/not-found");
     }
 
-    console.log('bLoGFile::', blogContent.fields.content)
     
     const { title, type, category, datePublished, content } = blogContent?.fields;
-
+    
     const img = {
         src: blogContent?.fields.img.fields.file.url.replace('//', 'https://'),
         alt: blogContent?.fields.img.fields.description,
@@ -26,6 +26,9 @@ export default function SingleBlogPage({ params }) {
         height: blogContent?.fields.img.fields.file.details.image.height,
         width: blogContent?.fields.img.fields.file.details.image.width,
     };
+    
+    const contentCopy = documentToReactComponents(content)
+    console.log('bLoGFile::', contentCopy)
 
     return (
         <main>
@@ -36,14 +39,8 @@ export default function SingleBlogPage({ params }) {
                 category={category} 
                 date={datePublished}
             />
-            <BlogBody blog={content}/>
+            <BlogBody blog={contentCopy}/>
             <CtaWrap/>
         </main>
     )
-}
-
-
-export async function getStaticProps() {
-    const response = await client.getEntry(process.env.ENTRY_ID);
-    console.log(response)
 }
