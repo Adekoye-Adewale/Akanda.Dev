@@ -4,8 +4,8 @@ export default function BlogArticle({ blog }) {
     return (
         <article 
             className={style.blog__content__wrap}
-            dangerouslySetInnerHTML={{ __html: blog }}
         >
+            {blog}
         </article>
     )
 }
