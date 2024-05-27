@@ -155,7 +155,7 @@
 .related__cards__wrap{
     grid-column: span 5;
 }
-.related__articles__wrap{
+.related__articles__wrap a{
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -210,7 +210,7 @@
     .related__section__wrap button{
         scale: 0.6;
     }
-    .related__articles__wrap{
+    .related__articles__wrap a{
         max-width: 200px;
     }
     .related__articles__title{
