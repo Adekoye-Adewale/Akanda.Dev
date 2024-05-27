@@ -1,13 +1,12 @@
 import Link from "next/link";
 import Image from "next/image"
-import { articlePageCopy } from "@/webContents/blogCopy"
 import style from './blog.module.css'
 
-export default function Cards() {
-    const Content = articlePageCopy;
+export default function Cards({ Contents }) {
+    // const Contents = articlePageCopy;
     return (
         <div className={style.archive__cards}>
-            {Content.map (( card ) => (
+            {Contents.map (( card ) => (
                 <Link 
                     href={card.slug}
                     title={card.title}
