@@ -11,27 +11,23 @@ import Link from 'next/link';
 
 export default function RelatedArticles() {
     const Related = articlePageCopy;
+
     const options = {
         type: 'loop',
         drag: 'free',
-        // wheel: true,
         snap: true,
         gap: '2rem',
         perPage: 3,
         perMove: 1,
         autoWidth: 'true',
-        cover: true,
         lazyLoad: 'nearby',
+        cover: true,
         breakpoints: {
             800: {
-              perPage: 2,
-              gap: '1rem',
-              autoHeight : 'true',
+                perPage: 2,
+                gap: '1rem',
+                autoHeight : 'true',
             },
-        },
-        autoplay: true,
-        autoScroll: {
-            speed: 1,
         },
     };
     
@@ -43,17 +39,12 @@ export default function RelatedArticles() {
             <div className={style.related__cards__wrap}>
                 <Splide options={options}>
                     {Related.slice(0, 3).map((card) => (
-                        <Link 
-                            href={card.slug} 
-                            title={card.title}
-                            target='__blank'
+                        <Card 
                             key={card.id}
-                        >
-                            <Card 
-                                title={card.title} 
-                                img={card.img}
-                            />
-                        </Link>
+                            title={card.title} 
+                            img={card.img}
+                            slug={card.slug}
+                        />
                     ))}
                 </Splide>
             </div>
@@ -61,17 +52,24 @@ export default function RelatedArticles() {
     )
 }
 
-const Card = ({ title, img }) => {
+const Card = ({ key, title, img, slug }) => {
     return (
         <SplideSlide 
             className={style.related__articles__wrap}
+            key={key}
         >
-            <div className={style.related__articles__img__wrap}>
-                <Image {...img}/>
-            </div>
-            <span className={style.related__articles__title}>
-                {title}
-            </span>
+            <Link 
+                href={slug} 
+                title={title}
+                target='__blank'
+            >
+                <div className={style.related__articles__img__wrap}>
+                    <Image {...img}/>
+                </div>
+                <span className={style.related__articles__title}>
+                    {title}
+                </span>
+            </Link>
         </SplideSlide>
     )
 }
