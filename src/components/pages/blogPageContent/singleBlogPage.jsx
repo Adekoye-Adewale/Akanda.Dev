@@ -1,10 +1,37 @@
-import { redirect } from "next/navigation";
+import { redirect, notFound } from 'next/navigation';
 import { BlogHero } from '@/components/blog/hero'
 import CtaWrap from '@/components/siteFooter/ctaWrap'
 import { articlePageCopy } from '@/webContents/blogCopy';
 import BlogBody from "@/components/blog/body";
-import { articleContents } from "@/app/api/contentful";
+import { articleContents, client } from "@/app/api/contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+export async function getStaticPaths() {
+    const articleContents = await client.getEntries({content_type: 'blog',});
+    const paths = articleContents.items.map((item) => ({
+        params: { title: item.fields.slug }
+    }));
+    
+    return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+    const articleContents = await client.getEntries({content_type: 'blog', 'fields.slug': params.title,});
+
+    const blogContent = articleContents.items.fields.find(
+        (content) => content.slug === params.title
+    );
+
+    if (!blogContent) {
+        return { notFound: true };
+    }
+
+    return {
+        props: { blogContent },
+        revalidate: 60,
+    };
+}
+
 
 export default function SingleBlogPage({ params }) {
 
@@ -12,28 +39,38 @@ export default function SingleBlogPage({ params }) {
         (content) => content.fields.slug === params.title
     );
 
-    if (!blogContent) {
-        return redirect("/not-found");
-    }
+    // if (!blogContent || !blogContent.fields) {
+    //     return redirect("/not-found");
+    // }
 
+    if (!blogContent || !blogContent.fields) {
+        notFound();
+        return null; 
+    }
+ 
+    const { img, title, type, category, datePublished, content } = blogContent?.fields;
+
+    // const img = blogContent?.fields?.img
+    // const title = blogContent?.fields?.title
+    // const type = blogContent?.fields?.type
+    // const category = blogContent?.fields?.category
+    // const datePublished = blogContent?.fields?.datePublished
+    // const content = blogContent?.fields?.content
     
-    const { title, type, category, datePublished, content } = blogContent?.fields;
-    
-    const img = {
-        src: blogContent?.fields.img.fields.file.url.replace('//', 'https://'),
-        alt: blogContent?.fields.img.fields.description,
-        title: blogContent?.fields.img.fields.title,
-        height: blogContent?.fields.img.fields.file.details.image.height,
-        width: blogContent?.fields.img.fields.file.details.image.width,
-    };
+    const imageProps = img?.fields?.file ? {
+        src: img.fields.file.url.replace('//', 'https://'),
+        alt: img.fields.description || '',
+        title: img.fields.title || '',
+        height: img.fields.file.details.image.height,
+        width: img.fields.file.details.image.width,
+    } : {};
     
     const contentCopy = documentToReactComponents(content)
-    console.log('bLoGFile::', contentCopy)
 
     return (
         <main>
             <BlogHero 
-                img={img} 
+                img={imageProps} 
                 title={title} 
                 type={type} 
                 category={category} 
