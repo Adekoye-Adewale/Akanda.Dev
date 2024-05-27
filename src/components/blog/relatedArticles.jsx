@@ -1,7 +1,6 @@
 'use client'
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import { SubTitle } from '../text';
 import Image from 'next/image';
 import { articlePageCopy } from '@/webContents/blogCopy';
@@ -39,12 +38,16 @@ export default function RelatedArticles() {
             <div className={style.related__cards__wrap}>
                 <Splide options={options}>
                     {Related.slice(0, 3).map((card) => (
-                        <Card 
+                        <SplideSlide 
+                            className={style.related__articles__wrap}
                             key={card.id}
-                            title={card.title} 
-                            img={card.img}
-                            slug={card.slug}
-                        />
+                        >
+                            <Card 
+                                title={card.title} 
+                                img={card.img}
+                                slug={card.slug}
+                            />
+                        </SplideSlide>
                     ))}
                 </Splide>
             </div>
@@ -52,12 +55,8 @@ export default function RelatedArticles() {
     )
 }
 
-const Card = ({ key, title, img, slug }) => {
+const Card = ({ title, img, slug }) => {
     return (
-        <SplideSlide 
-            className={style.related__articles__wrap}
-            key={key}
-        >
             <Link 
                 href={slug} 
                 title={title}
@@ -70,6 +69,5 @@ const Card = ({ key, title, img, slug }) => {
                     {title}
                 </span>
             </Link>
-        </SplideSlide>
     )
 }
