@@ -1,59 +1,42 @@
 import { client } from "@/lib/contentful";
 
 export async function getStaticProps({ params }) {
-    try {
-        const entries = await client.getEntries({
-            content_type: 'blog',
-            'fields.slug': params.title,
-        });
+  try {
+      console.log('Fetching data for slug:', params.title); // Debugging statement
 
-        if (!entries.items.length) {
-            return {
-                redirect: {
-                destination: "/not-found",
-                permanent: false,
-                },
-            };
-        }
+      const res = await client.getEntries({
+          content_type: 'blog',
+          'fields.slug': params.title,
+      });
 
-        const blogContent = entries.items[0].fields;
+      console.log('Contentful response:', JSON.stringify(res, null, 2)); // Debugging statement
 
-        return {
-            props: {
-                blogContent,
-            },
-            revalidate: 1, // Optional: Add revalidation to keep content updated
-            };
-    } catch (error) {
-        console.error("Error fetching data from Contentful:", error);
-        return {
-            redirect: {
-                destination: "/not-found",
-                permanent: false,
-            },
-        };
-    }
+      if (!res || !res.items || res.items.length === 0) {
+          console.error('No blog content found for slug:', params.title); // Debugging statement
+          return { notFound: true };
+      }
+
+      const blogContent = res.items[0];
+
+      console.log('Blog content found:', JSON.stringify(blogContent, null, 2)); // Debugging statement
+
+      return {
+          props: { blogContent },
+          revalidate: 60,
+      };
+  } catch (error) {
+      console.error('Error fetching blog content:', error); // Debugging statement
+      return { notFound: true };
+  }
 }
 
 export async function getStaticPaths() {
-  try {
-    const entries = await client.getEntries({
-      content_type: 'blog',
-    });
+  const res = await client.getEntries({ content_type: 'blog' });
+  const paths = res.items.map((item) => ({
+      params: { title: item.fields.slug }
+  }));
 
-    const paths = entries.items.map((item) => ({
-      params: { title: item.fields.slug },
-    }));
+  console.log('Generated paths:', paths); // Debugging statement
 
-    return {
-      paths,
-      fallback: 'blocking',
-    };
-  } catch (error) {
-    console.error("Error fetching paths from Contentful:", error);
-    return {
-      paths: [],
-      fallback: 'blocking',
-    };
-  }
+  return { paths, fallback: false };
 }
