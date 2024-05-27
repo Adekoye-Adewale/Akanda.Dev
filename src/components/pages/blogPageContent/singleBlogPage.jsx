@@ -1,10 +1,9 @@
-import { redirect, notFound } from 'next/navigation';
-import { BlogHero } from '@/components/blog/hero'
-import CtaWrap from '@/components/siteFooter/ctaWrap'
-import { articlePageCopy } from '@/webContents/blogCopy';
-import BlogBody from "@/components/blog/body";
+import { notFound } from 'next/navigation';
 import { articleContents, client } from "@/app/api/contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BlogHero } from '@/components/blog/hero';
+import BlogBody from "@/components/blog/body";
+import CtaWrap from '@/components/siteFooter/ctaWrap';
 
 export async function getStaticPaths() {
     const articleContents = await client.getEntries({content_type: 'blog',});
@@ -31,7 +30,6 @@ export async function getStaticProps({ params }) {
         revalidate: 60,
     };
 }
-
 
 export default function SingleBlogPage({ params }) {
 
