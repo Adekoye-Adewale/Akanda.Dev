@@ -21,6 +21,8 @@ export async function getStaticProps({ params }) {
         (content) => content.slug === params.title
     );
 
+    console.log("getStatic::", blogContent);
+
     if (!blogContent) {
         return { notFound: true };
     }
