@@ -6,7 +6,7 @@ import { articleContents } from '@/app/api/contentful'
 
 export default function BlogArchive() {
 
-    const blogContent = articleContents
+    const blogContent = articleContents.items
 
     console.log('first:', blogContent);
 
