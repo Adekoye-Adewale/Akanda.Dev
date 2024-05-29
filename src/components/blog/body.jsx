@@ -6,7 +6,7 @@ export default function BlogBody({blog}) {
     return (
         <div className={style.blog__body}>
             <BlogArticle blog={blog}/>
-            <RelatedArticles/>
+            {/* <RelatedArticles/> */}
         </div>
     )
 }
