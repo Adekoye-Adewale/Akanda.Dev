@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { articlePageCopy } from "@/webContents/blogCopy";
 import { BlogHero } from '@/components/blog/hero';
@@ -8,9 +9,11 @@ import CtaWrap from '@/components/siteFooter/ctaWrap';
 export default function SingleBlogPage({ params }) {
 
     const blogContent = articlePageCopy.find(
-        (content) => content.slug === params.title
+        (content) => content.slug.replace('blog/', '') === params.title
     );
-    console.log('Yt123:::', blogContent.articleCopy.content )
+
+    console.log('Yt1:::', blogContent );
+
     if (!blogContent) {
         notFound();
         return null; 
