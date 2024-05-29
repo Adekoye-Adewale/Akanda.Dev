@@ -9,10 +9,10 @@ import CtaWrap from '@/components/siteFooter/ctaWrap';
 export default function SingleBlogPage({ params }) {
 
     const blogContent = articlePageCopy.find(
-        (content) => content.slug.replace('blog/', '') === params.title
+        (content) => content.slug.replace('/blog/', '') === params.title
     );
 
-    console.log('Yt1:::', blogContent );
+    // console.log('Yt1:', blogContent );
 
     if (!blogContent) {
         notFound();
@@ -34,7 +34,10 @@ export default function SingleBlogPage({ params }) {
                 category={category} 
                 date={datePublished}
             />
-            <BlogBody blog={contentCopy}/>
+            <BlogBody 
+                blog={contentCopy} 
+                // related={articlePageCopy}
+            />
             <CtaWrap/>
         </main>
     )
