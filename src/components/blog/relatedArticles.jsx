@@ -8,8 +8,10 @@ import '@splidejs/react-splide/css/core';
 import style from './blog.module.css';
 import Link from 'next/link';
 
-export default function RelatedArticles() {
-    const Related = articlePageCopy;
+export default function RelatedArticles({ Related }) {
+    // const Related = articlePageCopy;
+
+    console.log('Relat1::', Related, articlePageCopy );
 
     const options = {
         type: 'loop',
@@ -37,7 +39,7 @@ export default function RelatedArticles() {
             </div>
             <div className={style.related__cards__wrap}>
                 <Splide options={options}>
-                    {Related.slice(0, 3).map((card) => (
+                    {Related.map((card) => (
                         <SplideSlide 
                             className={style.related__articles__wrap}
                             key={card.id}
