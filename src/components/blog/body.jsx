@@ -1,6 +1,6 @@
-import style from './blog.module.css'
 import BlogArticle from './blogArticle'
 import dynamic from 'next/dynamic';
+import style from './blog.module.css'
 
 const RelatedArticles = dynamic(() => import('./relatedArticles'), {
     ssr: false,
