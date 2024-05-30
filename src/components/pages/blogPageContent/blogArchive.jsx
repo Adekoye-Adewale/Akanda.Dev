@@ -1,7 +1,7 @@
 import Cards from '@/components/blog/cards'
 import ArchiveHero from '@/components/blog/hero'
 import CtaWrap from '@/components/siteFooter/ctaWrap'
-import { articlePageCopy } from "@/webContents/blogCopy"
+import { articlePageCopy } from '@/webContents/blogCopy'
 
 export default function BlogArchive() {
 
