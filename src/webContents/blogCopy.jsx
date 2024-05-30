@@ -32,9 +32,12 @@ export const articlePageCopy = blogContent?.map((content) => {
 
 function sanitizeSlug(slug) {
     return slug.replace(/%20/g, '-')
-                .replace(/[^a-zA-Z0-9]/g, '-')
-               .replace(/-+/g, '-')
-               .replace(/^-|-$/g, '');
+               .replace(/%3A/g, '-') 
+               .replace(/%3F/g, '-')  
+               .replace(/[^a-zA-Z0-9-]/g, '-') 
+               .replace(/-+/g, '-')        
+               .replace(/^-|-$/g, '')
+               .toLowerCase();
 }
 
 
