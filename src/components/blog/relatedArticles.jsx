@@ -3,15 +3,11 @@ import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { SubTitle } from '../text';
 import Image from 'next/image';
-import { articlePageCopy } from '@/webContents/blogCopy';
 import '@splidejs/react-splide/css/core';
 import style from './blog.module.css';
 import Link from 'next/link';
 
 export default function RelatedArticles({ Related }) {
-    // const Related = articlePageCopy;
-
-    console.log('Relat1::', Related, articlePageCopy );
 
     const options = {
         type: 'loop',
@@ -45,7 +41,7 @@ export default function RelatedArticles({ Related }) {
                             key={card.id}
                         >
                             <Card 
-                                title={card.title} 
+                                title={card.title || 'Article Title'} 
                                 img={card.img}
                                 slug={card.slug}
                             />
@@ -62,12 +58,16 @@ const Card = ({ title, img, slug }) => {
             <Link 
                 href={slug} 
                 title={title}
-                target='__blank'
+                target='_blank'
             >
-                <div className={style.related__articles__img__wrap}>
+                <div 
+                    className={style.related__articles__img__wrap}
+                >
                     <Image {...img}/>
                 </div>
-                <span className={style.related__articles__title}>
+                <span 
+                    className={style.related__articles__title}
+                >
                     {title}
                 </span>
             </Link>
