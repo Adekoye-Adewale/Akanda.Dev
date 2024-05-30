@@ -4,15 +4,17 @@ const blogContent = articleContents.items
 
 export const articlePageCopy = blogContent?.map((content) => {
     const fields = content?.fields;
+    const rawSlug = `${encodeURIComponent(fields?.title)}`;
+    const slug = sanitizeSlug(rawSlug);
     const img = fields?.img;
     const blogCopy = fields?.content;
-    const system = content?.sys?.id
+    const system = content?.sys?.id;
     const datePublished = new Date(fields?.datePublished).toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
 
     return {
         id: system,
         title: fields?.title,
-        slug: `/blog/${fields?.slug}`,
+        slug: `/blog/${slug}`,
         type: fields?.type,
         category: fields?.category,
         datePublished: datePublished,
@@ -28,6 +30,12 @@ export const articlePageCopy = blogContent?.map((content) => {
     };
 }) || [];
 
+function sanitizeSlug(slug) {
+    return slug.replace(/%20/g, '-')
+                .replace(/[^a-zA-Z0-9]/g, '-')
+               .replace(/-+/g, '-')
+               .replace(/^-|-$/g, '');
+}
 
 
 // ===================================================
