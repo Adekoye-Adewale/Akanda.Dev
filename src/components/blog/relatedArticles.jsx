@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { SubTitle } from '../text';
 import Image from 'next/image';
@@ -7,7 +7,15 @@ import '@splidejs/react-splide/css/core';
 import style from './blog.module.css';
 import Link from 'next/link';
 
-export default function RelatedArticles({ Related }) {
+export default function RelatedArticles({ related }) {
+
+    const [articles, setArticles] = useState([]);
+
+    useEffect(() => {
+        if (related && related.length > 0) {
+            setArticles(related);
+        }
+    }, [related]);
 
     const options = {
         type: 'loop',
@@ -35,7 +43,7 @@ export default function RelatedArticles({ Related }) {
             </div>
             <div className={style.related__cards__wrap}>
                 <Splide options={options}>
-                    {Related.map((card) => (
+                    {articles.map((card) => (
                         <SplideSlide 
                             className={style.related__articles__wrap}
                             key={card.id}
