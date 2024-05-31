@@ -1,0 +1,18 @@
+.icon__wrap{
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+.icon__wrap:hover{
+    opacity: 0.8;
+}
+.icon__wrap svg rect{
+    fill: var(--btn-border);
+}
+.icon__wrap path{
+    fill: var(--btn-color);
+}
+.icons__wrap{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
