@@ -1,4 +1,4 @@
-
+import { X, Facebook, LinkedIn, Medium, Email, ShareLink, PrintPage } from "."
 
 export default function Share() {
     return (
