@@ -126,6 +126,26 @@
     max-width: 1920px;
     width: 100%;
 }
+.interactive__sec{
+    padding: 20px 3.125%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-hexa);
+}
+.interactive__sub__sec{
+    display: grid;
+    gap: 10px;
+}
+.interactive__sub__sec span{
+    font-size: clamp(0.875rem, 0.4789rem + 1.2676vw, 2rem);
+}
+.interactive__sub__sec a{
+    font-family: var(--head-font);
+    font-size: clamp(1.2rem, 0.5662rem + 2.0282vw, 3rem);
+}
+.share__topic{
+    text-align: right;
+}
 .blog__body{
     background-color: var(--bg-color);
     padding-inline: 3.125%;
@@ -195,6 +215,13 @@
     .hero__blinks{
         width: 20px;
         height: 20px;
+    }
+    .interactive__sec{
+        flex-direction: column;
+        padding-inline: 10px;
+    }
+    .share__topic{
+        text-align: left;
     }
     .blog__body{
         padding-inline: 0px;
