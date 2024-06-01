@@ -17,6 +17,8 @@ export const articlePageCopy = blogContent?.map((content) => {
         slug: `/blog/${slug}`,
         type: fields?.type,
         category: fields?.category,
+        articleSource: fields?.articleSource,
+        sourceLink: fields?.sourceLink,
         datePublished: datePublished,
         articleCopy: blogCopy,
         img: img ? {
