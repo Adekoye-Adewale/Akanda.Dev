@@ -1,22 +1,27 @@
 import Link from 'next/link'
-import React from 'react'
 import { Share } from '../socials'
+import style from './blog.module.css'
 
 export default function Interact({ articleSource, sourceLink, title }) {
     return (
-        <div>
+        <div className={style.interactive__sec}>
             <Source 
                 articleSource={articleSource} 
                 articleSourceLink={sourceLink}
             />
-            <Share title={title}/>
+            <div className={`${style.interactive__sub__sec} ${style.share__topic}`}>
+                <span>
+                    Share this article
+                </span>
+                <Share title={title}/>
+            </div>
         </div>
     )
 }
 
 export const Source = ({ articleSource, articleSourceLink }) => {
     return (
-        <div>
+        <div className={style.interactive__sub__sec}>
             <span>
                 Article Source:
             </span>
