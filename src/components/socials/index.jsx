@@ -1,4 +1,9 @@
-import { X, Facebook, LinkedIn, Medium, Email, PrintPage, ShareLink } from './icons'
+import { X, Facebook, LinkedIn, Medium, Email, PrintPage, ShareLink } from './shareIcons'
 import SocialIcon from './socialMediaIcons';
+import dynamic from 'next/dynamic';
 
-export { X, Facebook, LinkedIn, Medium, Email, PrintPage, ShareLink, SocialIcon };
+const Share = dynamic(() => import('./share'), {
+    ssr: false,
+});
+
+export { X, Facebook, LinkedIn, Medium, Email, PrintPage, ShareLink, SocialIcon, Share };
