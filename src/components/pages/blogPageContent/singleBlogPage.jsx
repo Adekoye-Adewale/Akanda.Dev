@@ -25,8 +25,6 @@ export default function SingleBlogPage({ params }) {
         (content) => content.category === category && content.id !== id
     );
 
-    console.log(relatedArticles)
-
     return (
         <main>
             <BlogHero 
