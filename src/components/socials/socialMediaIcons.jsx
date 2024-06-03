@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import style from './socialIcons.module.css'
+import { fbLink, xLink } from '@/webContents/socialLinks'
 
 export default function SocialIcon() {
     return (
@@ -23,7 +24,7 @@ const Icon = ({ children, link }) =>{
     )
 }
 
-const Facebook = ({ fbLink }) => {
+const Facebook = () => {
 
     return (
         <Icon link={fbLink}>
@@ -35,7 +36,7 @@ const Facebook = ({ fbLink }) => {
     )
 }
 
-const X = ({ xLink }) => {
+const X = () => {
 
     return (
         <Icon link={xLink}>
