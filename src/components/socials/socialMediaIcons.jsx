@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import style from './socialIcons.module.css'
-import { fbLink, xLink } from '@/webContents/socialLinks'
+import { fbLink, xLink, linkedinLink, mailLink, mediumLink } from '@/webContents/socialLinks'
 
 export default function SocialIcon() {
     return (
@@ -47,7 +47,7 @@ const X = () => {
         </Icon>
     )
 }
-const LinkedIn = ({ linkedinLink }) => {
+const LinkedIn = () => {
 
     return (
         <Icon link={linkedinLink}>
@@ -59,7 +59,7 @@ const LinkedIn = ({ linkedinLink }) => {
     )
 }
 
-const Email = ({ mailLink }) => {
+const Email = () => {
 
     return (
         <Icon link={mailLink}>
@@ -71,7 +71,7 @@ const Email = ({ mailLink }) => {
     )
 }
 
-const Medium = ({ mediumLink }) => {
+const Medium = () => {
     return (
         <Icon link={mediumLink}>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
