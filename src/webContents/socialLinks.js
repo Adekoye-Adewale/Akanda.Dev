@@ -1,5 +1,5 @@
 export const fbLink = {
-    href: ``,
+    href: `https://www.linkedin.com/in/adekoye-adewale/`,
     title: `facebook link`,
     target: `_blank`,
 }
@@ -11,7 +11,7 @@ export const xLink = {
 }
 
 export const linkedinLink = {
-    href: ``,
+    href: `https://www.linkedin.com/in/adekoye-adewale/`,
     title: `facebook link`,
     target: `_blank`,
 }
