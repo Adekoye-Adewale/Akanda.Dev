@@ -7,4 +7,3 @@ export const client = Contentful.createClient({
 
 const response = await client.getEntry(process.env.ENTRY_ID);
 export const articleContents = await client.getEntries({content_type: 'blog',});
-// console.log('ENtAdi:',articleContents.items)
