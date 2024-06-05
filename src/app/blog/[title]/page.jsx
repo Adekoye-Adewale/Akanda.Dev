@@ -12,7 +12,7 @@ function sanitizeSlug(slug) {
                .toLowerCase();
 }
 
-function processBlogContent(content) {
+export function processBlogContent(content) {
     const fields = content?.fields;
     const rawSlug = `${encodeURIComponent(fields?.title)}`;
     const slug = sanitizeSlug(rawSlug);
