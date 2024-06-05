@@ -1,6 +1,8 @@
-import { articleContents } from '@/app/api/contentful'
+import { fetchContent } from '@/app/api/contentful';
 
-const blogContent = articleContents.items
+const content = await fetchContent();
+const { blog } = content;
+const blogContent = blog.items;
 
 export const articlePageCopy = blogContent?.map((content) => {
     const fields = content?.fields;
@@ -32,7 +34,7 @@ export const articlePageCopy = blogContent?.map((content) => {
     };
 }) || [];
 
-function sanitizeSlug(slug) {
+export function sanitizeSlug(slug) {
     return slug.replace(/%20/g, '-')
                .replace(/%3A/g, '-') 
                .replace(/%3F/g, '-')  
@@ -41,7 +43,6 @@ function sanitizeSlug(slug) {
                .replace(/^-|-$/g, '')
                .toLowerCase();
 }
-
 
 // ===================================================
 // ===================================================
