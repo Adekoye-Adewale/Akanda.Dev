@@ -64,20 +64,20 @@ export default function HomePage() {
 
 
 export const HeroSection = ({ Hero, className }) => {
-    // const hero = useRef();
-    // const { scrollYProgress } = useScroll({
-    //     target: hero,
-    //     offset: ["end start", "end end"]
-    // }) 
+    const hero = useRef();
+    const { scrollYProgress } = useScroll({
+        target: hero,
+        offset: ["end start", "end end"]
+    }) 
 
     return (
         <section 
-            // ref={hero} 
+            ref={hero} 
             className={className}
         >
             <HomeHero 
                 Hero={Hero} 
-                // scrollYProgress={scrollYProgress}
+                scrollYProgress={scrollYProgress}
             />    
         </section>
     )
