@@ -17,3 +17,11 @@
     align-items: center;
     line-height: 0;
 }
+@media (max-width: 768px){
+    .icon__wrap{
+        width: 30px;
+    }
+    .icon__wrap svg{
+        width: 100%;
+    }
+}
