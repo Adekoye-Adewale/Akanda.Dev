@@ -20,7 +20,9 @@ export default function HomePage() {
     
     return (
         <main>
-            <HeroSection Hero={homeHero}/>
+            <HeroSection 
+                Hero={homeHero}
+            />
             <SectionRotate className={`${style.about__sec}`}>
                 <HomeAboutSec/>
             </SectionRotate>
@@ -62,17 +64,20 @@ export default function HomePage() {
 
 
 export const HeroSection = ({ Hero, className }) => {
-    const hero = useRef();
-    const { scrollYProgress } = useScroll({
-        target: hero,
-        offset: ["end start", "end end"]
-    }) 
+    // const hero = useRef();
+    // const { scrollYProgress } = useScroll({
+    //     target: hero,
+    //     offset: ["end start", "end end"]
+    // }) 
 
     return (
-        <section ref={hero} className={className}>
+        <section 
+            // ref={hero} 
+            className={className}
+        >
             <HomeHero 
                 Hero={Hero} 
-                scrollYProgress={scrollYProgress}
+                // scrollYProgress={scrollYProgress}
             />    
         </section>
     )
