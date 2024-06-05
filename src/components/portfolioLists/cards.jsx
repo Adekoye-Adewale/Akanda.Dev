@@ -5,10 +5,11 @@ import style from './portfolioLists.module.css'
 export default function Cards({ CardList }) {
     return (
         <div className={style.parent__wrap}>
-            {CardList.map((list, index) => (
+            {CardList.map((list) => (
                 <Link 
                     {...list.slug} 
-                    key={index} 
+                    target='_blank'
+                    key={list.id} 
                     className={style.wrap}
                 >
                     <Card 
