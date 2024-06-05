@@ -218,6 +218,7 @@
     }
     .interactive__sec{
         flex-direction: column;
+        gap: 20px;
         padding-inline: 10px;
     }
     .share__topic{
