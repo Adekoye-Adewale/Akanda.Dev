@@ -1,10 +1,12 @@
 import Cards from './cards'
-import { portfolioList } from '@/webContents/portfolioPageCopy'
+import { worksList } from '@/webContents/portfolioPageCopy';
 
-export default function PortfolioLists() {
+export default async function PortfolioLists() {
     return (
-        <div>
-            <Cards CardList={portfolioList}/>
-        </div>
+        <>
+            <Cards 
+                CardList={worksList}
+            />
+        </>
     )
 }
