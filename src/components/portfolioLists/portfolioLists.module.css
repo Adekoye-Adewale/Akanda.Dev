@@ -13,6 +13,7 @@
     width: 100%;
 }
 .img__wrap{
+    position: relative;
     aspect-ratio: 300/203;
     line-height: 0;
     overflow: hidden;
@@ -37,10 +38,19 @@
 .wrap:hover img{
     filter: grayscale(0);
 }
-.parent__wrap span{
+.img__wrap__label{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 15px;
+    border-radius: 50px;
     display: block;
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 150%;
     letter-spacing: 0.05rem;
-    margin-bottom: 10px;
+}
+.copy__wrap h4{
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
