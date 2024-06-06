@@ -12,7 +12,11 @@ const menu = {
             height: "650px",
             top: "-15px",
             right: "-15px",
-            transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1]}
+            transition: { 
+                duration: 0.75, 
+                type: "tween", 
+                ease: [0.76, 0, 0.24, 1]
+            },
         },
         closed: {
             width: "100px",
@@ -47,7 +51,7 @@ export default function NavMenu() {
 
     useEffect(() => {
         const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+            setIsMobile(window.innerWidth <= 768);
         };
         checkMobile();
         window.addEventListener('resize', checkMobile);
@@ -57,7 +61,7 @@ export default function NavMenu() {
     const variant = isMobile ? menu.mobile : menu.desktop;
 
     return (
-        <div className={styles.wrapper}>
+        <div className={`${styles.wrapper} ${isActive ? "menu__control" : ""}`}>
             <motion.div 
                 className={styles.menu}
                 variants={variant}
