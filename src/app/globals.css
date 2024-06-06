@@ -245,6 +245,9 @@ body:has(a:hover) .cursor{
 body:has(h1:hover) .cursor {
   transform: scale(8);
 }
+body:has(.menu__control) header{
+  mix-blend-mode: normal;
+}
 .cursor__pointer{
   cursor: pointer;
 }
