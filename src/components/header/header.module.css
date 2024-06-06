@@ -9,19 +9,29 @@
     z-index: 2;
     mix-blend-mode: difference;
 }
-.burger {
+.logo__wrap{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: auto;
+}
+.menu__wrap{
+    position: absolute;
+    top: 42.5px;
+    right: 10px;
+}
+.menu__button{
+    display: flex;
+    align-items: center;
+    cursor: default;
+}
+.burger{
     display: none;
     position: relative;
     gap: 8px;
     flex-direction: column;
     padding: 30px;
     pointer-events: none;
-}
-.menu__button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    cursor: default;
 }
 @media (prefers-color-scheme: light){
     .header{
@@ -30,12 +40,12 @@
 }
 /* Mobile */
 @media (max-width: 768px) {
- .logo {
-    max-width: 50px;
-    max-height: 50px;
-    aspect-ratio: 1;
- }
- @media (prefers-color-scheme: dark){
+    .logo {
+        max-width: 50px;
+        max-height: 50px;
+        aspect-ratio: 1;
+    }
+@media (prefers-color-scheme: dark){
     .header{
         mix-blend-mode: normal;
     }
