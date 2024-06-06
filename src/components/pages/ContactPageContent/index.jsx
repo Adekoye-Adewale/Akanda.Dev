@@ -21,7 +21,7 @@ export default function ContactPageContent() {
                 <HeroSection scrollYProgress={scrollYProgress}/>
                 <SecTwo scrollYProgress={scrollYProgress}/>
             </div>
-            <SectionRotate className={`${styles.cta__sec} inline__pad grid__center full__screen`}>
+            <SectionRotate className={`${styles.cta__sec} grid__center full__screen`}>
                 <ContactCTA/>
             </SectionRotate>
         </>
