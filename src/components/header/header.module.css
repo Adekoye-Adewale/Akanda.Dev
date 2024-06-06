@@ -45,6 +45,9 @@
         max-height: 50px;
         aspect-ratio: 1;
     }
+    .menu__wrap{
+        top: 35px;
+    }
 @media (prefers-color-scheme: dark){
     .header{
         mix-blend-mode: normal;
