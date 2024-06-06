@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { getBackgroundColor } from './getBackgroundColor'
 import style from './portfolioLists.module.css'
 
 export default function Cards({ CardList }) {
@@ -24,14 +25,24 @@ export default function Cards({ CardList }) {
 };
 
 export const Card = ({ img, title, type }) => {
+    const backgroundColor = getBackgroundColor(type);
     return (
         <>
             <div className={style.img__wrap}>
-                <Image {...img} />    
+                <Image {...img} /> 
+                <div 
+                    className={style.img__wrap__label}
+                    style={{ backgroundColor }}
+                >
+                    <span>
+                        {type}
+                    </span>
+                </div>   
             </div>
             <div className={style.copy__wrap}>
-                <span>{title}</span>
-                <h4>{type}</h4>
+                <h4>
+                    {title}
+                </h4>
             </div>
         </>
     );
