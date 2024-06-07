@@ -17,6 +17,6 @@ export const getBackgroundColor = (type) => {
         // case 'Web Hosting Website':
         //     return '#371177';
         default:
-            return '#000'; 
+            return 'var(--btn-color)'; 
     }
 };
