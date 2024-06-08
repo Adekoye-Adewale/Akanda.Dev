@@ -48,4 +48,9 @@
     .hero, .services__provided__sec{
         padding-block: 50px;
     }
+    .hero__img__wrap{
+        width: 250px;
+        height: 116.86px;
+    }
+
 }
