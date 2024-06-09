@@ -13,9 +13,11 @@ export default function WhyChoose({ Why, desc }) {
                 </div>
                 <div className={style.list__wrap}>
                     {Why.map((choose, index)=>(
-                        <span key={index}  className={style.list}>
-                            {choose.title}
-                            <Image {...choose.img}/>
+                        <span key={index} className={style.list}>
+                            <span className={style.hover}></span>
+                            <span className={style.list__word}>
+                                {choose.title}
+                            </span>
                         </span>
                     ))}
                 </div>
