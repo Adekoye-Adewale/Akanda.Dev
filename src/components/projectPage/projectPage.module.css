@@ -3,6 +3,7 @@
     min-height: 900px;
     display: grid;
     place-content: center;
+    background-color: var(--black);
 }
 .hero__img__wrap{
     position: sticky;
@@ -21,7 +22,7 @@
 .hero__copy__wrap{
     display: grid;
     place-content: center;
-    color: #000;
+    color: #F4E5F8;
     transform: translateY(-75px);
 }
 .hero__copy__wrap h1{
@@ -35,7 +36,7 @@
     font-size: clamp(1.2rem, 0.741rem + 1.0492vw, 2rem);
 }
 .hero, .services__provided__sec{
-    background-color: #F4E5F8;
+    background-color: var(--black);
     padding-block: 100px;
 }
 .services__provided__sec{
