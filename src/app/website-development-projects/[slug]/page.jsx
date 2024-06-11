@@ -29,6 +29,11 @@ export function processWorksContent(content) {
         type: fields?.projectCategory,
         link: fields?.projectLink,
         agency: fields?.agency,
+        serviceProvided: fields?.serviceProvided,
+        objectiveSummary: fields?.objectiveSummary,
+        mainService: fields?.mainService,
+        mainDescription: fields?.mainDescription,
+        techList: fields?.techList,
         img: img ? {
             src: img.fields.file.url.replace('//', 'https://'),
             alt: img.fields.description || '',
@@ -39,7 +44,7 @@ export function processWorksContent(content) {
         slug: {
             href: `/website-development-projects/${slug}`,
             title: fields?.brandName,
-        }
+        },
     };
 }
 
@@ -81,7 +86,7 @@ export default async function Page({ params }) {
         //      (content) => content.type === page.type && content.id !== page.id
         // );
         
-    // console.log("Pats::", page);
+    console.log("Pats::", page);
 
     if (!page) {
         return notFound();
