@@ -1,23 +1,28 @@
 import React from 'react'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Body, SubTitle, Title } from '../text'
 import Slider from './slider'
 import style from './projectPage.module.css'
 
-export default function MainContent({ mainWorksCopy, imgList }) {
+export default function MainContent({ mainWorksCopy }) {
     return (
         <section className={style.main__copy__content__sec}>
             <Left 
                 mainWorksCopy={mainWorksCopy}
             />
-            <Right 
+            {/* <Right 
                 imgList={imgList}
-            />
+            /> */}
         </section>
     )
 }
 
 const Left = ({ mainWorksCopy }) => {
-    const { title, serviceProvided, summary, mainService, mainDescription, techList } = mainWorksCopy
+    const { title, serviceProvided, objectiveSummary, mainService, mainDescription, techList } = mainWorksCopy
+
+    const summary = documentToReactComponents(objectiveSummary);
+    const description = documentToReactComponents(mainDescription);
+
     return (
         <div className={style.left__content__sec}>
             <div>
@@ -33,7 +38,7 @@ const Left = ({ mainWorksCopy }) => {
                     subTitle={mainService}
                 />
                 <Body 
-                    text={mainDescription}
+                    text={description}
                 />
             </div>
             <div>
@@ -41,11 +46,11 @@ const Left = ({ mainWorksCopy }) => {
                     subTitle={"Tech Stack & Major Plugins"}
                 />
                 <ul>
-                    {techList.map(( list ) => (
+                    {techList.map(( list, index ) => (
                         <li 
-                            key={list.id}
+                            key={index}
                         >
-                            {list.tech}
+                            {list}
                         </li>
                     ))}
                 </ul>
@@ -53,12 +58,13 @@ const Left = ({ mainWorksCopy }) => {
         </div>
     )
 }
- const Right = ({ imgList }) => {
-    return (
-        <div className={style.right__content__sec}>
-            <Slider 
-                imgList={imgList}
-            />
-        </div>
-    )
- }
+
+// const Right = ({ imgList }) => {
+// return (
+//     <div className={style.right__content__sec}>
+//         <Slider 
+//             imgList={imgList}
+//         />
+//     </div>
+// )
+// }
