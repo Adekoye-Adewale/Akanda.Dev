@@ -78,9 +78,9 @@ export default function StickyCursor ({stickyElement}) {
         stickyElement.current.addEventListener("mouseleave", manageMouseLeave)
         window.addEventListener("mousemove", manageMouseMove);
         return () => {
-        stickyElement.current.removeEventListener("mouseenter", manageMouseOver)
-        stickyElement.current.removeEventListener("mouseleave", manageMouseLeave)
-        window.removeEventListener("mousemove", manageMouseMove)
+            stickyElement.current.removeEventListener("mouseenter", manageMouseOver)
+            stickyElement.current.removeEventListener("mouseleave", manageMouseLeave)
+            window.removeEventListener("mousemove", manageMouseMove)
         }
     }, [isHovered])
 
@@ -93,18 +93,19 @@ export default function StickyCursor ({stickyElement}) {
         <motion.div 
             transformTemplate={template}
             style={{
-            left: smoothMouse.x, 
-            top: smoothMouse.y,
-            scaleX: scale.x,
-            scaleY: scale.y,
+                left: smoothMouse.x, 
+                top: smoothMouse.y,
+                scaleX: scale.x,
+                scaleY: scale.y,
             }} 
             animate={{
-            width: cursorSize,
-            height: cursorSize
+                width: cursorSize,
+                height: cursorSize
             }}
             className='cursor'
             ref={cursor}
         >
+            <div className="cursor__inner"></div>
         </motion.div>
     </>
   )
