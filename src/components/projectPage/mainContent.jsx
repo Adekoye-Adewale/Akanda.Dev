@@ -1,18 +1,18 @@
 import React from 'react'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Body, SubTitle, Title } from '../text'
+import { SubTitle, Title } from '../text'
 import Slider from './slider'
 import style from './projectPage.module.css'
 
-export default function MainContent({ mainWorksCopy }) {
+export default function MainContent({ mainWorksCopy, imgList }) {
     return (
-        <section className={style.main__copy__content__sec}>
+        <section className={`${style.main__copy__content__sec} container__pad`}>
             <Left 
                 mainWorksCopy={mainWorksCopy}
             />
-            {/* <Right 
+            <Right 
                 imgList={imgList}
-            /> */}
+            />
         </section>
     )
 }
@@ -29,17 +29,17 @@ const Left = ({ mainWorksCopy }) => {
                 <Title 
                     title={`${title} ${serviceProvided}`}
                 />
-                <Body 
-                    text={summary}
-                />
+                <div>
+                    {summary}
+                </div>
             </div>
             <div>
                 <SubTitle 
                     subTitle={mainService}
                 />
-                <Body 
-                    text={description}
-                />
+                <div>
+                    {description}
+                </div>
             </div>
             <div>
                 <SubTitle 
@@ -59,12 +59,12 @@ const Left = ({ mainWorksCopy }) => {
     )
 }
 
-// const Right = ({ imgList }) => {
-// return (
-//     <div className={style.right__content__sec}>
-//         <Slider 
-//             imgList={imgList}
-//         />
-//     </div>
-// )
-// }
+const Right = ({ imgList }) => {
+    return (
+        <div className={`${style.right__content__sec} portfolio__page__slider`}>
+            <Slider 
+                imgList={imgList}
+            />
+        </div>
+    )
+}
