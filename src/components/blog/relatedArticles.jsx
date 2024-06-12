@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { SubTitle } from '../text';
 import Image from 'next/image';
+import Link from 'next/link';
 import '@splidejs/react-splide/css/core';
 import style from './blog.module.css';
-import Link from 'next/link';
 
 export default function RelatedArticles({ related }) {
 
