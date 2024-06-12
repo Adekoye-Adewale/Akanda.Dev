@@ -390,6 +390,28 @@ body:has(.menu__control) header{
 .portfolio__hero h1 span:nth-child(2){
   opacity: 1 !important;
 }
+.portfolio__page__slider ul{
+  aspect-ratio: 15/11;
+}
+.portfolio__page__slider .splide__slide{
+  width: 100%;
+}
+.portfolio__page__slider :is(.splide__arrows, .splide__pagination){
+  display: none;
+}
+.splide__slide{
+  transition: all 200ms ease-in-out;
+}
+.portfolio__page__slider .splide__slide.is-active{
+  overflow: hidden;
+  transform: scale(1.05);
+}
+.portfolio__page__slider .splide__slide.is-active img{
+  border-radius: 10px;
+}
+.portfolio__page__slider :is(.splide__slide.is-prev, .splide__slide.is-next){
+  transform: scale(0.8);
+}
 .blog__related__section{
   & .splide__arrows.splide__arrows--ltr{
     display: flex;
