@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import { client } from '@/app/api/contentful';
-import { sanitizeSlug } from '@/webContents/blogCopy';
 import SingleProjectPage from '@/components/pages/PortfolioPageComponents/singleProjectPage';
 
 export function processWorksContent(content) {
@@ -17,6 +16,21 @@ export function processWorksContent(content) {
                         .toLowerCase();
     const projectDate = new Date(fields?.projectYear).toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
     const projectYear = new Date(fields?.projectYear);
+    const processedImg = img ? {
+        src: img.fields.file.url.replace('//', 'https://'),
+        alt: img.fields.description || '',
+        title: img.fields.title || '',
+        height: img.fields.file.details.image.height,
+        width: img.fields.file.details.image.width,
+    } : null;
+    const processedImgList = fields?.imgList?.map(image => ({
+        id: image.sys.id,
+        src: image.fields.file.url.replace('//', 'https://'),
+        alt: image.fields.description || '',
+        title: image.fields.title || '',
+        height: image.fields.file.details.image.height || '1100',
+        width: image.fields.file.details.image.width || '1500',
+    })) || [];
 
     return {
         id: system,
@@ -34,17 +48,12 @@ export function processWorksContent(content) {
         mainService: fields?.mainService,
         mainDescription: fields?.mainDescription,
         techList: fields?.techList,
-        img: img ? {
-            src: img.fields.file.url.replace('//', 'https://'),
-            alt: img.fields.description || '',
-            title: img.fields.title || '',
-            height: img.fields.file.details.image.height,
-            width: img.fields.file.details.image.width,
-        } : null,
+        img: processedImg,
         slug: {
             href: `/website-development-projects/${slug}`,
             title: fields?.brandName,
         },
+        imgList: processedImgList,
     };
 }
 
@@ -53,7 +62,7 @@ export async function generateStaticParams() {
     const paths = pageContents.items.map((item) => ({
         slug: item.fields.brandName.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase()
     }));
-    // console.log("PaQway",paths);
+    // console.log("PaQway", pageContents.items);
     return paths;
 }
 
@@ -67,6 +76,8 @@ export async function getWorks(params) {
     const projects = pageContents.items.find(
         (item) => item.fields.brandName.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase() === slug
     );
+
+    // console.log("PaQway", projects.fields.imgList);
 
     if (!projects) {
         notFound();
@@ -86,7 +97,7 @@ export default async function Page({ params }) {
         //      (content) => content.type === page.type && content.id !== page.id
         // );
         
-    console.log("Pats::", page);
+    // console.log("Pats::", page);
 
     if (!page) {
         return notFound();
