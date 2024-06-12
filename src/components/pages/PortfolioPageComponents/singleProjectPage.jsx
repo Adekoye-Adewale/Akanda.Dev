@@ -27,7 +27,7 @@ export default function SingleProjectPage({ params }) {
             />
             <MainContent 
                 mainWorksCopy={mainWorksCopy} 
-                // imgList={imgList}
+                imgList={imgList}
             />
             <ServicesProvided/>
             <CtaWrap/>
