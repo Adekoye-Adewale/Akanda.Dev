@@ -1,7 +1,9 @@
 'use client'
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import style from './projectPage.module.css'
+import '@splidejs/react-splide/css/core';
+import style from './projectPage.module.css';
 
 export default function Slider({ imgList }) {
 
@@ -10,9 +12,11 @@ export default function Slider({ imgList }) {
         drag: 'free',
         snap: true,
         gap: '1rem',
+        padding: '5rem',
         perPage: 2,
         perMove: 1,
         autoWidth: 'true',
+        autoHeight : 'true',
         lazyLoad: 'nearby',
         cover: true,
         breakpoints: {
@@ -30,7 +34,10 @@ export default function Slider({ imgList }) {
                     key={list.id}
                 >
                     <div className={style.img__slide}>
-                        <Image {...list.img}/>
+                        <Image 
+                            {...list}
+                            layout='responsive' 
+                        />
                     </div>
                 </SplideSlide>
             ))}
