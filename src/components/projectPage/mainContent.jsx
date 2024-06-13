@@ -6,7 +6,7 @@ import style from './projectPage.module.css'
 
 export default function MainContent({ mainWorksCopy, imgList }) {
     return (
-        <section className={`${style.main__copy__content__sec} container__pad`}>
+        <section className={`${style.main__copy__content__sec}`}>
             <Left 
                 mainWorksCopy={mainWorksCopy}
             />
