@@ -7,6 +7,7 @@ export function processWorksContent(content) {
     const img = fields?.projectPreview;
     const system = content?.sys?.id;
     const rawSlug = `${encodeURIComponent(fields?.brandName)}`;
+    const projectTechnologies = fields?.projectTechnologies;
     const slug = rawSlug.replace(/%20/g, '-')
                         .replace(/%3A/g, '-') 
                         .replace(/%3F/g, '-')  
@@ -54,6 +55,7 @@ export function processWorksContent(content) {
             title: fields?.brandName,
         },
         imgList: processedImgList,
+        projectTechnologies: projectTechnologies,
     };
 }
 
@@ -77,7 +79,7 @@ export async function getWorks(params) {
         (item) => item.fields.brandName.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase() === slug
     );
 
-    // console.log("PaQway", projects.fields.imgList);
+    // console.log("PaQway", projects.fields.projectTechnologies);
 
     if (!projects) {
         notFound();
