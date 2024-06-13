@@ -33,7 +33,7 @@ export default function Slider({ imgList }) {
                     className={style.img__slider__wrap}
                     key={list.id}
                 >
-                    <div className={style.img__slide}>
+                    <div className={`${style.img__slide} drag`}>
                         <Image 
                             {...list}
                             layout='responsive' 
