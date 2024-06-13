@@ -6,7 +6,7 @@ import MainContent from '@/components/projectPage/mainContent';
 
 export default function SingleProjectPage({ params }) {
 
-    const { img, title, status, projectYear, agency, serviceProvided, objectiveSummary, mainService, mainDescription, techList, imgList }  = params;
+    const { img, title, status, projectYear, agency, serviceProvided, objectiveSummary, mainService, mainDescription, techList, imgList, projectTechnologies }  = params;
     const mainWorksCopy = {
         title: title,
         serviceProvided: serviceProvided,
@@ -29,7 +29,7 @@ export default function SingleProjectPage({ params }) {
                 mainWorksCopy={mainWorksCopy} 
                 imgList={imgList}
             />
-            <ServicesProvided/>
+            <ServicesProvided projectTechnologies={projectTechnologies}/>
             <CtaWrap/>
         </main>
     )
