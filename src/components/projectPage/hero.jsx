@@ -29,8 +29,10 @@ export default function Hero({ img, title, status, year, agency }) {
                 drag 
                 dragConstraints={container}
                 dragSnapToOrigin={true}
-                // dragElastic={0.2}
-                dragTransition={{ bounceStiffness: 300, bounceDamping: 50 }}
+                dragTransition={{ 
+                    bounceStiffness: 300, 
+                    bounceDamping: 50 
+                }}
                 className={`${style.hero__img__wrap} drag`}
             >
                 <Image {...img}/>
