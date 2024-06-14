@@ -54,7 +54,7 @@ export default function Hero({ img, title, status, year, agency }) {
                 </motion.div>
                 
                 <div className={style.hero__metadata__wrap}>
-                    <span>Project Status: {status}</span>
+                    <span>Project Status: {status ? 'Online😁' : 'Offline😒'}</span>
                     <span>Since {year}</span>
                     <span>Agency: {agency}</span>
                 </div>
