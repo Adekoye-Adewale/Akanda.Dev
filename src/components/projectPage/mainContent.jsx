@@ -3,6 +3,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { SubTitle, Title } from '../text'
 import Slider from './slider'
 import style from './projectPage.module.css'
+import PriBtn from '../btn/priBtn';
 
 export default function MainContent({ mainWorksCopy, imgList }) {
     return (
@@ -18,7 +19,7 @@ export default function MainContent({ mainWorksCopy, imgList }) {
 }
 
 const Left = ({ mainWorksCopy }) => {
-    const { title, serviceProvided, objectiveSummary, mainService, mainDescription, techList } = mainWorksCopy
+    const { title, serviceProvided, objectiveSummary, mainService, mainDescription, techList, link } = mainWorksCopy
 
     const summary = documentToReactComponents(objectiveSummary);
     const description = documentToReactComponents(mainDescription);
@@ -54,6 +55,12 @@ const Left = ({ mainWorksCopy }) => {
                         </li>
                     ))}
                 </ul>
+            </div>
+            <div>
+                <PriBtn 
+                    text={"Visit Site"} 
+                    href={link}
+                />
             </div>
         </div>
     )
