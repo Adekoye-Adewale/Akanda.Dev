@@ -60,6 +60,7 @@ const Left = ({ mainWorksCopy }) => {
                 <PriBtn 
                     text={"Visit Site"} 
                     href={link}
+                    target={"_blank"}
                 />
             </div>
         </div>
