@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import style from './btn.module.css'
 
-export default function PriBtn({ text, href }) {
+export default function PriBtn({ text, href, target }) {
     return (
         <Link 
             href={href} 
             title={text}
+            target={target}
             className={style.pri__btn}
         >
             <button className={style.button}>
