@@ -211,7 +211,7 @@ export default async function ProjectPage({ params }) {
                 id="porfolio-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(schema),
+                    __html: JSON.stringify(schema)
                 }}
             />
             <SingleProjectPage 
