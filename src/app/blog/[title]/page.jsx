@@ -1,3 +1,5 @@
+import Script from "next/script";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { notFound } from 'next/navigation';
 import { client } from '@/app/api/contentful';
 import { SingleBlogPage } from '@/components/pages/blogPageContent'
@@ -19,6 +21,7 @@ export function processBlogContent(content) {
     const img = fields?.img;
     const blogCopy = fields?.content;
     const system = content?.sys?.id;
+    const seoContent = content?.sys;
     const datePublished = new Date(fields?.datePublished).toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
 
     return {
@@ -29,6 +32,7 @@ export function processBlogContent(content) {
         category: fields?.category,
         articleSource: fields?.articleSource,
         sourceLink: fields?.sourceLink,
+        rawDatePublished: fields?.datePublished,
         datePublished: datePublished,
         articleCopy: blogCopy,
         img: img ? {
@@ -38,7 +42,11 @@ export function processBlogContent(content) {
             height: img.fields.file.details.image.height,
             width: img.fields.file.details.image.width,
         } : null,
-        content
+        content,
+        seoContent: {
+            datePublished: seoContent.createdAt,
+            dateModified: seoContent.updatedAt,
+        }
     };
 }
 
@@ -70,7 +78,108 @@ export async function getPost(params) {
     return processBlogContent(blogContent);
 }
 
-export default async function Page({ params }) {
+function extractTextFromReactComponents(components) {
+    let textContent = '';
+    let skipFirstH2 = true;
+
+    const extractText = (component) => {
+        if (typeof component === 'string') {
+            textContent += component;
+        } else if (Array.isArray(component)) {
+            component.forEach(extractText);
+        } else if (component.props && component.props.children) {
+            if (skipFirstH2 && component.type === 'h2') {
+                skipFirstH2 = false;
+                return;
+            }
+            extractText(component.props.children);
+        }
+    };
+
+    components.forEach(extractText);
+    return textContent;
+}
+
+export async function generateMetadata({ params }) {
+    const post = await getPost(params);
+
+    if (!post) {
+        return {
+            title: 'Blog Not Found',
+            description: 'The requested blog page could not be found.',
+        };
+    }
+
+    const { title, slug, img, seoContent, articleCopy } = post;
+    const contentComponents = documentToReactComponents(articleCopy);
+    const contentText = extractTextFromReactComponents(contentComponents);
+    let description = contentText.slice(0, 157);
+    if (contentText.length > 157) {
+        description += '...'; 
+    };
+
+    const metadata = {
+        title,
+        description,
+        alternates: {
+            canonical: `https://akanda.dev${slug}`,
+        },
+        openGraph: {
+            title,
+            description,
+            url: `https://akanda.dev${slug}`,
+            type: 'article',
+            article: {
+                publishedTime: seoContent.datePublished,
+            },
+            images: img ? [
+                {
+                    url: img.src,
+                    alt: img.alt,
+                    width: img.width,
+                    height: img.height,
+                }
+            ] : [],
+        },
+    };
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://akanda.dev${slug}`
+        },
+        "headline": title,
+        "image": img ? `https://akanda.dev${img.src}` : undefined,
+        "datePublished": seoContent.datePublished,
+        "dateModified": seoContent.dateModified,
+        "author": {
+            "@type": "Person",
+            "name": "Adekoye Adewale"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Akanda Dev",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://akanda.netlify.app/_next/image?url=%2Fakanda_dev.png&w=96&q=75"
+            }
+        },
+        "description": description,
+        "articleBody": contentText,
+    };
+
+    // console.log('sch11', schema );
+
+    return {
+        ...metadata,
+        schema,
+    };
+}
+
+export default async function BlogPage({ params }) {
+    const { schema } = await generateMetadata({ params });
     const post = await getPost(params);
 
     const allArticlesResponse = await client.getEntries({ content_type: 'blog' });
@@ -86,6 +195,9 @@ export default async function Page({ params }) {
 
     return (
         <>
+            <Script type="application/ld+json">
+                {JSON.stringify(schema)}
+            </Script>
             <SingleBlogPage 
                 params={post}
                 relatedArticles={relatedArticles}
