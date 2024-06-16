@@ -207,12 +207,13 @@ export default async function ProjectPage({ params }) {
 
     return (
         <>
-            <Script 
-                type="application/ld+json" 
+            <Script
                 id="porfolio-schema"
-            >
-                {JSON.stringify(schema)}
-            </Script>
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(schema),
+                }}
+            />
             <SingleProjectPage 
                 params={page}
             />
