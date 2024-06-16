@@ -11,6 +11,7 @@ export const articlePageCopy = blogContent?.map((content) => {
     const img = fields?.img;
     const blogCopy = fields?.content;
     const system = content?.sys?.id;
+    const seoContent = content?.sys;
     const datePublished = new Date(fields?.datePublished).toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
 
     return {
@@ -30,7 +31,11 @@ export const articlePageCopy = blogContent?.map((content) => {
             height: img.fields.file.details.image.height,
             width: img.fields.file.details.image.width,
         } : null,
-        content
+        content,
+        seoContent: {
+            datePublished: seoContent.createdAt,
+            dateModified: seoContent.updatedAt
+        }
     };
 }) || [];
 
