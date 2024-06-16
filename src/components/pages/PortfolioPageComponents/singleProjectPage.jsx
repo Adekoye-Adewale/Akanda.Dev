@@ -30,7 +30,9 @@ export default function SingleProjectPage({ params }) {
                 mainWorksCopy={mainWorksCopy} 
                 imgList={imgList}
             />
-            <ServicesProvided projectTechnologies={projectTechnologies}/>
+            <ServicesProvided 
+                projectTechnologies={projectTechnologies}
+            />
             <CtaWrap/>
         </main>
     )
