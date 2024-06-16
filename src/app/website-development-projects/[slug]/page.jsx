@@ -1,3 +1,5 @@
+import Script from "next/script";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { notFound } from 'next/navigation';
 import { client } from '@/app/api/contentful';
 import SingleProjectPage from '@/components/pages/PortfolioPageComponents/singleProjectPage';
@@ -8,6 +10,8 @@ export function processWorksContent(content) {
     const system = content?.sys?.id;
     const rawSlug = `${encodeURIComponent(fields?.brandName)}`;
     const projectTechnologies = fields?.projectTechnologies;
+    const datePublished = content?.sys?.createdAt;
+    const lastUpdate = content?.sys?.updatedAt;
     const slug = rawSlug.replace(/%20/g, '-')
                         .replace(/%3A/g, '-') 
                         .replace(/%3F/g, '-')  
@@ -56,6 +60,10 @@ export function processWorksContent(content) {
         },
         imgList: processedImgList,
         projectTechnologies: projectTechnologies,
+        seoContent: {
+            datePublished,
+            lastUpdate,
+        }
     };
 }
 
@@ -79,7 +87,7 @@ export async function getWorks(params) {
         (item) => item.fields.brandName.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase() === slug
     );
 
-    // console.log("PaQway", projects.fields.projectTechnologies);
+    // console.log("PaQway", projects.sys);
 
     if (!projects) {
         notFound();
@@ -89,17 +97,109 @@ export async function getWorks(params) {
     return processWorksContent(projects);
 }
 
-export default async function Page({ params }) {
+function extractTextFromReactComponents(components) {
+    let textContent = '';
+    let skipFirstH2 = true;
+
+    const extractText = (component) => {
+        if (typeof component === 'string') {
+            textContent += component;
+        } else if (Array.isArray(component)) {
+            component.forEach(extractText);
+        } else if (component.props && component.props.children) {
+            if (skipFirstH2 && component.type === 'h2') {
+                skipFirstH2 = false;
+                return;
+            }
+            extractText(component.props.children);
+        }
+    };
+
+    components.forEach(extractText);
+    return textContent;
+}
+
+export async function generateMetadata({ params }) {
+    const work = await getWorks(params);
+
+    if (!work) {
+        return {
+            title: 'Project Not Found',
+            description: 'The requested project page could not be found.',
+        };
+    }
+
+    const { title, summary, slug, img, agency, seoContent, mainDescription } = work;
+    const contentComponents = documentToReactComponents(mainDescription);
+    const contentText = extractTextFromReactComponents(contentComponents);
+    let description = contentText.slice(0, 157);
+    if (contentText.length > 157) {
+        description += '...'; 
+    };
+
+    const metadata = {
+        title,
+        description,
+        alternates: {
+            canonical: `https://akanda.dev${slug?.href}`,
+        },
+        openGraph: {
+            title,
+            description,
+            url: `https://akanda.dev${slug?.href}`,
+            type: 'article',
+            article: {
+                publishedTime: seoContent?.datePublished,
+                modifiedTime: seoContent?.lastUpdate,
+            },
+            images: img ? [
+                {
+                    url: img.src,
+                    alt: img.alt,
+                    width: img.width,
+                    height: img.height,
+                }
+            ] : [],
+        },
+    };
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Project",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://akanda.dev${slug}`,
+            "description": summary,
+        },
+        "headline": title,
+        "image": img ? `https://akanda.dev${img.src}` : undefined,
+        "datePublished": seoContent?.datePublished,
+        "dateModified": seoContent?.lastUpdate,
+        "author": {
+            "@type": "Person",
+            "name": "Adekoye Adewale"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": agency,
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://akanda.netlify.app/_next/image?url=%2Fakanda_dev.png&w=96&q=75" 
+            }
+        },
+        "brand": title,
+        "description": description
+    };
+
+    return {
+        ...metadata,
+        schema,
+    };
+}
+
+export default async function ProjectPage({ params }) {
+    const { schema } = await generateMetadata({ params });
     const page = await getWorks(params);
-
-    // const allProjectsResponse = await client.getEntries({ content_type: 'portfolio' });
-    // const allProjects = allProjectsResponse.items.map(processWorksContent);
-
-    // const relatedProjects = allProjects.filter(
-        //      (content) => content.type === page.type && content.id !== page.id
-        // );
-        
-    // console.log("Pats::", page);
 
     if (!page) {
         return notFound();
@@ -107,6 +207,9 @@ export default async function Page({ params }) {
 
     return (
         <>
+            <Script type="application/ld+json">
+                {JSON.stringify(schema)}
+            </Script>
             <SingleProjectPage 
                 params={page}
             />
