@@ -207,7 +207,10 @@ export default async function ProjectPage({ params }) {
 
     return (
         <>
-            <Script type="application/ld+json">
+            <Script 
+                type="application/ld+json" 
+                id="porfolio-schema"
+            >
                 {JSON.stringify(schema)}
             </Script>
             <SingleProjectPage 

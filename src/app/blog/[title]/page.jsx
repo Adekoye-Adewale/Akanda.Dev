@@ -195,7 +195,10 @@ export default async function BlogPage({ params }) {
 
     return (
         <>
-            <Script type="application/ld+json">
+            <Script 
+                type="application/ld+json" 
+                id="blog-schema"
+            >
                 {JSON.stringify(schema)}
             </Script>
             <SingleBlogPage 
