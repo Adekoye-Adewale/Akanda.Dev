@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Body, Title } from "../text";
 import style from './projectPage.module.css';
+import SecBtn from "../btn/secBtn";
 
 export default function ServicesProvided({ projectTechnologies }) {
     return (
@@ -12,6 +13,12 @@ export default function ServicesProvided({ projectTechnologies }) {
                         <span>{list}</span>
                     </Fragment>
                 ))}
+            </div>
+            <div>
+                <SecBtn 
+                    text={'View more'} 
+                    href={'/website-development-projects'} 
+                />
             </div>
         </section>
     )
