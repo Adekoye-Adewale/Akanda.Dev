@@ -199,7 +199,7 @@ export default async function BlogPage({ params }) {
                 id="blog-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(schema),
+                    __html: JSON.stringify(schema)
                 }}
             />
             <SingleBlogPage 
