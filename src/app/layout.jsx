@@ -58,13 +58,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <Script
+      <Script
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(Home),
         }}
-      /> */}
+      />
       <body>
         <MainLayout/>
           {children}
