@@ -170,8 +170,6 @@ export async function generateMetadata({ params }) {
         "articleBody": contentText,
     };
 
-    // console.log('sch11', schema );
-
     return {
         ...metadata,
         schema,
@@ -179,7 +177,6 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPage({ params }) {
-    const { schema } = await generateMetadata({ params });
     const post = await getPost(params);
 
     const allArticlesResponse = await client.getEntries({ content_type: 'blog' });
@@ -195,15 +192,6 @@ export default async function BlogPage({ params }) {
 
     return (
         <>
-            <head>
-                <Script
-                    id="blog-schema"
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(schema)
-                    }}
-                />
-            </head>
             <SingleBlogPage 
                 params={post}
                 relatedArticles={relatedArticles}
