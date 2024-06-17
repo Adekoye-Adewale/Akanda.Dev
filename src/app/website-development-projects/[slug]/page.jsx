@@ -3,7 +3,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { notFound } from 'next/navigation';
 import { client } from '@/app/api/contentful';
 import SingleProjectPage from '@/components/pages/PortfolioPageComponents/singleProjectPage';
-import Head from "next/head";
 
 export function processWorksContent(content) {
     const fields = content?.fields;
@@ -206,11 +205,9 @@ export default async function ProjectPage({ params }) {
         return notFound();
     }
 
-    console.log(schema)
-
     return (
         <>
-            <Head>
+            <head>
                 <Script
                     id="porfolio-schema"
                     type="application/ld+json"
@@ -218,7 +215,7 @@ export default async function ProjectPage({ params }) {
                         __html: JSON.stringify(schema)
                     }}
                 />
-            </Head>
+            </head>
             <SingleProjectPage 
                 params={page}
             />

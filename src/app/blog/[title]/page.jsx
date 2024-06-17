@@ -195,13 +195,15 @@ export default async function BlogPage({ params }) {
 
     return (
         <>
-            <Script
-                id="blog-schema"
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(schema)
-                }}
-            />
+            <head>
+                <Script
+                    id="blog-schema"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(schema)
+                    }}
+                />
+            </head>
             <SingleBlogPage 
                 params={post}
                 relatedArticles={relatedArticles}
