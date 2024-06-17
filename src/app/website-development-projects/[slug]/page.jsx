@@ -208,7 +208,7 @@ export default async function ProjectPage({ params }) {
     return (
         <>
             <head>
-                <Script
+                <script
                     id="porfolio-schema"
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
