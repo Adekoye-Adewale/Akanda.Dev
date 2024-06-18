@@ -96,6 +96,7 @@
     --btn-color: #000;
     --btn-border: #fff;
     --acd-border: #f7f7f7;
+    --akandaDev: url('/images/akandaDevLight.svg');
   }
   html {
     color-scheme: dark;
@@ -117,6 +118,7 @@
     --btn-color: #fff;
     --btn-border: #000;
     --acd-border: #222;
+    --akandaDev: url('/images/akandaDevDark.png');
   }
   html {
     color-scheme: light;
@@ -493,7 +495,7 @@ body:has(.menu__control) header{
   text-wrap: nowrap;
 }
 body:has(.drag:hover) .cursor{
-  transform: scale(3);
+  transform: scale(5);
   cursor: grabbing;
 }
 body:has(.drag:hover) .cursor__inner::after{
