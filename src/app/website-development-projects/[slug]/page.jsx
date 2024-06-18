@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { notFound } from 'next/navigation';
 import { client } from '@/app/api/contentful';
@@ -198,7 +197,6 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ProjectPage({ params }) {
-    const { schema } = await generateMetadata({ params });
     const page = await getWorks(params);
 
     if (!page) {
@@ -207,15 +205,6 @@ export default async function ProjectPage({ params }) {
 
     return (
         <>
-            <head>
-                <Script
-                    id="porfolio-schema"
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(schema)
-                    }}
-                />
-            </head>
             <SingleProjectPage 
                 params={page}
             />
