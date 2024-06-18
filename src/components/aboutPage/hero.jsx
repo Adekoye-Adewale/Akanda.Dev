@@ -18,7 +18,7 @@ export default function Hero() {
     const opacity = useTransform(scrollYProgress, [0, 0.65, 1], [0, 0, 1]);
     const filter = useTransform(scrollYProgress, [0, 0.6], ["blur(0) brightness(1)", "blur(10px) brightness(0)"]);
     const transform = useTransform(scrollYProgress, [0, 0.35, 1], 
-        ["scale(0.8) translate(0px, 0px)", "scale(1) translate(-15%, 15%)", "scale(50) translate(-15%, 15%)"]);
+        ["scale(0.8) translate(0px, 0px)", "scale(1) translate(-15%, 0%)", "scale(50) translate(-15%, 50%)"]);
 
     return (
         <section className={style.hero} ref={container}>
@@ -26,31 +26,13 @@ export default function Hero() {
                 className={style.hero__sec__one}
                 style={{
                     transform,
-                    // backgroundColor
                 }} 
-                transition={{ 
-                    duration: 0.5, 
+                transition={{  
                     type: "spring", 
                     stiffness: 100, 
                     ease: "easeInOut"
                 }}
             >
-                {/* <h1>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-                </h1>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-                </p> */}
-                {/* <Image 
-                    src={akandaDev} 
-                    alt={"akanda dev image identity"} 
-                    title={"akanda dev image identity"} 
-                    width={774} 
-                    height={130}
-                /> */}
                 <motion.div 
                     style={{
                         filter
@@ -63,8 +45,7 @@ export default function Hero() {
                 style={{
                     opacity
                 }} 
-                transition={{ 
-                    duration: 0.5, 
+                transition={{  
                     type: "spring", 
                     stiffness: 100, 
                     ease: "easeInOut"
