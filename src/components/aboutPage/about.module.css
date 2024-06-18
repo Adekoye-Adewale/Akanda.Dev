@@ -6,19 +6,13 @@
 }
 .hero div{
     position: sticky;
-    top: 50px;
+    top: 50vh;
+    -webkit-translate: 0% -50%;
+    translate: 0% -50%;
 }
 .hero__sec__one{
-    aspect-ratio: 774/130;
-    /* background-color: white; */
-    /* -webkit-mask-image: var(--akandaDev);
-    mask-image: var(--akandaDev);
-    -webkit-mask-position: top center;
-    mask-position: top center;
-    -webkit-mask-size: 100%;
-    mask-size: 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;  */
+    /* aspect-ratio: 774/130; */
+    transform-origin: center;
 }
 .hero__sec__one :is(h1, p){
     opacity: 0;
