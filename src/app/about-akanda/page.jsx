@@ -1,3 +1,4 @@
+import AboutPageComponent from "@/components/aboutPage";
 
 export const metadata = {
     title: "About Akanda Dev",
@@ -9,10 +10,13 @@ export const metadata = {
 export default function AboutPage() {
     
     return (
-        <main className='grid__center full__size'>
-            <h1>
-                About
-            </h1>
+        <main>
+            <AboutPageComponent/>
+            <div className='grid__center full__size'>
+                <h1>
+                    About
+                </h1>
+            </div>
         </main>
     )
 }
