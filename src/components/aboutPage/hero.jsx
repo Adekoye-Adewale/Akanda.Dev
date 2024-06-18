@@ -17,8 +17,8 @@ export default function Hero() {
     const backgroundColor = useTransform(scrollYProgress, [0, 1], ["#ffffff", '#000000']);
     const opacity = useTransform(scrollYProgress, [0, 0.65, 1], [0, 0, 1]);
     const filter = useTransform(scrollYProgress, [0, 0.6], ["blur(0) brightness(1)", "blur(10px) brightness(0)"]);
-    const transform = useTransform(scrollYProgress, [0, 0.5, 1], 
-        ["scale(0.8) translateX(0px)", "scale(1) translateX(-175px)", "scale(50) translateX(-175px)"]);
+    const transform = useTransform(scrollYProgress, [0, 0.35, 1], 
+        ["scale(0.8) translate(0px, 0px)", "scale(1) translate(-15%, 15%)", "scale(50) translate(-15%, 15%)"]);
 
     return (
         <section className={style.hero} ref={container}>
@@ -26,7 +26,7 @@ export default function Hero() {
                 className={style.hero__sec__one}
                 style={{
                     transform,
-                    backgroundColor
+                    // backgroundColor
                 }} 
                 transition={{ 
                     duration: 0.5, 
@@ -35,7 +35,7 @@ export default function Hero() {
                     ease: "easeInOut"
                 }}
             >
-                <h1>
+                {/* <h1>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
                 </h1>
                 <p>
@@ -43,7 +43,7 @@ export default function Hero() {
                 </p>
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-                </p>
+                </p> */}
                 {/* <Image 
                     src={akandaDev} 
                     alt={"akanda dev image identity"} 
