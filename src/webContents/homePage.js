@@ -32,36 +32,40 @@ export const HomeContent = {
     whyAkandaList: [
         {
             title: `High Quality`,
+            text: `Creating websites and applications is my passion, and I am dedicated to doing everything in my power to ensure the entire process aligns with your business objectives.`,
             img: {
-                src: `/images/ai-icon.png`,
-                alt: `ai-icon`,
+                src: `/images/opengraphImage.png`,
+                alt: `High Quality`,
                 height: `512`,
                 width: `512`,
             }
         },
         {
             title: `Quality Assurance`,
+            text: `Creating websites and applications is my passion, and I am dedicated to doing everything in my power to ensure the entire process aligns with your business objectives.`,
             img: {
-                src: `/images/ai-icon.png`,
-                alt: `ai-icon`,
+                src: `/images/opengraphImage.png`,
+                alt: `Quality Assurance`,
                 height: `512`,
                 width: `512`,
             }
         },
         {
             title: `Customer Centric Products`,
+            text: `Creating websites and applications is my passion, and I am dedicated to doing everything in my power to ensure the entire process aligns with your business objectives.`,
             img: {
-                src: `/images/ai-icon.png`,
-                alt: `ai-icon`,
+                src: `/images/opengraphImage.png`,
+                alt: `Customer Centric Products`,
                 height: `512`,
                 width: `512`,
             }
         },
         {
             title: `No Bull-Sh*t`,
+            text: `Creating websites and applications is my passion, and I am dedicated to doing everything in my power to ensure the entire process aligns with your business objectives.`,
             img: {
-                src: `/images/ai-icon.png`,
-                alt: `ai-icon`,
+                src: `/images/opengraphImage.png`,
+                alt: `No Bull-Sh*t`,
                 height: `512`,
                 width: `512`,
             }
