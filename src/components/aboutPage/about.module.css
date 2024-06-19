@@ -4,7 +4,7 @@
     overflow: clip;
     /* background-image: var(--akandaDev); */
 }
-.hero div{
+.hero__inner__sec{
     position: sticky;
     top: 50vh;
     -webkit-translate: 0% -50%;
@@ -25,9 +25,9 @@
     object-position: center;
 }
 .hero__logo{
-    position: absolute !important;
+    /* position: absolute !important;
     top: 0 !important;
-    inset: 0;
+    inset: 0; */
     aspect-ratio: 774/130;
     object-fit: cover;
     object-position: center center;
