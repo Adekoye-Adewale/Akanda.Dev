@@ -4,6 +4,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import Image from 'next/image'
 import style from './about.module.css'
 import akandaDev from '../../../public/images/akandaDevDark.svg'
+import HeroSecTwo from './heroSecTwo';
 
 export default function Hero() {
     
@@ -23,7 +24,7 @@ export default function Hero() {
     return (
         <section className={style.hero} ref={container}>
             <motion.div
-                className={style.hero__sec__one}
+                className={`${style.hero__inner__sec} ${style.hero__sec__one}`}
                 style={{
                     transform,
                 }} 
@@ -42,6 +43,7 @@ export default function Hero() {
                 </motion.div>
             </motion.div>
             <motion.div
+                className={`${style.hero__inner__sec} ${style.hero__two__sec}`}
                 style={{
                     opacity
                 }} 
@@ -51,12 +53,13 @@ export default function Hero() {
                     ease: "easeInOut"
                 }}
             >
-                <h1>
+                {/* <h1>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
                 </h1>
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-                </p>
+                </p> */}
+                <HeroSecTwo/>
             </motion.div>
         </section>
     )
