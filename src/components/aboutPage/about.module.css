@@ -35,3 +35,8 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.hero__two__sec__wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+}
