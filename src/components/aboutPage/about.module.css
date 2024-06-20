@@ -1,10 +1,15 @@
 .hero{
     width: 100%;
-    height: 150vh;
+    height: 200vh;
     overflow: clip;
+    padding: 50px 3.125%;
     /* background-image: var(--akandaDev); */
 }
 .hero__inner__sec{
+    position: sticky;
+    top: 50px;
+}
+.hero__inner__sec:first-child{
     position: sticky;
     top: 50vh;
     -webkit-translate: 0% -50%;
@@ -35,8 +40,31 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.hero__two__sec{
+    padding-top: 50px;
+}
 .hero__two__sec__wrapper{
     display: grid;
-    grid-template-columns: auto auto;
     position: relative;
+}
+.list__wrap{
+    display: grid;
+    grid-template-columns: calc( 50% - 60px ) auto;
+    gap: 60px;
+    align-items: center;
+}
+.list__copy__wrapper{
+    display: grid;
+    gap: 20px;
+}
+.list__copy__wrap{
+    cursor: pointer;
+    border-bottom: solid 1px var(--acd-border);
+    overflow: hidden;
+}
+.list__copy__wrap h3{
+    margin-bottom: 10px;
+}
+.list__body{
+    overflow: hidden;
 }
