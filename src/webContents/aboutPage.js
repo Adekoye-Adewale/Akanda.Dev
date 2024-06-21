@@ -13,6 +13,7 @@ export const Akanda = {
             title: `Akanda.Dev is always ready to develop your idea`,
             width: `1000`,
             height: `616`,
-        }
+        },
+        subTitle: `Specializing in creating exceptional digital experiences, Adekoye Adewale is the top pick for all of your website design and development needs.`,
     }
 }
