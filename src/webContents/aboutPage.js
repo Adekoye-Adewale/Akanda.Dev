@@ -5,4 +5,14 @@ export const Akanda = {
     quote: `Driven by a desire for excellence, I go above and beyond to ensure that each project I undertake exceeds expectations. From meticulous attention to detail to staying abreast of the latest industry trends, I pride myself on delivering results that truly make a difference for my clients.`,
     secTwoTitle: `Akanda.Dev is always ready to develop your idea`,
     secTwoBody: `For every website and application, Akanda combines a creative approach with an understanding of the industry on a business level. He implements tailor-made technology solutions in every project to fulfill each client's business goals.`,
+    alwaysReady: {
+        title: `Akanda.Dev is always ready to develop your idea`,
+        img: {
+            src: `/images/Akanda-dev-is-always-ready-to-develop-your-idea.png`,
+            alt: `Akanda.Dev is always ready to develop your idea`,
+            title: `Akanda.Dev is always ready to develop your idea`,
+            width: `1000`,
+            height: `616`,
+        }
+    }
 }
