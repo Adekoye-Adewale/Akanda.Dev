@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Body, SubTitle } from '../text';
 import { HomeContent } from '@/webContents/homePage';
@@ -11,6 +11,18 @@ export default function HeroSecTwo() {
     const whyAkandaList = HomeContent.whyAkandaList;
     const [hoverTab, setHoverTab] = useState(whyAkandaList[0]);
     const [hoveredIndex, setHoveredIndex] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const variant = isMobile ? tabCopy.mobile : tabCopy.desktop;
 
     const handleMouseEnter = (list, index) => {
         setHoverTab(list);
@@ -52,7 +64,7 @@ export default function HeroSecTwo() {
                             <SubTitle subTitle={list.title} />
                             <motion.div
                                 className={style.list__body}
-                                variants={tabCopy}
+                                variants={variant}
                                 initial="initial"
                                 animate={hoveredIndex === index ? "enter" : "initial"}
                                 exit="exit"
