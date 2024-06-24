@@ -1,7 +1,6 @@
 'use client'
-import { useRef} from 'react'
+import { useRef } from 'react'
 import { useScroll, useTransform, motion } from "framer-motion";
-import Image from 'next/image'
 import style from './about.module.css'
 import akandaDev from '../../../public/images/akandaDevDark.svg'
 import HeroSecTwo from './heroSecTwo';
