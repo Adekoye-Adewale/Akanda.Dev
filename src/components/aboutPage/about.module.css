@@ -16,7 +16,6 @@
     translate: 0% -50%;
 }
 .hero__sec__one{
-    /* aspect-ratio: 774/130; */
     transform-origin: center;
 }
 .hero__sec__one :is(h1, p){
@@ -30,9 +29,6 @@
     object-position: center;
 }
 .hero__logo{
-    /* position: absolute !important;
-    top: 0 !important;
-    inset: 0; */
     aspect-ratio: 774/130;
     object-fit: cover;
     object-position: center center;
@@ -69,6 +65,9 @@
     overflow: hidden;
 }
 @media (max-width: 1070px){
+    .hero__sec__one{
+        transform-origin: bottom;
+    }
     .list__wrap{
         grid-template-columns: calc( 50% - 20px ) auto;
         gap: 20px;
