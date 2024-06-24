@@ -12,11 +12,11 @@ export default function AboutPage() {
     return (
         <main>
             <AboutPageComponent/>
-            <div className='grid__center full__size'>
+            {/* <div className='grid__center full__size'>
                 <h1>
                     About
                 </h1>
-            </div>
+            </div> */}
         </main>
     )
 }
