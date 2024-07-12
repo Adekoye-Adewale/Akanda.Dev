@@ -1,9 +1,12 @@
 import TabContent from "@/components/tab/tabContent";
+import Image from "next/image";
+
 export const Tabs = [
     {
         title: 'tab1',
         label: 'Web Development',
         component: ({ img, text, link }) => <TabContent img={img} text={text} link={link} />,
+        comp: ({ img }) => <Image {...img}/>,
         img: {
             src: `/images/web-development.webp`,
             alt: `Web Development`,
@@ -22,6 +25,7 @@ export const Tabs = [
         title: 'tab2',
         label: 'E-Commerce',
         component: ({ img, text, link }) => <TabContent img={img} text={text} link={link} />,
+        comp: ({ img }) => <Image {...img}/>,
         img: {
             src: `/images/e-commerce.webp`,
             alt: `E-Commerce`,
@@ -40,6 +44,7 @@ export const Tabs = [
         title: 'tab3',
         label: 'Search Engine Optimization',
         component: ({ img, text, link }) => <TabContent img={img} text={text} link={link} />,
+        comp: ({ img }) => <Image {...img}/>,
         img: {
             src: `/images/search-engine-optimization.webp`,
             alt: `Search Engine Optimization`,
@@ -58,6 +63,7 @@ export const Tabs = [
         title: 'tab4',
         label: 'Web Analytics and User Tracking',
         component: ({ img, text, link }) => <TabContent img={img} text={text} link={link} />,
+        comp: ({ img }) => <Image {...img}/>,
         img: {
             src: `/images/web-analytics-and-user-tracking.webp`,
             alt: `Web Analytics and User Tracking`,
