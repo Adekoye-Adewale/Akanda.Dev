@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Body, SubTitle } from '../text';
-import { HomeContent } from '@/webContents/homePage';
 import { tabCopy } from './anim';
 import style from './about.module.css';
+import { Tabs } from '@/webContents/skills';
 
 export default function HeroSecTwo() {
 
-    const whyAkandaList = HomeContent.whyAkandaList;
+    const whyAkandaList = Tabs;
     const [hoverTab, setHoverTab] = useState(whyAkandaList[0]);
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
@@ -44,7 +44,7 @@ export default function HeroSecTwo() {
                 <div 
                     className={style.list__img__wrap}
                 >
-                    {hoverTab && hoverTab.component(
+                    {hoverTab && hoverTab.comp(
                         { 
                             img: hoverTab.img,
                         })
@@ -61,7 +61,7 @@ export default function HeroSecTwo() {
                             onMouseLeave={handleMouseLeave}
                             whileHover="enter"
                         >
-                            <SubTitle subTitle={list.title} />
+                            <SubTitle subTitle={list.label} />
                             <motion.div
                                 className={style.list__body}
                                 variants={variant}
