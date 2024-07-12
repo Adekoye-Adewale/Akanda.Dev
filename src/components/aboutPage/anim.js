@@ -6,7 +6,7 @@ export const tabCopy = {
             y: 10,
         },
         enter: {
-            height: 90,
+            height: 220,
             opacity: 1,
             y: 0,
             transition: {
@@ -46,7 +46,7 @@ export const tabCopy = {
             y: 10,
         },
         enter: {
-            height: 150,
+            height: 200,
             opacity: 1,
             y: 0,
             transition: {
