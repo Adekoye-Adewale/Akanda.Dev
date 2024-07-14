@@ -17,3 +17,29 @@ export const Akanda = {
         subTitle: `Specializing in creating exceptional digital experiences, Adekoye Adewale is the top pick for all of your website design and development needs.`,
     }
 }
+
+export const Hobby = {
+    title: `Akanda Likes a Few things outside solving your problems.`,
+    interest: [
+        {
+            label: `Gaming`,
+            body: `E Football, Fifa, Fortnite, Football Manager, Candy Crush, and GTA`,
+        },
+        {
+            label: `Music`,
+            body: `HipHop, AfroBeats, Salsa, RnB, and Reggae`,
+        },
+        {
+            label: `Movie`,
+            body: `Crime Thriller, Mystery, SuperHeros, Actions, War, Prison Beak is the greatess Tv show of all time`,
+        },
+        {
+            label: `Surfing the internet`,
+            body: `Twitter, Reading Blogs, YouTube is Home`,
+        },
+        {
+            label: `Being Alone😎`,
+            body: `Best Friend with Everyone Regardless`,
+        },
+    ]
+}
