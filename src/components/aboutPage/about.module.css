@@ -92,16 +92,48 @@
 .intro__sec__sub__title{
     max-width: 66%;
 }
+.interest__tabs__wrapper{
+    margin-block: 20px;
+}
 .interest__tab__wrap{
+    position: relative;
     overflow: hidden;
-    height: 30px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    justify-items: self-end;
+    align-items: center;
+    padding: 20px 10px;
+    cursor: pointer;
+    transition: background-color 250ms ease-in-out;
 }
-.interest__tab__wrap:hover{
-    height: fit-content;
+.interest__tab__wrap:not(:last-child){
+    border-bottom: solid 2px var(--acd-border);
 }
-.interest__tab__wrap p{
-    opacity: 0;
-    transition: opacity 450ms ease-in-out 50ms;
+.interest__tab__wrap span{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 5%;
+    height: 0px;
+    border-radius: 500px;
+    background-color: var(--acd-border);
+    transition: all 550ms ease-in-out;
+}
+.interest__tab__wrap:hover span{
+    bottom: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 300px;
+    border-radius: 0px;
+}
+.interest__tab__wrap:hover :is(p, h3){
+    color: var(--btn-color);
+    z-index: 1;
+}
+.interest__tab__wrap :is(p, h3){
+    transition: color 450ms ease-in-out 100ms;
 }
 .interest__tab__wrap:hover p{
     opacity: 1;
