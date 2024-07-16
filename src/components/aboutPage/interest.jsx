@@ -16,7 +16,7 @@ export default function Interest() {
 
 const Tabs = () => {
     return (
-        <div  className={style.interest__tab__wrap}>
+        <div  className={style.interest__tabs__wrapper}>
             {Hobby.interest.map( ( items, i ) => (
                 <Tab
                     key={i}
@@ -31,6 +31,7 @@ const Tabs = () => {
 const Tab = ({ label, body }) => {
     return (
         <div className={style.interest__tab__wrap}>
+            <span></span>
             <SubTitle 
                 subTitle={label}
             />
