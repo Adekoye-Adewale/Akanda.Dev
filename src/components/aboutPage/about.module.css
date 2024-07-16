@@ -46,9 +46,6 @@
     position: relative;
     display: grid;
 }
-.list__copy__wrapper{
-    
-}
 .list__copy__wrap{
     display: grid;
     gap: 10px 20px;
@@ -80,13 +77,11 @@
     padding: 50px 3.125%;
 }
 .intro__sec__title{
-    /* max-width: 1050px; */
     max-width: 35%;
     text-transform: capitalize;
 }
 .intro__sec__img{
     max-width: 800px;
-    /* height: 550px; */
     aspect-ratio: 100/55;
     object-fit: cover;
     overflow: hidden;
@@ -157,9 +152,6 @@
 @media (max-width: 1070px){
     .hero__sec__one{
         transform-origin: bottom;
-    }
-    .list__wrap{
-        
     }
     .list__img__wrap img{
         aspect-ratio: 500/334;
