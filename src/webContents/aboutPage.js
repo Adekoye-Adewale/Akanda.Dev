@@ -22,20 +22,24 @@ export const Hobby = {
     title: `Akanda Likes a Few things outside solving your problems.`,
     interest: [
         {
-            label: `Gaming`,
+            label: `Gaming🎮`,
             body: `E Football, Fifa, Fortnite, Football Manager, Candy Crush, and GTA`,
         },
         {
-            label: `Music`,
+            label: `Music🎶`,
             body: `HipHop, AfroBeats, Salsa, RnB, and Reggae`,
         },
         {
-            label: `Movie`,
+            label: `Movie🍿`,
             body: `Crime Thriller, Mystery, SuperHeros, Actions, War, Prison Beak is the greatess Tv show of all time`,
         },
         {
-            label: `Surfing the internet`,
+            label: `Surfing the internet🧑🏾‍💻`,
             body: `Twitter, Reading Blogs, YouTube is Home`,
+        },
+        {
+            label: `Sport`,
+            body: `Manchester United because my blood is RED🩸`,
         },
         {
             label: `Being Alone😎`,
