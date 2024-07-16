@@ -6,7 +6,7 @@ import style from './about.module.css'
 export default function Interest() {
     return (
         <section className={style.intro__sec}>
-            <div>
+            <div className={style.hobby__title}>
                 <Title title={Hobby.title}/>
             </div>
             <Tabs/>

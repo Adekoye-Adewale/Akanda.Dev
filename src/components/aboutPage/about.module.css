@@ -43,22 +43,35 @@
     position: relative;
 }
 .list__wrap{
+    position: relative;
     display: grid;
-    grid-template-columns: calc( 50% - 60px ) auto;
-    gap: 60px;
-    align-items: center;
 }
 .list__copy__wrapper{
-    display: grid;
-    gap: 20px;
+    
 }
 .list__copy__wrap{
+    display: grid;
+    gap: 10px 20px;
+    grid-template-columns: 300px 1fr;
+    padding-block: 20px;
     cursor: pointer;
-    border-bottom: solid 1px var(--acd-border);
     overflow: hidden;
 }
-.list__copy__wrap h3{
-    margin-bottom: 10px;
+.list__copy__wrap:not(:last-child){
+    border-bottom: solid 2px var(--acd-border);
+}
+.list__img__wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% ) scale(0) rotate(0.2turn);
+    transition: all 550ms ease-in-out;
+}
+.list__copy__wrap:hover .list__img__wrap{
+    transform: translate( -50%, -50% ) scale(1) rotate(calc(var(--r) * 350deg + 2.03turn));
+}
+.list__copy__wrap p{
+    text-align: right;
 }
 .list__body{
     overflow: hidden;
@@ -92,6 +105,9 @@
 .intro__sec__sub__title{
     max-width: 66%;
 }
+.hobby__title{
+    max-width: 680px;
+}
 .interest__tabs__wrapper{
     margin-block: 20px;
 }
@@ -99,9 +115,8 @@
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2rem;
-    justify-items: self-end;
+    grid-template-columns: 300px 1fr;
+    gap: 1rem 2rem;
     align-items: center;
     padding: 20px 10px;
     cursor: pointer;
@@ -135,23 +150,31 @@
 .interest__tab__wrap :is(p, h3){
     transition: color 450ms ease-in-out 100ms;
 }
-.interest__tab__wrap:hover p{
-    opacity: 1;
+.interest__tab__wrap p{
+    justify-self: flex-end;
+    text-align: right;
 }
 @media (max-width: 1070px){
     .hero__sec__one{
         transform-origin: bottom;
     }
     .list__wrap{
-        grid-template-columns: calc( 50% - 20px ) auto;
-        gap: 20px;
-        align-items: flex-start;
+        
     }
     .list__img__wrap img{
-        aspect-ratio: 500/650;
+        aspect-ratio: 500/334;
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+@media (max-width: 767px) {
+    .interest__tab__wrap{
+        grid-template-columns: auto;
+    }
+    .list__copy__wrap{
+        grid-template-columns: 1fr;
+        padding-block: 20px;
     }
 }
 @media (max-width: 500px){

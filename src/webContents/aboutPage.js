@@ -19,7 +19,7 @@ export const Akanda = {
 }
 
 export const Hobby = {
-    title: `Akanda Likes a Few things outside solving your problems.`,
+    title: `Akanda Likes a Few Things Outside Solving Your Problems.`,
     interest: [
         {
             label: `Gaming🎮`,
@@ -38,7 +38,7 @@ export const Hobby = {
             body: `Twitter, Reading Blogs, YouTube is Home`,
         },
         {
-            label: `Sport`,
+            label: `Sport🏐`,
             body: `Manchester United because my blood is RED🩸`,
         },
         {
