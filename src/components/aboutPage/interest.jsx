@@ -16,7 +16,7 @@ export default function Interest() {
 
 const Tabs = () => {
     return (
-        <div>
+        <div  className={style.interest__tab__wrap}>
             {Hobby.interest.map( ( items, i ) => (
                 <Tab
                     key={i}
