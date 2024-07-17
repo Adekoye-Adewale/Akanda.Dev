@@ -380,7 +380,9 @@ body:has(.menu__control) header{
   bottom: 0;
   left: 0;
   padding: 20px 3.125%;
+  overflow: hidden;
   mix-blend-mode: difference;
+  background-color: red;
 }
 /* CONTACT PAGE */
 .hello::after{
