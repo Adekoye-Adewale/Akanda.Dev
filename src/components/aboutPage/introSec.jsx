@@ -21,9 +21,13 @@ export default function IntroSec() {
         <section 
             className={style.intro__sec}
         >
-            <div className={style.intro__sec__title}>
+            <motion.div 
+                className={style.intro__sec__title}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+            >
                 <Heading head={intro.title}/>
-            </div>
+            </motion.div>
             <div ref={container} className={style.intro__sec__img}>
                 <motion.div 
                     style={{
