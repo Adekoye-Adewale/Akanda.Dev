@@ -150,6 +150,9 @@
         height: fit-content;
         /* overflow: hidden; */
     }
+    .foot__cards_wrap li:hover .left{
+        transform: translateY(0px);
+    }
     .foot__cards_wrap hr:not(:last-child){
         display: block;
         margin: 0;
