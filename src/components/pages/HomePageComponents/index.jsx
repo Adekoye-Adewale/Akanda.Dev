@@ -54,9 +54,7 @@ export default function HomePage() {
                 </div>
                 <Accordion Content={FAQ}/>
             </SectionRotate>
-            <div className={`sec__foot`}>
-                <SectionFoot/>
-            </div>
+            <SectionFoot/>
             <CtaWrap/>
         </main>
     )
