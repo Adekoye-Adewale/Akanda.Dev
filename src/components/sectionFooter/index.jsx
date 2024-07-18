@@ -14,14 +14,11 @@ export default function SectionFoot() {
         offset: ["end 99.5%", "end 90%"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], [ 0, -180], { ease: circInOut });
+    const y = useTransform(scrollYProgress, [0, 0.5], [ 0, -20]);
     const opacity = useTransform(scrollYProgress, [0, 0.6], [ 1, 0], { ease: circInOut });
-    const maxHeight = useTransform(scrollYProgress, [0, 1], [ 80, 0]);
+    const maxHeight = useTransform(scrollYProgress, [0, 1], [ 80, 0], { ease: circInOut });
     const paddingBottom = useTransform(scrollYProgress, [0, 1], [ 20, 0]);
     const paddingTop = useTransform(scrollYProgress, [0, 1], [ 20, 0]);
-
-    console.log('=============', opacity);
-    console.log('+++++++++++++', scrollYProgress);
 
     return (
         <motion.div 
@@ -41,6 +38,7 @@ export default function SectionFoot() {
                     href={'https://mobile.twitter.com/__akanda__'} 
                     target={'_blank'}
                     title={'Twitter Link'}
+                    className={`${style.handle}`}
                 >
                     @__akanda__
                 </Link>
@@ -50,6 +48,7 @@ export default function SectionFoot() {
                     opacity,
                     y
                 }}
+                className={`${style.copy}`}
             >
                 <Body 
                     text={"A Creative & Problem Solving Software Engineer From Nigeria"}
@@ -59,6 +58,7 @@ export default function SectionFoot() {
                 style={{
                     opacity, y
                 }}
+                className={`${style.github}`}
             >
                 <Link 
                     href={''} 
