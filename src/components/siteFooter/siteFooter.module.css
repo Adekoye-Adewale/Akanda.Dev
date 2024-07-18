@@ -148,7 +148,6 @@
     .foot__cards_wrap li{
         max-width: 100%;
         height: fit-content;
-        /* overflow: hidden; */
     }
     .foot__cards_wrap li:hover .left{
         transform: translateY(0px);
@@ -164,14 +163,16 @@
         row-gap: 10px;
     }
     .link__pri__text{
-        opacity: 1;
         font-size: 1rem;
     }
     .link__sec__text{
         font-size: 1.8rem;
     }
-    .link__pri__text:last-child{
+    .foot__cards_wrap li:hover .link__pri__text:first-child, 
+    .link__pri__text:last-child, .link__pri__text{
         opacity: 1;
+    }
+    .link__pri__text:last-child{
         text-wrap: balance;
     }
     .right, .svg__wrap{
