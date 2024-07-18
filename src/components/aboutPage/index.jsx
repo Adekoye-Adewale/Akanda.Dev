@@ -11,9 +11,7 @@ export default function AboutPageComponent() {
             <Hero/>
             <IntroSec/>
             <Interest/>
-            {/* <div className={`sec__foot`}> */}
-                <SectionFoot/>
-            {/* </div>             */}
+            <SectionFoot/>
             <CtaWrap/>
         </>
     )
