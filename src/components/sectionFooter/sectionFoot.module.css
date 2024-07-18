@@ -8,14 +8,17 @@
 .wrap :is(a, p){
     font-size: 0.8rem;
 }
-.wrap>p{
+.copy{
     text-align: center;
     text-wrap: balance;
 }
-.wrap>a:last-child{
+.github{
+    display: flex;
+}
+.github a{
     max-width: 230px;
     text-align: right;
-    justify-self: flex-end;
+    margin-left: auto;
     text-wrap: balance;
 }
 @media (prefers-color-scheme: light) {
