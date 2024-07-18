@@ -382,7 +382,6 @@ body:has(.menu__control) header{
   padding: 20px 3.125%;
   overflow: hidden;
   mix-blend-mode: difference;
-  background-color: red;
 }
 /* CONTACT PAGE */
 .hello::after{
@@ -502,5 +501,4 @@ body:has(.drag:hover) .cursor{
 }
 body:has(.drag:hover) .cursor__inner::after{
  content: 'Drag Me';
- /* transform: scale(0.5); */
 }
