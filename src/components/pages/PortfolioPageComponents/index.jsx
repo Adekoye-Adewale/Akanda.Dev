@@ -16,9 +16,7 @@ export default function PortfolioContents() {
             <SectionRotate>
                 <PortfolioLists/>
             </SectionRotate>
-            <div className={`sec__foot`}>
-                <SectionFoot/>
-            </div>
+            <SectionFoot/>
             <CtaWrap/>
         </main>
     )
