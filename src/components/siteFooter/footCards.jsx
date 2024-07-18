@@ -16,17 +16,20 @@ export function Cards() {
     return (
         <ul>
             {FootCard.map(( card, index ) => (
-                <li key={index}>
-                    <Link
-                        href={card.link}
-                    >
-                        <Card 
-                            pri={card.pri} 
-                            sec={card.sec} 
-                            desc={card.desc}
-                        />
-                    </Link>
-                </li>
+                <>
+                    <li key={index}>
+                        <Link
+                            href={card.link}
+                        >
+                            <Card 
+                                pri={card.pri} 
+                                sec={card.sec} 
+                                desc={card.desc}
+                            />
+                        </Link>
+                    </li>
+                    <hr />
+                </>
             ))}
         </ul>
     )
