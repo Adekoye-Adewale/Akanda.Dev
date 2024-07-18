@@ -175,7 +175,9 @@
     .link__pri__text:last-child{
         text-wrap: balance;
     }
-    .right, .svg__wrap{
+    .right, 
+    .svg__wrap, 
+    .foot__cards_wrap li:hover .svg__wrap{
         height: 100%;
     }
 }
