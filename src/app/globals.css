@@ -83,6 +83,9 @@
   color: var(--purple-200);
   background-color: var(--gold-800);
 }
+::-webkit-scrollbar {
+  width: 0px;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: hsl(247°, 0%, 9%);
