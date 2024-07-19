@@ -17,11 +17,20 @@ export default function ContactPageContent() {
     }) 
     return (
         <>
-            <div ref={container} className={styles.scroll__ani}>
-                <HeroSection scrollYProgress={scrollYProgress}/>
-                <SecTwo scrollYProgress={scrollYProgress}/>
+            <div 
+                ref={container} 
+                className={styles.scroll__ani}
+            >
+                <HeroSection 
+                    scrollYProgress={scrollYProgress}
+                />
+                <SecTwo 
+                    scrollYProgress={scrollYProgress}
+                />
             </div>
-            <SectionRotate className={`${styles.cta__sec} grid__center full__screen`}>
+            <SectionRotate 
+                className={`${styles.cta__sec} grid__center full__screen`}
+            >
                 <ContactCTA/>
             </SectionRotate>
         </>
@@ -31,11 +40,10 @@ export default function ContactPageContent() {
 const HeroSection = ({scrollYProgress}) => {
 
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
     return (
         <motion.section 
-            style={{scale, rotate}} 
+            style={{scale}} 
             transition={{ 
                 duration: 0.5, 
                 type: "spring", 
@@ -53,12 +61,17 @@ const SecTwo = ({scrollYProgress}) => {
 
     const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
-    const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
     const backgroundColor = useTransform(scrollYProgress, [0, 1], ['#171717', '#000000']);
 
     return (
         <motion.section 
-            style={{scale, rotate, opacity, backgroundColor}} 
+            style={
+                {
+                    scale, 
+                    opacity, 
+                    backgroundColor
+                }
+            } 
             className={`${styles.scroll__sec} inline__pad`}
         >
             <ContactInfo/>
