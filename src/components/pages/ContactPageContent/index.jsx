@@ -11,10 +11,10 @@ export default function ContactPageContent() {
     
     const container = useRef();
     const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"]
-
+        target: container,
+        offset: ["start start", "end end"]
     }) 
+    
     return (
         <>
             <div 
@@ -40,10 +40,11 @@ export default function ContactPageContent() {
 const HeroSection = ({scrollYProgress}) => {
 
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
         <motion.section 
-            style={{scale}} 
+            style={{scale, opacity}} 
             transition={{ 
                 duration: 0.5, 
                 type: "spring", 
