@@ -5,9 +5,6 @@ export const client = Contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
 });
 
-// const response = await client.getEntry(process.env.ENTRY_ID);
-// export const articleContents = await client.getEntries({content_type: 'blog',});
-
 export const fetchContent = async () => {
     try {
         const response = await client.getEntry(process.env.ENTRY_ID);
