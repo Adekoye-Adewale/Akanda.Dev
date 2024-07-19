@@ -6,7 +6,9 @@ import styles from './contactPageContent.module.css'
 
 export default function Hero() {
     return (
-        <div className={`${styles.hero__wrapper} grid__center full__screen`}>
+        <div 
+            className={`${styles.hero__wrapper} grid__center full__screen`}
+        >
             <Heading head={ContactPageCopy.hero}/>
             <PriBtn text={'Arrange a meeting'} href={'/'}/>
         </div>
