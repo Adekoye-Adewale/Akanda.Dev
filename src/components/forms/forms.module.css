@@ -1,0 +1,118 @@
+.contact__form{
+    color: #000;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--preloader-bg);
+}
+.form__group{
+    margin-bottom: 20px;
+}
+.contact__form label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.contact__form :is(input[type="text"], 
+input[type="email"], 
+input[type="number"], 
+input[type="tel"], 
+select, textarea) {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--bg-hexa);
+    border-radius: 6px;
+}
+.contact__form input[type="radio"]{
+    width: 15px;
+    aspect-ratio: 1;
+    background: var(--color-600) content-box;
+    border: solid 2px var(--color-600);
+    border-radius: 4px;
+    margin: 0px;
+    margin-right: 8px;
+    appearance: none;
+    /* transition: all 350ms ease-in-out; */
+
+}
+.contact__form input[type="radio"]:checked{
+    background: var(--gold-700) content-box;
+    border: solid 2px var(--gold-700);
+    padding: 2px;
+}
+.contact__form textarea{
+    height: 120px;  
+}
+.contact__form option{
+    margin-bottom: 10px;
+}
+.contact__form  :is(textarea, select, input){
+    font-family: var(--body-font-400);
+    font-size: 0.8rem;
+    color: var(--bg-hexa);
+    background-color: transparent;
+    transition: all 250ms ease-in-out;
+}
+.contact__form  :is(textarea, input):focus{
+    color: var(--purple-700);
+    background-color: var(--color-400);
+    outline: none;
+}
+.contact__form button{
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 350ms ease-in-out;
+}
+.contact__form button:disabled {
+    background-color: #ccc;
+    color: #222;
+    cursor: not-allowed;
+}
+.error{
+    color: red;
+    font-size: 0.8rem;
+}
+.form__btns{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.next__btn{    
+    padding: 0.6rem 2.2rem;
+    color: var(--bg-hexa);
+    background-color: transparent;  
+    border: solid 2px var(--bg-hexa);
+}
+.next__btn:hover{
+    color: var(--preloader-bg);
+    background-color: var(--bg-hexa);
+    border-color: var(--bg-hexa);
+}
+.step1__btn{
+    margin-left: auto;
+}
+.prev__btn{
+    text-decoration: underline;
+    padding: 0px;
+    color: var(--bg-hexa);
+    background-color: transparent;
+    border: solid 2px transparent;
+}
+.submit__btn{
+    padding: 0.6rem 2.2rem;
+    color: var(--preloader-bg);
+    background-color: var(--bg-hexa);
+    border-color: var(--bg-hexa);
+    border: solid 2px var(--bg-hexa);
+}
+.submit__btn:hover{
+    color: var(--bg-hexa);
+    background-color: transparent; 
+}
+.success__message{
+    padding: 10px 25px;
+    color: var(--purple-100);
+    background-color: var(--gold-700);
+}
