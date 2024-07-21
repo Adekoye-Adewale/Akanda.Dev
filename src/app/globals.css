@@ -456,6 +456,17 @@ body:has(.menu__control) header{
       content: '👋🏾';
   }
 }
+.react-datepicker__time-container 
+.react-datepicker__time 
+.react-datepicker__time-box 
+ul.react-datepicker__time-list::-webkit-scrollbar{
+  width: 7px;
+  background-color: var(--color-700);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-300); 
+  border-radius: 10px;
+}
 .react-datepicker__time-list-item[aria-disabled="true"]{
   display: none;
 }
