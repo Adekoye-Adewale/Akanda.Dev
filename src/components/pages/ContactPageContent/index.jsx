@@ -6,6 +6,7 @@ import ContactInfo from '@/components/contactInfo'
 import ContactCTA from '@/components/contactCTASec'
 import styles from './contactPageContent.module.css'
 import SectionRotate from '@/components/util/sectionRotate'
+import { ContactForm } from '@/components/forms'
 
 export default function ContactPageContent() {
     
@@ -33,6 +34,7 @@ export default function ContactPageContent() {
             >
                 <ContactCTA/>
             </SectionRotate>
+            <ContactForm/>
         </>
     )
 }
