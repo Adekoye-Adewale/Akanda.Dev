@@ -456,6 +456,9 @@ body:has(.menu__control) header{
       content: '👋🏾';
   }
 }
+.react-datepicker__time-list-item[aria-disabled="true"]{
+  display: none;
+}
 /* Mobile */
 @media (max-width: 768px){
   button, p{
