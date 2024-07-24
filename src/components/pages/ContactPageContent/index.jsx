@@ -6,7 +6,7 @@ import ContactInfo from '@/components/contactInfo'
 import ContactCTA from '@/components/contactCTASec'
 import styles from './contactPageContent.module.css'
 import SectionRotate from '@/components/util/sectionRotate'
-import { ContactForm } from '@/components/forms'
+import BtnWithForm from '@/components/btn/btnWithForm'
 
 export default function ContactPageContent() {
     
@@ -34,7 +34,11 @@ export default function ContactPageContent() {
             >
                 <ContactCTA/>
             </SectionRotate>
-            <ContactForm/>
+            <div className='grid---center'>
+                <BtnWithForm 
+                    text={`Click Me`}
+                />
+            </div>
         </>
     )
 }
