@@ -2,7 +2,7 @@
     position: relative;
     padding: 100px 3.125%;
     display: grid;
-    grid-template-columns: 1fr fit-content(450px);
+    grid-template-columns: 1fr fit-content(600px);
     justify-content: space-between;
     gap: 5%;
     background-color: var(--bg-hexa);
