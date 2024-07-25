@@ -7,7 +7,7 @@ import styles from './contactPageContent.module.css'
 export default function Hero() {
     return (
         <div 
-            className={`${styles.hero__wrapper} grid__center full__screen`}
+            className={`${styles.hero__wrapper} grid__center`}
         >
             <Heading 
                 head={ContactPageCopy.hero}
