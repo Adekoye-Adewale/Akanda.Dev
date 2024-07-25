@@ -386,6 +386,9 @@ body:has(.menu__control) header{
   overflow: hidden;
   mix-blend-mode: difference;
 }
+.cta__wrap__button .main__wrap {
+  justify-items: flex-end;
+}
 /* CONTACT PAGE */
 .hello::after{
   content: '👋🏾';
@@ -455,6 +458,12 @@ body:has(.menu__control) header{
   100%{
       content: '👋🏾';
   }
+}
+.react-datepicker-wrapper.react-datepicker-wrapper{
+  display: block;
+}
+h2.react-datepicker__current-month{
+  font-size: 1rem !important;
 }
 .react-datepicker__time-container 
 .react-datepicker__time 
