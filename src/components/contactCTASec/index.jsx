@@ -1,13 +1,21 @@
 import { ContactCTACopy } from "@/webContents/contactPageCopy";
-import PopUpBtn from "../btn/popUpBtn";
 import { Body, Title } from "../text";
+import BtnWithForm from "../btn/btnWithForm";
 
 export default function ContactCTA() {
     return (
         <>
-            <Title title={ContactCTACopy.title}/>
-            <Body text={ContactCTACopy.text}/>
-            <PopUpBtn onClick={''} text={ContactCTACopy.btnText}/>
+            <Title 
+                title={ContactCTACopy.title}
+            />
+            <Body 
+                text={ContactCTACopy.text}
+            />
+            <div className="grid__center">
+                <BtnWithForm 
+                    text={ContactCTACopy.btnText}
+                />
+            </div>            
         </>
     )
 }
