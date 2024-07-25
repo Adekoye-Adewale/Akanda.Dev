@@ -12,6 +12,7 @@
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    text-align: left;
 }
 .contact__form :is(input[type="text"], 
 input[type="email"], 
@@ -61,6 +62,7 @@ select, textarea) {
 .contact__form button{
     font-size: 1rem;
     border-radius: 20px;
+    margin-right: 0;
     cursor: pointer;
     transition: all 350ms ease-in-out;
 }
@@ -99,6 +101,7 @@ select, textarea) {
     color: var(--bg-hexa);
     background-color: transparent;
     border: solid 2px transparent;
+    margin-left: 0 !important;
 }
 .submit__btn{
     padding: 0.6rem 2.2rem;
