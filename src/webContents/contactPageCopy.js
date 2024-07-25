@@ -1,5 +1,6 @@
 export const ContactPageCopy = {
     hero: `<span class='hello italic'>Hello </span><span>Let's Connect, Meet,</span><span>Drink, and Work Together.</span>`,
+    cta: `Arrange a meeting`,
     link: {
         text: `Arrange a meeting`,
         href: `/`,
