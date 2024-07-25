@@ -1,61 +1,95 @@
-`use client`
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+"use client"
+import React, { useState, useEffect } from 'react'
+import { motion, useAnimate, stagger } from 'framer-motion'
 import style from './btn.module.css'
+import { ContactForm } from '../forms'
 
-export default function BtnWithForm({ text}) {
+const staggerFormInputs = stagger(0.1, { startDelay: 0.75 });
 
-    const vari = {
-        open: {
-            width: "480px",
-            height: "650px",
-            top: "-15px",
-            right: "-15px",
-            backgroundColor: `#fe0000`,
-            transition: { 
-                duration: 0.75, 
-                type: "tween", 
-                ease: [0.76, 0, 0.24, 1]
-            },
-        },
-        closed: {
-            width: "100px",
-            height: "40px",
-            top: "0px",
-            right: "0px",
-            // transition: { duration: 0.75, delay: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1]}
-        }
-    }
+function useFormAnimation(isActive) {
+    const [scope, animate] = useAnimate();
+  
+    useEffect(() => {
+        animate(
+            ".stag__form",
+            isActive
+                ? { 
+                    opacity: 1, 
+                    width: "100%",
+                    maxWidth: "500px",
+                    height: "100%",
+                    maxHeight: "800px",
+                    padding: "30px 20px",
+                    marginTop: "20px",
+                }
+                : { 
+                    opacity: 0, 
+                    width: "0px",
+                    height: "100%",
+                    maxHeight: "0px", 
+                    padding: "0px 0px",
+                    marginTop: "0px",
+                },
+            {
+                type: "tween",
+                ease: "circInOut",
+                bounce: 0,
+                duration: 0.5,
+                damping: 3, 
+                stiffness: 50,
+            }
+        );
+    
+        animate(
+            "form",
+            isActive
+                ? { opacity: 1, scale: 1, filter: "blur(0px)", width: "100%" }
+                : { opacity: 0, scale: 0, filter: "blur(20px)", width: "100%" },
+            {
+                duration: 0.75,
+                delay: isActive ? 0.5 : 0.2,
+            }
+        );
+    
+        animate(
+            ".forms_form__group__ONbro",
+            isActive
+                ? { opacity: 1, scale: 1, filter: "blur(0px)" }
+                : { opacity: 0, scale: 0.3, filter: "blur(20px)" },
+            {
+                duration: 1.2,
+                delay: isActive ? staggerFormInputs : 0,
+            }
+        );
+    }, [isActive]);
+  
+    return scope;
+}
 
-    const [ useActive, setUseActive ] = useState(false)
+export default function BtnWithForm({ text }) {
 
-    const onClick = () => {
-        if (!useActive) {
-            setUseActive(true)
-        } else{
-            setUseActive(false)
-        }    
-    }
+    const [ isActive, setIsActive ] = useState(false)
+    const scope = useFormAnimation(isActive);
 
     return (
-        <motion.div className={`${style.wrapper}`}>
-            <button 
+        <div 
+            className={`${style.wrapper} main__wrap`}
+            ref={scope}
+        >
+            <motion.button 
                 className={`${style.button} ${style.popup__button}`}
-                onClick={onClick}
+                onClick={() => setIsActive(!isActive)}
             >
                 <PerspectiveText
                     label={text}
                 />
-            </button>
-            <motion.div 
-                className={`${style.form_wrap} ${useActive ? `${style.relative}` : `${style.absolute}`}`}
-                variants={vari}
-                animate={useActive ? "closed" : "open"}
-                initial="closed"
+            </motion.button>
+            <div 
+                className={`${style.form_wrap} stag__form`}
             >
-
-            </motion.div>
-        </motion.div>
+                <ContactForm/>                    
+            </div>
+        </div>
     )
 }
 
