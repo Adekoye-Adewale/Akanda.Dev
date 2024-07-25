@@ -1,7 +1,7 @@
 import { Body, Title } from '../text'
-import PriBtn from '../btn/priBtn'
 import { FooterCTA } from '@/webContents/ctaCopy'
 import style from './siteFooter.module.css'
+import BtnWithForm from '../btn/btnWithForm'
 
 export default function CtaWrap() {
     return (
@@ -10,9 +10,10 @@ export default function CtaWrap() {
                 <Title title={FooterCTA.main}/>
                 <Body text={FooterCTA.body}/>
             </div>
-            <div>
-                <PriBtn {...FooterCTA.link}/>
+            <div className='cta__wrap__button'>
+                <BtnWithForm text={FooterCTA.link.text}/>
             </div>
+
         </div>
     )
 }
