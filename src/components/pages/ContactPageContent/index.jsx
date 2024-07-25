@@ -4,9 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Hero from './HeroSection'
 import ContactInfo from '@/components/contactInfo'
 import ContactCTA from '@/components/contactCTASec'
-import styles from './contactPageContent.module.css'
 import SectionRotate from '@/components/util/sectionRotate'
-import BtnWithForm from '@/components/btn/btnWithForm'
+import styles from './contactPageContent.module.css'
 
 export default function ContactPageContent() {
     
@@ -34,11 +33,6 @@ export default function ContactPageContent() {
             >
                 <ContactCTA/>
             </SectionRotate>
-            <div className='grid---center'>
-                <BtnWithForm 
-                    text={`Click Me`}
-                />
-            </div>
         </>
     )
 }
@@ -50,7 +44,10 @@ const HeroSection = ({scrollYProgress}) => {
 
     return (
         <motion.section 
-            style={{scale, opacity}} 
+            style={{
+                scale, 
+                opacity,
+            }} 
             transition={{ 
                 duration: 0.5, 
                 type: "spring", 
