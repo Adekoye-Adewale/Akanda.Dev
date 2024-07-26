@@ -1,17 +1,17 @@
 'use client'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Lenis from 'lenis'
 import Loading from './_loading/loading'
 
 export default function Template({ children }) {
 
-    const [loading, setLoading] = React.useState(false)
+    const [loading, setLoading] = useState(false)
  
-    React.useEffect(() => {
+    useEffect(() => {
         setTimeout(() => setLoading(true), 7000);
     }, [])
 
-    React.useEffect(() => {
+    useEffect(() => {
         const lenis = new Lenis()
 
         function raf(time) {
