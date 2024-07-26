@@ -57,8 +57,8 @@ export default function PortfolioList() {
 
     return (
         <div className={style.list__wrap}>
-            {Works.map(({client, img, summary, url}) => (
-                <div key={client} className={style.list}>
+            {Works.map(({ i, client, img, summary, url}) => (
+                <div key={i} className={style.list}>
                     <div className={style.copy__wrap}>
                         <Body text={summary}/>
                         <SubTitle subTitle={client}/>
