@@ -41,12 +41,14 @@ const HeroSection = ({scrollYProgress}) => {
 
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+    const filter = useTransform(scrollYProgress, [0, 0.6], ["blur(0) brightness(1)", "blur(10px) brightness(0)"]);
 
     return (
         <motion.section 
             style={{
                 scale, 
                 opacity,
+                filter
             }} 
             transition={{ 
                 duration: 0.5, 
