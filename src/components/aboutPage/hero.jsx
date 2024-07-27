@@ -2,7 +2,6 @@
 import { useRef } from 'react'
 import { useScroll, useTransform, motion } from "framer-motion";
 import style from './about.module.css'
-import akandaDev from '../../../public/images/akandaDevDark.svg'
 import HeroSecTwo from './heroSecTwo';
 
 export default function Hero() {
