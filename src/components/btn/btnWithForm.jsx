@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, useAnimate, stagger } from 'framer-motion'
 import style from './btn.module.css'
 import { ContactForm } from '../forms'
+import { FadeInLeft } from '../ui/enteranceAnimation'
 
 const staggerFormInputs = stagger(0.1, { startDelay: 0.75 });
 
@@ -72,24 +73,26 @@ export default function BtnWithForm({ text }) {
     const scope = useFormAnimation(isActive);
 
     return (
-        <div 
-            className={`${style.wrapper} main__wrap`}
-            ref={scope}
-        >
-            <motion.button 
-                className={`${style.button} ${style.popup__button}`}
-                onClick={() => setIsActive(!isActive)}
-            >
-                <PerspectiveText
-                    label={text}
-                />
-            </motion.button>
+        <FadeInLeft>
             <div 
-                className={`${style.form_wrap} stag__form`}
+                className={`${style.wrapper} main__wrap`}
+                ref={scope}
             >
-                <ContactForm/>                    
+                <motion.button 
+                    className={`${style.button} ${style.popup__button}`}
+                    onClick={() => setIsActive(!isActive)}
+                >
+                    <PerspectiveText
+                        label={text}
+                    />
+                </motion.button>
+                <div 
+                    className={`${style.form_wrap} stag__form`}
+                >
+                    <ContactForm/>                    
+                </div>
             </div>
-        </div>
+        </FadeInLeft>        
     )
 }
 
