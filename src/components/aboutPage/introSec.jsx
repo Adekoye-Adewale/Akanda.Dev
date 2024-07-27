@@ -1,6 +1,7 @@
 'use client'
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from "framer-motion";
+import { FadeInLeft } from '../ui/enteranceAnimation';
 import { Heading, SubTitle } from '../text';
 import Image from 'next/image';
 import { Akanda } from '@/webContents/aboutPage';
@@ -21,26 +22,38 @@ export default function IntroSec() {
         <section 
             className={style.intro__sec}
         >
-            <motion.div 
-                className={style.intro__sec__title}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+            <FadeInLeft 
+                delay={'.5'}
             >
-                <Heading head={intro.title}/>
-            </motion.div>
-            <div ref={container} className={style.intro__sec__img}>
                 <motion.div 
-                    style={{
-                        y
-                    }} 
-                    className={style.intro__sec__img__wrap}
+                    className={style.intro__sec__title}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                 >
-                    <Image {...intro.img}/>
+                    <Heading head={intro.title}/>
                 </motion.div>
-            </div>
-            <div className={style.intro__sec__sub__title}>
-                <SubTitle subTitle={intro.subTitle}/>
-            </div>
+            </FadeInLeft>
+            <FadeInLeft 
+                delay={'.75'}
+            >
+                <div ref={container} className={style.intro__sec__img}>
+                    <motion.div 
+                        style={{
+                            y
+                        }} 
+                        className={style.intro__sec__img__wrap}
+                    >
+                        <Image {...intro.img}/>
+                    </motion.div>
+                </div>
+            </FadeInLeft>
+            <FadeInLeft 
+                delay={1}
+            >
+                <div className={style.intro__sec__sub__title}>
+                    <SubTitle subTitle={intro.subTitle}/>
+                </div>
+            </FadeInLeft>
         </section>
     )
 }
