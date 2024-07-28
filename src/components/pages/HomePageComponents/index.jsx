@@ -15,6 +15,7 @@ import HomeHero from '@/components/hero/HomeHero';
 import SectionRotate from '@/components/util/sectionRotate';
 import CtaWrap from '@/components/siteFooter/ctaWrap';
 import style from './homePage.module.css'
+import { FadeIn, FadeInLeft } from '@/components/ui/enteranceAnimation';
 
 export default function HomePage() {
     
@@ -30,12 +31,15 @@ export default function HomePage() {
                 <HomePortfolioSec/>
             </section>
             <SectionRotate className={`${style.skill__sec}`}>
-                <div className='hidden'>
+                <FadeInLeft className='hidden'>
                     <Title title={"Akanda Skill"}/>
-                </div>
-                <div className={style.skill__sec__title}>
+                </FadeInLeft>
+                <FadeInLeft 
+                    delay={"0.5"} 
+                    className={style.skill__sec__title}
+                >
                     <SubTitle subTitle={HomeContent.skillTitle}/>
-                </div>
+                </FadeInLeft>
                 <Tab/>
             </SectionRotate>
             <SectionRotate className={`${style.why__sec}`}>
@@ -45,13 +49,15 @@ export default function HomePage() {
                 />
             </SectionRotate>
             <SectionRotate className={`${style.faq__sec}`}>
-                <div>
+                <FadeInLeft>
                     <Title title={HomeContent.faq.title}/>
-                </div>
-                <div>
+                </FadeInLeft>
+                <FadeInLeft
+                    delay={"0.5"}
+                >
                     <Body text={HomeContent.faq.desc}/>
                     <SecBtn {...HomeContent.faq.btn}/>
-                </div>
+                </FadeInLeft>
                 <Accordion Content={FAQ}/>
             </SectionRotate>
             <SectionFoot/>
@@ -73,10 +79,12 @@ export const HeroSection = ({ Hero, className }) => {
             ref={hero} 
             className={className}
         >
-            <HomeHero 
-                Hero={Hero} 
-                scrollYProgress={scrollYProgress}
-            />    
+            <FadeIn>
+                <HomeHero 
+                    Hero={Hero} 
+                    scrollYProgress={scrollYProgress}
+                />    
+            </FadeIn>
         </section>
     )
 }

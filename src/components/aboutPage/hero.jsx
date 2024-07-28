@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { useScroll, useTransform, motion } from "framer-motion";
 import style from './about.module.css'
 import HeroSecTwo from './heroSecTwo';
+import { FadeIn } from '../ui/enteranceAnimation';
 
 export default function Hero() {
     
@@ -51,7 +52,9 @@ export default function Hero() {
                     ease: "easeInOut"
                 }}
             >
-                <HeroSecTwo/>
+                <FadeIn>
+                    <HeroSecTwo/>
+                </FadeIn>
             </motion.div>
         </section>
     )

@@ -1,15 +1,22 @@
 import React from 'react'
 import { Body, SubTitle, Title } from '../text'
+import { FadeIn, FadeInLeft } from '../ui/enteranceAnimation'
 import { Hobby } from '@/webContents/aboutPage'
 import style from './about.module.css'
 
 export default function Interest() {
     return (
         <section className={style.intro__sec}>
-            <div className={style.hobby__title}>
-                <Title title={Hobby.title}/>
-            </div>
-            <Tabs/>
+            <FadeInLeft 
+                delay={'.5'}
+            >
+                <div className={style.hobby__title}>
+                    <Title title={Hobby.title}/>
+                </div>
+            </FadeInLeft>
+            <FadeIn>
+                <Tabs/>
+            </FadeIn>
         </section>
     )
 }

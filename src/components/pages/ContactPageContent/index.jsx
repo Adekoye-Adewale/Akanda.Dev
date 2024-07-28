@@ -6,6 +6,7 @@ import ContactInfo from '@/components/contactInfo'
 import ContactCTA from '@/components/contactCTASec'
 import SectionRotate from '@/components/util/sectionRotate'
 import styles from './contactPageContent.module.css'
+import { FadeIn } from '@/components/ui/enteranceAnimation'
 
 export default function ContactPageContent() {
     
@@ -80,7 +81,9 @@ const SecTwo = ({scrollYProgress}) => {
             } 
             className={`${styles.scroll__sec} inline__pad`}
         >
-            <ContactInfo/>
+            <FadeIn>
+                <ContactInfo/>
+            </FadeIn>
         </motion.section>
     )
 

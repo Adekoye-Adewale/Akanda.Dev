@@ -34,7 +34,7 @@ export default function IntroSec() {
                 </motion.div>
             </FadeInLeft>
             <FadeInLeft 
-                delay={'.75'}
+                delay={'.5'}
             >
                 <div ref={container} className={style.intro__sec__img}>
                     <motion.div 
@@ -48,7 +48,7 @@ export default function IntroSec() {
                 </div>
             </FadeInLeft>
             <FadeInLeft 
-                delay={1}
+                delay={'.5'}
             >
                 <div className={style.intro__sec__sub__title}>
                     <SubTitle subTitle={intro.subTitle}/>
