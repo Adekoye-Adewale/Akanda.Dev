@@ -27,9 +27,10 @@ export default function ContactForm() {
     const [currentStep, setCurrentStep] = useState(1);
 
     const onSubmit = async (formData) => {
-        console.log(formData);
         try {
-            const token = await executeRecaptcha("submit_contact_form");
+            const token = await executeRecaptcha("submit_contact_form", {
+                sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+            });
             if (!token) {
                 console.error('reCaptcha validation failed.');
                 return;
@@ -37,12 +38,26 @@ export default function ContactForm() {
 
             setSubmitting(true);
 
-            // Simulating form submission delay (replace with actual API call)
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+                    secret_key: process.env.NEXT_PUBLIC_WEB3FORMS_SECRET_KEY,
+                    data: { ...formData, meetingDate, 'g-recaptcha-response': token }
+                })
+            });
 
-            console.log('Form data:', { ...formData, meetingDate });
-            setFormSubmitted(true);
-            reset(); 
+            const result = await response.json();
+            if (result.success) {
+                setFormSubmitted(true);
+                reset();
+            } else {
+                console.error('Form submission failed:', result.message);
+            }
         } catch (error) {
             console.error('Error submitting the form:', error);
         } finally {
