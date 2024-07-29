@@ -104,6 +104,9 @@ select, textarea) {
     margin-left: 0 !important;
 }
 .submit__btn{
+    display: flex;
+    align-items: center;
+    gap: 5px;
     padding: 0.6rem 2.2rem;
     color: var(--preloader-bg);
     background-color: var(--bg-hexa);
@@ -118,4 +121,18 @@ select, textarea) {
     padding: 10px 25px;
     color: var(--purple-100);
     background-color: var(--gold-700);
+}
+.submiting__icon{
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: solid 2px green;
+    border-bottom: solid 2px red;
+    animation: rotate 2000ms infinite linear;
+}
+@keyframes rotate {
+    to{
+        transform: rotate(360deg);
+    }
 }
