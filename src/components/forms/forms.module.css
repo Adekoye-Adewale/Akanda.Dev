@@ -127,9 +127,10 @@ select, textarea) {
     width: 15px;
     height: 15px;
     border-radius: 100%;
-    border: solid 2px green;
-    border-bottom: solid 2px red;
+    border: solid 2px var(--preloader-bg);
+    border-bottom: solid 2px var(--gold-700);
     animation: rotate 2000ms infinite linear;
+    transition: all 300ms ease-in-out;
 }
 @keyframes rotate {
     to{
