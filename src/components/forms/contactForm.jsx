@@ -104,7 +104,7 @@ export default function ContactForm() {
                     type="hidden"
                     {...register("recaptcha_response")}
                     id="recaptchaResponse"
-                />       
+                />           
                 {currentStep === 1 && (
                     <>
                         <div 
@@ -454,7 +454,7 @@ export default function ContactForm() {
                                     <span className={styles.submiting__icon}>
                                     </span>
                                 )}
-                                Submit
+                                {submitting ? "Submitting" : "Submit"}
                             </button>
                         </div>
                     </>
@@ -463,22 +463,10 @@ export default function ContactForm() {
                 {formSubmitted && <p className={styles.success__message}>Form submitted successfully!</p>}
                     
             </form>
-            <Script
+            <Script 
+                src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`} 
+                strategy="lazyOnload" 
                 id="recaptcha-load"
-                strategy="lazyOnload"
-                src={`https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_SITE_KEY}`}
-                onLoad={() => {
-                    grecaptcha.ready(function () {
-                        grecaptcha
-                        .execute( process.env.RECAPTCHA_SITE_KEY, {
-                            action: "contact"
-                        })
-                        .then(function (token) {
-                            console.log(token);
-                            setCaptchaToken(token);
-                        });
-                    });
-                }}
             />
         </>
     );
