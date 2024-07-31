@@ -84,6 +84,8 @@
     display: grid;
 }
 .form_wrap{
+    display: grid;
+    grid-template-columns: 1fr;
     min-width: 370px;
     border-radius: 20px;
     transition: all 600ms ease-in-out;
