@@ -119,8 +119,9 @@ select, textarea) {
 }
 .success__message{
     padding: 10px 25px;
-    color: var(--purple-100);
-    background-color: var(--gold-700);
+    color: var(--gold-700);
+    text-align: center;
+    font-size: 1.5rem;
 }
 .submiting__icon{
     display: block;
@@ -136,4 +137,18 @@ select, textarea) {
     to{
         transform: rotate(360deg);
     }
+}
+.contact__form, 
+.success__wrap{
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+.success__svg{
+    display: grid;
+    place-content: center;
+}
+.success__svg svg{
+    width: 200px;
+    height: 200px;
+    color: var(--gold-700);
 }
