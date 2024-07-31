@@ -1,9 +1,9 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { motion, useAnimate, stagger } from 'framer-motion'
-import style from './btn.module.css'
 import { ContactForm } from '../forms'
 import { FadeInLeft } from '../ui/enteranceAnimation'
+import style from './btn.module.css'
 
 const staggerFormInputs = stagger(0.1, { startDelay: 0.75 });
 
