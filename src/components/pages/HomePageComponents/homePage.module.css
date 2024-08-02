@@ -7,7 +7,7 @@
 }
 .skill__sec>div{
     display: grid;
-    row-gap: 60px;
+    row-gap: 20px;
 }
 .skill__sec__title{
     max-width: 70%;
