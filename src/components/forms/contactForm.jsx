@@ -98,7 +98,7 @@ export default function ContactForm() {
         <>
             {formSubmitted && (<FormSubmittedSuccessfully/> )}                
             <form 
-                className={styles.contact__form} 
+                className={`${styles.contact__form} ${formSubmitted ? "hidden" : ""}`} 
                 onSubmit={handleSubmit(onSubmit)}
             >        
                 <input
