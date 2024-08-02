@@ -80,7 +80,7 @@ export const HomeContent = {
     faq: {
         title: `Frequently Asked Questions`,
         btn: {
-            href: `/`,
+            href: `/contact-website-developer-in-lagos`,
             text: `Ask Akanda.Dev`,
         },
         desc: `Got Questions?`,
