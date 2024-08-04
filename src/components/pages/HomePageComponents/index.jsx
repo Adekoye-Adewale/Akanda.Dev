@@ -21,9 +21,9 @@ export default function HomePage() {
     
     return (
         <main>
-            {/* <HeroSection 
+            <HeroSection 
                 Hero={homeHero}
-            /> */}
+            />
             <SectionRotate className={`${style.about__sec}`}>
                 <HomeAboutSec/>
             </SectionRotate>
@@ -79,12 +79,12 @@ export const HeroSection = ({ Hero, className }) => {
             ref={hero} 
             className={className}
         >
-            {/* <FadeIn> */}
+            <FadeIn>
                 <HomeHero 
                     Hero={Hero} 
                     scrollYProgress={scrollYProgress}
                 />    
-            {/* </FadeIn> */}
+            </FadeIn>
         </section>
     )
 }
