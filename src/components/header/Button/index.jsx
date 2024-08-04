@@ -7,7 +7,11 @@ export default function Button({isActive, toggleMenu}) {
             <motion.div 
                 className={styles.slider}
                 animate={{top: isActive ? "-100%" : "0%"}}
-                transition={{ duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1]}}
+                transition={{ 
+                    duration: 0.5, 
+                    type: "tween", 
+                    ease: [0.76, 0, 0.24, 1]
+                }}
             >
                 <div 
                     className={styles.el}
