@@ -16,6 +16,14 @@
 }
 .hero__sec__one{
     transform-origin: center;
+
+    width: 100%;
+    height: calc(100vh - 100px);
+    position: sticky;
+    /* display: grid; */
+    /* place-content: center;
+    top: 0;
+    left: 0; */
 }
 .hero__sec__one :is(h1, p){
     opacity: 0;
