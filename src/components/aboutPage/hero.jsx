@@ -18,7 +18,7 @@ export default function Hero() {
     const opacity = useTransform(scrollYProgress, [0, 0.50, 0.8, 1], [0, 0, 1, 1]);
     const filter = useTransform(scrollYProgress, [0, 0.6], ["blur(0) brightness(1)", "blur(10px) brightness(0)"]);
     const transform = useTransform(scrollYProgress, [0, 0.35, 1], 
-        ["scale(0.8) translate(0px, 0px)", "scale(1) translate(-15%, 0%)", "scale(50) translate(-15%, 50%)"]);
+        ["scale(0.8) translate(0px, 0px)", "scale(1) translate(-15%, 0%)", "scale(50) translate(-15%, 0%)"]);
 
     return (
         <section className={style.hero} ref={container}>
