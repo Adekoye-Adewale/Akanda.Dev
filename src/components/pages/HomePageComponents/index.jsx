@@ -21,9 +21,9 @@ export default function HomePage() {
     
     return (
         <main>
-            <HeroSection 
+            {/* <HeroSection 
                 Hero={homeHero}
-            />
+            /> */}
             <SectionRotate className={`${style.about__sec}`}>
                 <HomeAboutSec/>
             </SectionRotate>
