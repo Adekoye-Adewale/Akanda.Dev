@@ -79,12 +79,12 @@ export const HeroSection = ({ Hero, className }) => {
             ref={hero} 
             className={className}
         >
-            <FadeIn>
+            {/* <FadeIn> */}
                 <HomeHero 
                     Hero={Hero} 
                     scrollYProgress={scrollYProgress}
                 />    
-            </FadeIn>
+            {/* </FadeIn> */}
         </section>
     )
 }
