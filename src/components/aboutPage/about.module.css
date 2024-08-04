@@ -20,7 +20,8 @@
     width: 100%;
     height: calc(100vh - 100px);
     position: sticky;
-    /* display: grid; */
+    display: grid;
+    align-content: center;
     /* place-content: center;
     top: 0;
     left: 0; */
@@ -159,7 +160,7 @@
 }
 @media (max-width: 1070px){
     .hero__sec__one{
-        transform-origin: bottom;
+        transform-origin: center;
     }
     .list__img__wrap img{
         aspect-ratio: 500/334;
