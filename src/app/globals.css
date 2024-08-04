@@ -135,7 +135,7 @@
   min-width: 0;
 }
 main{
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 body{
   position: relative;
