@@ -11,7 +11,8 @@ export const ContactInfoCopy = {
     Lists: [
         {
             title: `Email`,
-            text: `info@akanda.dev`,
+            text: `***@akanda.dev`,
+            info: `No Spamming😒`,
             link: {
                 href: `mailto:info@akanda.dev`,
                 title: `Akanda Dev business email`
@@ -19,7 +20,8 @@ export const ContactInfoCopy = {
         },
         {
             title: `Telephone`,
-            text: `+234 806 7355 472`,
+            text: `+234 806 7**`,
+            info: `Save the energy, schedule a meeting😎`,
             link: {
                 href: `tel:+2348067355472`,
                 title: `Akanda Dev business number`
