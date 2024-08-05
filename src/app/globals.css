@@ -399,6 +399,9 @@ body:has(.menu__control) header{
   transition: all 300ms ease-in-out;
   animation: iconSwitch 5s ease-in-out 0ms infinite;
 }
+body:has(.social_svg:hover) .cursor{
+  transform: scale(0.5);
+}
 /* PORTFOLIO PAGE */
 .portfolio__hero h1 span:nth-child(2){
   opacity: 1 !important;
