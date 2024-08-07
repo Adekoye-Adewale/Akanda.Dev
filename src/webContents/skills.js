@@ -8,11 +8,11 @@ export const Tabs = [
         component: ({ img, text, link }) => <TabContent img={img} text={text} link={link} />,
         comp: ({ aboutImg }) => <Image {...aboutImg}/>,
         img: {
-            src: `/images/web-development.webp`,
+            src: `/images/website-development.webp`,
             alt: `Web Development`,
             title: `Web Development`,
             width: `600`,
-            height: `473`,
+            height: `450`,
         },
         aboutImg: {
             src: `/images/website-development.webp`,
@@ -34,11 +34,11 @@ export const Tabs = [
         component: ({ img, text, link }) => <TabContent img={img} text={text} link={link} />,
         comp: ({ aboutImg }) => <Image {...aboutImg}/>,
         img: {
-            src: `/images/e-commerce.webp`,
+            src: `/images/ecommerce-online-shopping.webp`,
             alt: `E-Commerce`,
             title: `E-Commerce`,
             width: `600`,
-            height: `431`,
+            height: `450`,
         },
         aboutImg: {
             src: `/images/ecommerce-online-shopping.webp`,
@@ -60,11 +60,11 @@ export const Tabs = [
         component: ({ img, text, link }) => <TabContent img={img} text={text} link={link} />,
         comp: ({ aboutImg }) => <Image {...aboutImg}/>,
         img: {
-            src: `/images/search-engine-optimization.webp`,
+            src: `/images/website-search-engine-optimization.webp`,
             alt: `Search Engine Optimization`,
             title: `Search Engine Optimization`,
             width: `600`,
-            height: `418`,
+            height: `450`,
         },
         aboutImg: {
             src: `/images/website-search-engine-optimization.webp`,
@@ -86,11 +86,11 @@ export const Tabs = [
         component: ({ img, text, link }) => <TabContent img={img} text={text} link={link} />,
         comp: ({ aboutImg }) => <Image {...aboutImg}/>,
         img: {
-            src: `/images/web-analytics-and-user-tracking.webp`,
+            src: `/images/analytics-and-user-tracking.webp`,
             alt: `Web Analytics and User Tracking`,
             title: `Web Analytics and User Tracking`,
             width: `600`,
-            height: `315`,
+            height: `450`,
         },
         aboutImg: {
             src: `/images/analytics-and-user-tracking.webp`,
