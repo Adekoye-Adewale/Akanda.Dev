@@ -44,7 +44,7 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: flex-start;
     justify-content: space-between;
-    gap: 40px 100px;
+    gap: 40px;
     width: 100%;
     padding: 60px;
     border: solid 1px var(--btn-border);
