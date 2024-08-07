@@ -40,7 +40,7 @@ export const slideIn = {
         y: 0,
         transition: { 
             duration: 0.5,
-            delay: 0.85 + (i * 0.1), 
+            delay: 0.15 + (i * 0.1), 
             ease: [.215,.61,.355,1],
             opacity: {
                 duration: 1,
