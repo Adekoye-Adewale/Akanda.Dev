@@ -1,5 +1,4 @@
 import { forwardRef } from 'react';
-import Magnetic from '../magnetic';
 import NavMenu from './navMenu';
 import Logo from './logo';
 import styles from './header.module.css';
