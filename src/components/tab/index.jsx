@@ -15,10 +15,10 @@ export default function Tab() {
         <div className={style.tab__boxes__wrap}>
             <div className={style.tab__box}>
                 <div className={style.title__btns__wrap}>
-                    {Tabs.map((tab) => (
+                    {Tabs.map((tab, i) => (
                         <div
                             className={`${isSelected(tab) ? style.active : ''}`}
-                            key={tab.title}
+                            key={i}
                             onClick={() => setActiveTab(tab)}
                         >
                             <TabTitleBtn text={tab.label} />
