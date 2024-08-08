@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Link from 'next/link'
 import { FootCard } from '@/webContents/siteFooterCopy'
 import style from './siteFooter.module.css'
@@ -16,8 +16,8 @@ export function Cards() {
     return (
         <ul>
             {FootCard.map(( card, index ) => (
-                <>
-                    <li key={index}>
+                <Fragment key={index}>
+                    <li>
                         <Link
                             href={card.link}
                         >
@@ -29,7 +29,7 @@ export function Cards() {
                         </Link>
                     </li>
                     <hr />
-                </>
+                </Fragment>
             ))}
         </ul>
     )
