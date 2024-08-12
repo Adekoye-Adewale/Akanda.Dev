@@ -51,7 +51,7 @@ export function Card({ pri, sec, desc }) {
             </div>
             <div  className={style.right}>
                 <div className={style.svg__wrap}>
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="https://www.w3.org/2000/svg">
                         <path d="M25 44.25V6.75" stroke="#C2C2C2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M31.25 13L25 6.75L18.75 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
