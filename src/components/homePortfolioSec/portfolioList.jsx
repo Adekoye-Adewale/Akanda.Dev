@@ -1,10 +1,10 @@
 'use client'
-import React,{ useRef} from 'react'
+import React,{ useRef } from 'react';
 import { useScroll, useTransform, motion} from 'framer-motion';
-import { Body, SubTitle } from '../text'
-import Image from 'next/image'
+import { Body, SubTitle } from '../text';
+import Image from 'next/image';
+import Link from 'next/link';
 import style from "./homePortfolioSec.module.css";
-
 
 export default function PortfolioList() {
     const Works = [
@@ -65,6 +65,7 @@ export default function PortfolioList() {
                     </div>
                     <GrowImg 
                         img={img}
+                        url={url}
                     />
                 </div>
             ))}
@@ -72,8 +73,7 @@ export default function PortfolioList() {
     )
 }
 
-
-const GrowImg = ({ img }) => {
+const GrowImg = ({ img, url }) => {
 
     const el = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -89,8 +89,64 @@ const GrowImg = ({ img }) => {
             ref={el}
             style={{scale, borderRadius: radius}}
             className={style.img__wrap}
-        >
+        >            
+            <Link 
+                {...url} 
+                target='_blank'
+            >
+                <LinkArrow/>
+            </Link>
             <Image {...img}/>
+        </motion.div>
+    )
+}
+
+const LinkArrow = () => {
+
+    const linkEl = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: linkEl,
+        offset: ['start 0.9', 'start 0.1']
+    })
+
+    const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [0, 180, 359]);
+    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.5, 0.5]);
+    const x = useTransform(scrollYProgress, [0, 0.5, 1], [`-50%`, `-50%`, `-50%`]);
+    const y = useTransform(scrollYProgress, [0, 0.5, 1], [`-50%`, `-50%`, `-50%`]);
+
+    return (
+        <motion.div 
+            ref={linkEl}
+            style={{
+                scale,
+                rotate,
+                x,
+                y,
+            }}
+            className={style.link_icon__wrap}
+        >
+            <svg 
+                width="30" 
+                height="30" 
+                viewBox="0 0 50 50" 
+                fill="none" 
+                xmlns="https://www.w3.org/2000/svg"
+            >
+                <path 
+                    d="M25 44.25V6.75" 
+                    stroke="#C2C2C2" 
+                    strokeWidth="3" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                />
+                <path 
+                    d="M31.25 13L25 6.75L18.75 13" 
+                    stroke="white" 
+                    strokeWidth="3" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                />
+            </svg>
         </motion.div>
     )
 }
