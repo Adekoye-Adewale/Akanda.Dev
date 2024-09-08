@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
       />
       <Script
         id="zsiqscript"
-        src={`https://salesiq.zohopublic.com/widget?wc=${process.env.ENTRY_ID}`}
+        src={`https://salesiq.zohopublic.com/widget?wc=${process.env.ZOHO_SIQ_URL}`}
         defer
       />
       <body>
