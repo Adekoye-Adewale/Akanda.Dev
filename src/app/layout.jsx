@@ -65,6 +65,20 @@ export default function RootLayout({ children }) {
           __html: JSON.stringify(Home),
         }}
       />
+      <Script
+        id="zoho-chat"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.$zoho = window.$zoho || {};
+            $zoho.salesiq = $zoho.salesiq || { ready: function() {} };
+          `,
+        }}
+      />
+      <Script
+        id="zsiqscript"
+        src={`https://salesiq.zohopublic.com/widget?wc=${process.env.ENTRY_ID}`}
+        defer
+      />
       <body>
         <MainLayout/>
           {children}
