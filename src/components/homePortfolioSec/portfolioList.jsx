@@ -34,8 +34,8 @@ export default function PortfolioList() {
             height: `409`,
         },
         url: {
-            href: `https://www.mediatekng.com/`,
-            title: `Click to visit Mediatek NG website`,
+            href: `https://designglaze.com/`,
+            title: `Click to visit Design Glaze website`,
         },
     },
     {
@@ -49,8 +49,8 @@ export default function PortfolioList() {
             height: `409`,
         },
         url: {
-            href: `https://www.mediatekng.com/`,
-            title: `Click to visit Mediatek NG website`,
+            href: `https://blbrand.shop/`,
+            title: `Click to visit BL Brand website`,
         },
     },
 ]
