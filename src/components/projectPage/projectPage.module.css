@@ -13,6 +13,7 @@
     border-radius: 20px;
     aspect-ratio: 700/409;
     overflow: hidden;
+    margin-inline: auto;
 }
 .hero__copy__wrap{
     display: grid;
@@ -22,6 +23,7 @@
 }
 .hero__copy__wrap h1{
     font-size: 100px;
+    text-align: center;
 }
 .hero__metadata__wrap{
     display: flex;
