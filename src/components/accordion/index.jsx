@@ -21,7 +21,6 @@ export default function Accordion({ Content }) {
                 >
                     <div 
                         className={`${style.accordion__title} ${isSelected(tab) ? `${style.active}` : ''}`}
-                        key={tab.title}
                         onClick={() => setActiveTab(tab)}
                     >
                         <AccordionTitle text={tab.question}/>
