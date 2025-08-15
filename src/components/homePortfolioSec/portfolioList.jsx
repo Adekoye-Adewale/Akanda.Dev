@@ -7,8 +7,9 @@ import Link from 'next/link';
 import style from "./homePortfolioSec.module.css";
 
 export default function PortfolioList() {
-    const Works = [
+    const works = [
     {
+        id: 1001,
         client:`Mediatek NG`,
         summary:`A media independent company`,
         img: {
@@ -24,6 +25,7 @@ export default function PortfolioList() {
         },
     },
     {
+        id: 1002,
         client:`Design Glaze`,
         summary:`uPVC Windows and Doors Installer in United Kingdom`,
         img: {
@@ -34,11 +36,12 @@ export default function PortfolioList() {
             height: `409`,
         },
         url: {
-            href: `https://www.mediatekng.com/`,
-            title: `Click to visit Mediatek NG website`,
+            href: `https://designglaze.com/`,
+            title: `Click to visit Design Glaze website`,
         },
     },
     {
+        id: 1003,
         client:`BLBrand`,
         summary:`A fashion brand that produces stylish Adire infused with streetwear`,
         img: {
@@ -49,23 +52,23 @@ export default function PortfolioList() {
             height: `409`,
         },
         url: {
-            href: `https://www.mediatekng.com/`,
-            title: `Click to visit Mediatek NG website`,
+            href: `https://blbrand.shop/`,
+            title: `Click to visit BL Brand website`,
         },
     },
 ]
 
     return (
         <div className={style.list__wrap}>
-            {Works.map(({ i, client, img, summary, url}) => (
-                <div key={i} className={style.list}>
+            {works.map(( work ) => (
+                <div key={work.id} className={style.list}>
                     <div className={style.copy__wrap}>
-                        <Body text={summary}/>
-                        <SubTitle subTitle={client}/>
+                        <Body text={work.summary}/>
+                        <SubTitle subTitle={work.client}/>
                     </div>
                     <GrowImg 
-                        img={img}
-                        url={url}
+                        img={work.img}
+                        url={work.url}
                     />
                 </div>
             ))}
