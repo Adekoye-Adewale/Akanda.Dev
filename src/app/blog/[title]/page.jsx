@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { notFound } from 'next/navigation';
 import { client } from '@/app/api/contentful';
@@ -14,10 +13,12 @@ function sanitizeSlug(slug) {
                .toLowerCase();
 }
 
+const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://akanda.dev';
+
 export function processBlogContent(content) {
     const fields = content?.fields;
     const rawSlug = `${encodeURIComponent(fields?.title)}`;
-    const slug = sanitizeSlug(rawSlug);
+    const slug = fields?.slug || sanitizeSlug(rawSlug);
     const img = fields?.img;
     const blogCopy = fields?.content;
     const system = content?.sys?.id;
@@ -122,12 +123,12 @@ export async function generateMetadata({ params }) {
         title,
         description,
         alternates: {
-            canonical: `https://akanda.dev${slug}`,
+            canonical: `${siteURL}${slug}`,
         },
         openGraph: {
             title,
             description,
-            url: `https://akanda.dev${slug}`,
+            url: `${siteURL}${slug}`,
             type: 'article',
             article: {
                 publishedTime: seoContent.datePublished,
