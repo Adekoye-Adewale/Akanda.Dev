@@ -11,7 +11,7 @@ export function processWorksContent(content) {
     const projectTechnologies = fields?.projectTechnologies;
     const datePublished = content?.sys?.createdAt;
     const lastUpdate = content?.sys?.updatedAt;
-    const slug = rawSlug.replace(/%20/g, '-')
+    const slug = fields?.slug || rawSlug.replace(/%20/g, '-')
                         .replace(/%3A/g, '-') 
                         .replace(/%3F/g, '-')  
                         .replace(/[^a-zA-Z0-9-]/g, '-') 
@@ -79,11 +79,11 @@ export async function getWorks(params) {
     const { slug } = params;
     const pageContents = await client.getEntries({
         content_type: 'portfolio',
-        // 'fields.brandName': slug,
+        // 'fields.slug': slug,
     });
     
     const projects = pageContents.items.find(
-        (item) => item.fields.brandName.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase() === slug
+        (item) => item.fields.slug === slug
     );
 
     // console.log("PaQway", projects.sys);
