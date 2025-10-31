@@ -32,7 +32,7 @@ export function processBlogContent(content) {
         type: fields?.type,
         category: fields?.category,
         articleSource: fields?.articleSource,
-        sourceLink: fields?.sourceLink,
+        sourceLink: fields?.sourceLink || `${siteURL}/blog/${slug}`,
         rawDatePublished: fields?.datePublished,
         datePublished: datePublished,
         articleCopy: blogCopy,
