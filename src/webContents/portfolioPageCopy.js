@@ -10,7 +10,7 @@ export const rawWorksList = worksContent?.map((content) => {
     const img = fields?.projectPreview;
     const system = content?.sys?.id;
     const rawSlug = fields?.brandName;
-    const slug = sanitizeSlug(rawSlug);
+    const slug = fields?.slug || sanitizeSlug(rawSlug);
     const projectDate = new Date(fields?.projectYear).toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
     const projectYear = new Date(fields?.projectYear);
 
