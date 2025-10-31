@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { client } from '@/app/api/contentful';
 import SingleProjectPage from '@/components/pages/PortfolioPageComponents/singleProjectPage';
 
+const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://akanda.dev';
+
 export function processWorksContent(content) {
     const fields = content?.fields;
     const img = fields?.projectPreview;
@@ -140,12 +142,12 @@ export async function generateMetadata({ params }) {
         title,
         description,
         alternates: {
-            canonical: `https://akanda.dev${slug?.href}`,
+            canonical: `${siteURL}${slug?.href}`,
         },
         openGraph: {
             title,
             description,
-            url: `https://akanda.dev${slug?.href}`,
+            url: `${siteURL}${slug?.href}`,
             type: 'article',
             article: {
                 publishedTime: seoContent?.datePublished,
@@ -167,11 +169,11 @@ export async function generateMetadata({ params }) {
         "@type": "Project",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://akanda.dev${slug}`,
+            "@id": `${siteURL}${slug}`,
             "description": summary,
         },
         "headline": title,
-        "image": img ? `https://akanda.dev${img.src}` : undefined,
+        "image": img ? `${siteURL}${img.src}` : undefined,
         "datePublished": seoContent?.datePublished,
         "dateModified": seoContent?.lastUpdate,
         "author": {

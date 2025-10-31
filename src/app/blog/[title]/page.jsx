@@ -149,10 +149,10 @@ export async function generateMetadata({ params }) {
         "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://akanda.dev${slug}`
+            "@id": `${siteURL}${slug}`
         },
         "headline": title,
-        "image": img ? `https://akanda.dev${img.src}` : undefined,
+        "image": img ? `${siteURL}${img.src}` : undefined,
         "datePublished": seoContent.datePublished,
         "dateModified": seoContent.dateModified,
         "author": {
