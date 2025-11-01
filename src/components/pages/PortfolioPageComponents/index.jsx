@@ -13,7 +13,7 @@ export default function PortfolioContents() {
                 className={`portfolio__hero`}
                 Hero={portfolioHero}
             />
-            <SectionRotate>
+            <SectionRotate gridPositionClass='grid__start'>
                 <PortfolioLists/>
             </SectionRotate>
             <SectionFoot/>
