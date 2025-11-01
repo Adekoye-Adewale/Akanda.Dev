@@ -25,6 +25,7 @@ export const rawWorksList = worksContent?.map((content) => {
         type: fields?.projectCategory,
         link: fields?.projectLink,
         agency: fields?.agency,
+        projectFramework: fields?.projectFramework,
         img: img ? {
             src: img.fields.file.url.replace('//', 'https://'),
             alt: img.fields.description || '',
