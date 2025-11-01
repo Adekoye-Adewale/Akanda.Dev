@@ -2,7 +2,12 @@
 import { useRef} from 'react'
 import { useScroll, useTransform, motion } from "framer-motion";
 
-export default function SectionRotate({ className, children }) {
+export default function SectionRotate(
+    { 
+        className, 
+        children, 
+        gridPositionClass = 'grid__center' 
+    }) {
 
     const container = useRef();
     const { scrollYProgress } = useScroll({
@@ -24,7 +29,7 @@ export default function SectionRotate({ className, children }) {
                     stiffness: 100, 
                     ease: "easeInOut"
                 }}
-                className='full__screen grid__center section__bg container__pad'
+                className={`full__screen ${gridPositionClass} section__bg container__pad`}
             >
                 {children}
             </motion.div>
